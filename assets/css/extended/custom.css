@@ -1,0 +1,9 @@
+/* This will apply to all custom pages */
+.page {
+    margin-top: 1000; /* Adjust this value to your preference */
+    background-color: #c51919; /* Adjust this value to your preference */
+  }
+
+:root {
+--theme: rgb(245, 245, 245);
+}

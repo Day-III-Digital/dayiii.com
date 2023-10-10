@@ -1,0 +1,40 @@
+baseURL = 'https://dayiii.com/'
+languageCode = 'en-us'
+title = 'DAY III DIGITAL'
+theme = 'PaperMod'
+
+[params]
+    hideFooter = 'true'
+    defaultTheme = 'light'
+    disableThemeToggle = 'true'
+    customCSS = ["css/extended/custom.css"]
+
+[[socialIcons]]
+    name = "linkedin"
+    title = "LinkedIn"
+    url = "https://kofi.com"
+
+[[socialIcons]]
+    name = "instagram"
+    title = "Instagram"
+    url = "https://twitter.com"
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+
+# [[menu.main]]
+#     name = "News"
+#     url = "/news/"
+#     weight = 3
+
+[[menu.main]]
+    name = "Careers"
+    url = "/careers/"
+    weight = 4
+
+[[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
