@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@900&display=swap');
+
+.logo a {
+  font-weight: 900;
+  font-family: 'Gabarito', sans-serif;
+}
+
+#menu a {
+  font-weight: 900;
+  font-family: 'Gabarito', sans-serif;
+}
+
+#menu .active {
+  font-weight: 900;
+  border-bottom: 2px solid currentColor;
+  font-family: 'Gabarito', sans-serif;
+}
+
+.page-header, .post-header {
+  font-weight: 900;
+  font-family: 'Gabarito', sans-serif;
+}
+
 /* This will apply to all custom pages */
 .page {
     margin-top: 1000; /* Adjust this value to your preference */

@@ -1,6 +1,6 @@
 ---
-title: "Contact"
+title: "CONTACT"
 type: "page"
 ---
 
-info@DayIII.com
+INFO@DAYIII.COM
