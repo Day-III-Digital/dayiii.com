@@ -1,31 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@900&display=swap');
+@font-face {
+  font-family: "GabaritoExtraBold";
+  src: url("/fonts/Gabarito-ExtraBold.woff2");
+}
+
+@font-face {
+  font-family: "GabaritoSemiBold";
+  src: url("/fonts/Gabarito-SemiBold.woff2");
+}
 
 .logo a {
-  font-weight: 900;
-  font-family: 'Gabarito', sans-serif;
+  font-weight: 800;
+  font-size: 1.5em;
+  font-family: "GabaritoExtraBold", sans-serif;
 }
 
 #menu a {
-  font-weight: 900;
-  font-family: 'Gabarito', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-family: "GabaritoSemiBold";
 }
 
 #menu .active {
-  font-weight: 900;
+  font-weight: 700;
+  text-transform: uppercase;
   border-bottom: 2px solid currentColor;
-  font-family: 'Gabarito', sans-serif;
+  font-family: "GabaritoSemiBold", sans-serif;
 }
 
-.page-header, .post-header {
-  font-weight: 900;
-  font-family: 'Gabarito', sans-serif;
+.page-header h1, .post-title {
+  font-weight: 800;
+  font-family: "GabaritoExtraBold", sans-serif;
+  text-transform: uppercase;
+  /* border-bottom: 2px solid currentColor; */
+  /* border-top: 2px solid currentColor; */
+  text-align: center;
+  font-size: 1.5em;
+}
+.entry-header{
+  font-size: 1em;
+  font-family: "GabaritoSemiBold", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-/* This will apply to all custom pages */
-.page {
-    margin-top: 1000; /* Adjust this value to your preference */
-    background-color: #c51919; /* Adjust this value to your preference */
-  }
+.post-entry {
+  background-color: #1E1E1E;
+}
+
+.entry-header h2 {
+  font-size: 1em;
+  color: rgb(245, 245, 245);
+}
+
+.post-content h3 {
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "GabaritoSemiBold", sans-serif;
+}
+
+/* .post-content strong {
+  font-weight: 700;
+  font-family: "GabaritoExtraBold", sans-serif;
+  font-style: normal;
+} */
 
 :root {
 --theme: rgb(245, 245, 245);

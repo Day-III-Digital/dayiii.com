@@ -20,7 +20,7 @@ theme = 'PaperMod'
     url = "https://twitter.com"
 
 [[menu.main]]
-    name = "ABOUT"
+    name = "About"
     url = "/about/"
     weight = 3
 
@@ -30,11 +30,11 @@ theme = 'PaperMod'
 #     weight = 3
 
 [[menu.main]]
-    name = "CAREERS"
+    name = "Careers"
     url = "/careers/"
     weight = 4
 
 [[menu.main]]
-    name = "CONTACT"
+    name = "Contact"
     url = "/contact/"
     weight = 5

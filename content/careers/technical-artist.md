@@ -1,7 +1,7 @@
 ---
-title: "TECHNICAL ARTIST"
+title: "Technical Artist"
 date: 2023-10-10
-type: "career"
+type: "careers"
 hideMeta: true
 hideSummary: true
 ---
@@ -51,4 +51,4 @@ Remote: possible for senior applicants
 To embark on this journey with us, send in your resume, a portfolio showcasing your expertise, and a cover letter.
 Dive deep, and let's craft masterpieces together!
 
-HIRING@DAYIII.COM
+**HIRING@DAYIII.COM**
