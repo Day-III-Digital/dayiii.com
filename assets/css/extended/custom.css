@@ -15,24 +15,36 @@
 }
 
 input{
-  background: #fafafa;
-  border-radius: 15px;
-  border: black;
-  border-width: 10px;
-  margin: 8px;
+  background: rgb(155, 156, 157);
+  border-radius: 10px;
+  margin: 5px;
   padding: 5px;
+  width: 100%;
+  
+}
+
+::placeholder{
+  color: black;
+  opacity: 1;
+}
+
+.form{
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
 }
 
 button{
-  background-color: #fafafa; /* Green */
-  border: black;
-  border-radius: 15px;
+  background-color: rgb(155, 156, 157); 
   color: black;
-  margin: 8px;
+  border-radius: 10px;
+  margin: 8px 5px 8px 5px;
   padding: 5px;
   text-align: center;
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
+  width: 100%;
+
 }
 
 #menu a {

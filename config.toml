@@ -1,13 +1,15 @@
 baseURL = 'https://dayiii.com/'
 languageCode = 'en-us'
-title = 'DAY III DIGITAL'
+title = ' '
 theme = 'PaperMod'
 
 [params]
     hideFooter = 'true'
-    defaultTheme = 'light'
-    disableThemeToggle = 'true'
+    defaultTheme = "dark"
+    disableThemeToggle = 'false'
     customCSS = ["css/extended/custom.css"]
+    label.icon = "logos/DayIII_Logo_Normal_White.png"
+
 
 [[socialIcons]]
     name = "linkedin"
