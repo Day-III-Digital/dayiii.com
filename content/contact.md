@@ -3,9 +3,8 @@ title: "Contact"
 type: "page"
 ---
 
-**INFO@DAYIII.COM**
 
-[LinkedIn](https://www.linkedin.com/company/day-iii-digital/)
+ [comment]: [LinkedIn](https://www.linkedin.com/company/day-iii-digital/)
 
 
 
