@@ -33,7 +33,9 @@
   
 }
 
-
+p{
+  text-align: justify;
+}
 
 ::placeholder{
   color: black;
