@@ -20,7 +20,20 @@
   margin: 5px;
   padding: 5px;
   width: 100%;
+
 }
+
+.textareaform{
+  background: rgb(155, 156, 157);
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  width: 100%;
+  height: 100px;
+  
+}
+
+
 
 ::placeholder{
   color: black;
