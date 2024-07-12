@@ -4,7 +4,7 @@ type: "page"
 layout: "page"
 ---
 
-<!-- maybe Photo of the team  -->
+
 
 ### Our Story
 
@@ -18,4 +18,4 @@ Day III Digital provides an environment where developers can learn, experiment a
 
 We believe in transparency and democracy in the workplace. Our commitment to fair and ethical practices translates into high-quality work, innovation, and a strong, satisfied workforce—benefits that directly enhance the services we provide to our clients.
 
-<!-- other visuals -->
+<!-- {{< imagegrid >}} -->

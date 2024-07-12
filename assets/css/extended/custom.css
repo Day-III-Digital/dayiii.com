@@ -64,6 +64,18 @@ p{
   font-weight: bold;
 }
 
+.rowimggrid{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.columnimggrid{
+  float: left;
+  width: 33%;
+  padding: 10px;
+}
+
 #menu a {
   font-weight: 700;
   font-size: 1em;
