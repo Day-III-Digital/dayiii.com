@@ -19,24 +19,12 @@ input{
   border-radius: 10px;
   margin: 5px;
   padding: 5px;
-  width: 400px;
+  width: 100%;
 }
 
 ::placeholder{
   color: black;
   opacity: 1;
-}
-
-@media (max-width: 768px) {
-  .form {
-      width: 80%; /* Increase width for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .form {
-      width: 100%; /* Full width for very small screens */
-  }
 }
 
 .form{
@@ -55,7 +43,7 @@ button{
   text-align: center;
   display: inline-block;
   font-size: 18px;
-  width: 400px;
+  width: 100%;
   font-weight: bold;
 }
 
