@@ -14,7 +14,7 @@
   font-family: "GabaritoExtraBold", sans-serif;
 }
 
-input{
+.inputform{
   background: rgb(155, 156, 157);
   border-radius: 10px;
   margin: 5px;
@@ -31,14 +31,15 @@ input{
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  width: 100%;
 }
 
 
-button{
+.buttonform{
   background-color: rgb(91, 92, 94); 
   color: black;
   border-radius: 10px;
-  margin: 8px 5px 8px 5px;
+  margin: 5px;
   padding: 5px;
   text-align: center;
   display: inline-block;
