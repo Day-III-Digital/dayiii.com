@@ -27,6 +27,7 @@
   opacity: 1;
 }
 
+
 .form{
   display: flex;
   flex-flow: column wrap;
@@ -68,7 +69,7 @@
   text-transform: uppercase;
   /* border-bottom: 2px solid currentColor; */
   /* border-top: 2px solid currentColor; */
-  text-align: center;
+  text-align: left;
   font-size: 1.5em;
 }
 .entry-header{
