@@ -43,12 +43,12 @@ p{
 }
 
 
-.form{
+/* .form{
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   width: 100%;
-}
+} */
 
 
 .buttonform{
