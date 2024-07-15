@@ -20,6 +20,8 @@
   margin: 5px;
   padding: 5px;
   width: 100%;
+  font-family: "GabaritoSemiBold";
+  src: url("/fonts/Gabarito-SemiBold.woff2");
 
 }
 
@@ -30,7 +32,24 @@
   padding: 5px;
   width: 100%;
   height: 100px;
-  
+  font-family: "GabaritoSemiBold";
+  src: url("/fonts/Gabarito-SemiBold.woff2");
+  resize: none;
+}
+
+.buttonform{
+  background-color: rgb(100, 100, 100); 
+  color: black;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  width: 100%;
+  font-weight: bold;
+  font-family: "GabaritoSemiBold";
+  src: url("/fonts/Gabarito-SemiBold.woff2");
 }
 
 p{
@@ -51,18 +70,6 @@ p{
 } */
 
 
-.buttonform{
-  background-color: rgb(91, 92, 94); 
-  color: black;
-  border-radius: 10px;
-  margin: 5px;
-  padding: 5px;
-  text-align: center;
-  display: inline-block;
-  font-size: 18px;
-  width: 100%;
-  font-weight: bold;
-}
 
 .rowimggrid{
   content: "";
