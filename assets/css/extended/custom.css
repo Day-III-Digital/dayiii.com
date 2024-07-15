@@ -15,16 +15,19 @@
 }
 
 .inputform{
-  background: rgb(155, 156, 157);
+  background: rgb(29, 30, 32);;
   border-radius: 10px;
   margin: 5px;
   padding: 5px;
   width: 100%;
   font-family: "GabaritoSemiBold";
+  border: 3px solid rgb(196, 196, 197);
+  font-style: rgb(196, 196, 197);
+  color: rgb(196, 196, 197);
 }
 
 .textareaform{
-  background: rgb(155, 156, 157);
+  background: rgb(29, 30, 32);;
   border-radius: 10px;
   margin: 5px;
   padding: 5px;
@@ -32,20 +35,25 @@
   height: 100px;
   font-family: "GabaritoSemiBold";
   resize: none;
+  border: 3px solid rgb(196, 196, 197);
+  font-style: rgb(196, 196, 197);
+  color: rgb(196, 196, 197);
 }
 
 .buttonform{
-  background-color: rgb(100, 100, 100); 
+  background-color: rgb(29, 30, 32);;
   color: black;
   border-radius: 10px;
   margin: 5px;
   padding: 5px;
   text-align: center;
+  color: rgb(196, 196, 197);
   display: inline-block;
   font-size: 18px;
   width: 100%;
   font-weight: bold;
-  font-family: "GabaritoSemiBold";
+  font-family: "GabaritoExtraBold";
+  border: 3px solid rgb(196, 196, 197);
 }
 
 p{
@@ -53,7 +61,7 @@ p{
 }
 
 ::placeholder{
-  color: black;
+  color: rgb(196, 196, 197);
   opacity: 1;
 }
 
