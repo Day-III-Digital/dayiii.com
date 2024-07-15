@@ -4,7 +4,6 @@ type: "page"
 layout: "page"
 ---
 
-
 {{< rawhtml >}} 
 <img src="logos/DayIII_Logo_Normal_White-cropped.png" alt="logo">
 <br>
