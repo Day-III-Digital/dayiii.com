@@ -15,7 +15,7 @@
 }
 
 .inputform{
-  background: rgb(29, 30, 32);;
+  background: rgb(29, 30, 32);
   border-radius: 10px;
   margin: 5px;
   padding: 5px;
@@ -27,7 +27,7 @@
 }
 
 .textareaform{
-  background: rgb(29, 30, 32);;
+  background: rgb(29, 30, 32);
   border-radius: 10px;
   margin: 5px;
   padding: 5px;
@@ -41,7 +41,7 @@
 }
 
 .buttonform{
-  background-color: rgb(29, 30, 32);;
+  background-color: rgb(29, 30, 32);
   color: black;
   border-radius: 10px;
   margin: 5px;
@@ -95,6 +95,11 @@ p{
   float: left;
   width: 33%;
   padding: 10px;
+}
+
+.entry-link{
+  border: 3px solid rgb(196, 196, 197);
+  border-radius: 10px;
 }
 
 #menu a {
