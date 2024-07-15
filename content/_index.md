@@ -6,7 +6,7 @@ layout: "page"
 
 
 {{< rawhtml >}} 
-<img src="logos/DayIII_Logo_Normal_White.png" alt="logo">
+<img src="logos/DayIII_Logo_Normal_White-cropped.png" alt="logo">
 <br>
 {{< /rawhtml >}}
 
