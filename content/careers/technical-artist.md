@@ -1,6 +1,6 @@
 ---
 title: "Technical Artist"
-date: 2023-10-10
+date: 2999-10-10
 type: "careers"
 hideMeta: true
 hideSummary: true
