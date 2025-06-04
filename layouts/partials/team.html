@@ -1,0 +1,8 @@
+
+<div class="row" id="team">
+    {{ range $index, $element :=  where .Site.RegularPages "Type" "team" }}
+        <div class="col-lg-8 full-height-screen">
+            {{ .Content }}
+        </div>
+    {{ end }}
+</div>

@@ -1,0 +1,8 @@
+
+<div class="row" id="contact" style="min-height: 50vh;">
+    {{ range $index, $element := where .Site.RegularPages "Type" "contact" }}
+        <div class="col-lg-8">
+            {{ .Content }}
+        </div>
+    {{ end }}
+</div>

@@ -1,16 +1,18 @@
 ---
 title: "About"
-type: "page"
-layout: "page"
+type: "about"
+page: "section"
 ---
-
-
 
 ### Our Story
 
 Founded by [**Matthijs Janssens**](https://www.linkedin.com/in/matthijs-janssens-23858a59/), Day III Digital are specialists in open-world creation for AAA games. We take pride in pioneering tooling solutions that enable artists and designers to build rich, detailed worlds swiftly and flexibly. 
 
 With the largest national park in the Alps as our backdrop, inspiration is just a glance away. This stunning environment provides a treasure trove for photogrammetry and reference gathering across seasons, fuelling our creativity and precision.
+
+<br>
+<br>
+<br>
 
 ### Our Values
 

@@ -1,8 +1,7 @@
 ---
 title: "Contact"
-type: "page"
+type: "contact"
+page: "section"
 ---
-
-
 
 {{< form  >}}

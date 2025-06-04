@@ -4,13 +4,32 @@
     {{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }} 
     {{- partial "home_info.html" . }} 
     {{- end }}
+
     <div class="container">
-        <div class="row">
+        <div class="row full-height-screen">
             <div class="col-lg-4">
                 <img class="headshot img-thumbnail"  src="{{.Site.Params.Headshot }}">
             </div>
-            <div class="col-lg-8">{{ .Content }}
+            <div class="col-lg-8">
+                <img src="logos/DayIII_Logo_Normal_White-cropped.png" alt="logo">
+                <br>
+                <span><b>We are game development pipeline specialists with expertise in Unreal Engine, deep learning, procedural generation and optimisation.</b></span> 
+                <br>
+                <br>                
+                <span>Our studio is nestled in the <b>Austrian Alps</b>, providing an inspiring and tranquil environment where creativity and innovation flourish.</span>
             </div>
         </div>
+
+        {{ partial "about.html" . }}
+
+        {{ partial "team.html" . }}
+
+        {{ partial "contact.html" . }}
     </div>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 {{- end }}
