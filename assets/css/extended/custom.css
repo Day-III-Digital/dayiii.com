@@ -159,3 +159,7 @@ p{
 :root {
 --theme: rgb(245, 245, 245);
 }
+
+.full-height-screen {
+  min-height: 100vh;
+}
