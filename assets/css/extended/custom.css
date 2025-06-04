@@ -157,9 +157,37 @@ p{
 } */
 
 :root {
---theme: rgb(245, 245, 245);
+  --theme: rgb(245, 245, 245);
 }
 
 .full-height-screen {
   min-height: 100vh;
+  align-content: center;
+}
+
+.header, .footer, .bg-accent {
+  background-color: #272727;
+}
+
+.bg-accent {
+  margin-left: -100%;
+  margin-right: -100%;
+  padding-right: 100%;
+  padding-left: 100%;
+}
+
+.footer {
+  max-width: none;
+}
+
+.header {
+  width: 100%;
+}
+
+.main {
+  padding: 0%;
+}
+
+body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }

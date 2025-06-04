@@ -5,9 +5,10 @@ theme = 'PaperMod'
 publishDir = 'public'
 
 [params]
-    hideFooter = 'true'
+    hideFooter = true
     defaultTheme = "dark"
-    disableThemeToggle = 'false'
+    disableThemeToggle = true
+    disableScrollToTop = true
     customCSS = ["css/extended/custom.css"]
     label.icon = ""  
 
