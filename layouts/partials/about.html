@@ -1,5 +1,5 @@
 
-<div class="row" id="about">
+<div class="row bg-accent" id="about">
     {{ range $index, $element :=  where .Site.RegularPages "Type" "about" }}
         <div class="col-lg-8 full-height-screen">
             {{ .Content }}
