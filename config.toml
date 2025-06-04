@@ -2,6 +2,7 @@ baseURL = 'https://dayiii.com/'
 languageCode = 'en-us'
 title = 'DAY III DIGITAL'
 theme = 'PaperMod'
+publishDir = 'public'
 
 [params]
     hideFooter = 'true'
@@ -23,25 +24,30 @@ theme = 'PaperMod'
 
 [[menu.main]]
     name = "About"
-    url = "/about/"
+    url = "/#about"
     weight = 3
 
-# [[menu.main]]
-#     name = "News"
-#     url = "/news/"
-#     weight = 3
-
 [[menu.main]]
-    name = "Careers"
-    url = "/careers/"
+    name = "Team"
+    url = "/#team"
     weight = 4
 
 [[menu.main]]
     name = "Contact"
-    url = "/contact/"
+    url = "/#contact"
     weight = 5
 
- [markup]
-[markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+[[menu.main]]
+    name = "Careers"
+    url = "/careers/"
+    weight = 6
+
+[[menu.main]]
+    name = "News"
+    url = "/news/"
+    weight = 7
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
