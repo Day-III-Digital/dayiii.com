@@ -29,15 +29,6 @@
             transform: rotate(1deg);
         }
     }
-    
-    @keyframes shake-rotate-2x {
-        from {
-            transform: rotate(-1deg);
-        }
-        to {
-            transform: rotate(1deg);
-        }
-    }
 
     @keyframes shake-up-down {
         from {
@@ -49,17 +40,18 @@
     }
     
     #Explosion, #ExplosionOnTop {
+
         transform-origin: 0% 50%;
-        animation: shake-up-down var(--animation-speed) linear alternate-reverse infinite ;
+        animation: shake-up-down var(--animation-speed) linear alternate-reverse infinite;
     }
 
     #Marmot {
         transform-origin: 25% 50%;
-        animation: shake-rotate-2x var(--animation-speed) linear alternate-reverse infinite ;
+        animation: shake-rotate var(--animation-speed) linear alternate-reverse infinite;
     }
 
     #MarmotSpeach {
         transform-origin: 25% 50%;
-        animation: shake-rotate var(--animation-speed) linear alternate-reverse infinite ;
+        animation: shake-rotate var(--animation-speed) linear alternate-reverse infinite;
     }
 </style>

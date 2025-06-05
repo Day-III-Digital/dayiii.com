@@ -166,7 +166,7 @@ p{
 }
 
 .header, .footer, .bg-accent {
-  background-color: #272727;
+  background-color: var(--border);
 }
 
 .bg-accent {
