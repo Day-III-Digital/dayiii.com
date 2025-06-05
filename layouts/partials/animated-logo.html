@@ -17,41 +17,94 @@
 
 <style>
     :root {
-        --animation-speed: 0.2s;
+        --animation-speed: 1s;
         --shake-animation-amount: 15px;
     }
 
     @keyframes shake-rotate {
-        from {
+        0% {
             transform: rotate(-1deg);
         }
-        to {
+        10% {
             transform: rotate(1deg);
+        }
+        20% {
+            transform: rotate(-1deg);
+        }
+        30% {
+            transform: rotate(1deg);
+        }
+        40% {
+            transform: rotate(-1deg);
+        }
+        50% {
+            transform: rotate(1deg);
+        }
+        60% {
+            transform: rotate(-1deg);
+        }
+        70% {
+            transform: rotate(1deg);
+        }
+        80% {
+            transform: rotate(-1deg);
+        }
+        90% {
+            transform: rotate(1deg);
+        }
+        100% {
+            transform: rotate(0deg);
         }
     }
 
     @keyframes shake-up-down {
-        from {
+        0% {
             transform: translateY(calc(var(--shake-animation-amount) * -1));             
         }
-        to {
+        10% {
             transform: translateY(var(--shake-animation-amount));
+        }
+        20% {
+            transform: translateY(calc(var(--shake-animation-amount) * -1));             
+        }
+        30% {
+            transform: translateY(var(--shake-animation-amount));
+        }
+        40% {
+            transform: translateY(calc(var(--shake-animation-amount) * -1));             
+        }
+        50% {
+            transform: translateY(var(--shake-animation-amount));
+        }
+        60% {
+            transform: translateY(calc(var(--shake-animation-amount) * -1));             
+        }
+        70% {
+            transform: translateY(var(--shake-animation-amount));
+        }
+        80% {
+            transform: translateY(calc(var(--shake-animation-amount) * -1));             
+        }
+        90% {
+            transform: translateY(var(--shake-animation-amount));
+        }
+        100% {
+            transform: translateY(0);             
         }
     }
     
     #Explosion, #ExplosionOnTop {
-
         transform-origin: 0% 50%;
-        animation: shake-up-down var(--animation-speed) linear alternate-reverse infinite;
+        animation: shake-up-down var(--animation-speed) linear alternate-reverse;
     }
 
     #Marmot {
         transform-origin: 25% 50%;
-        animation: shake-rotate var(--animation-speed) linear alternate-reverse infinite;
+        animation: shake-rotate var(--animation-speed) linear alternate-reverse;
     }
 
     #MarmotSpeach {
         transform-origin: 25% 50%;
-        animation: shake-rotate var(--animation-speed) linear alternate-reverse infinite;
+        animation: shake-rotate var(--animation-speed) linear alternate-reverse;
     }
 </style>
