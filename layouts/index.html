@@ -6,26 +6,16 @@
     {{- end }}
 
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 full-height-screen">
-                {{ partial "animated-logo.html" . }}
-
-                <br>
-                <span><b>We are game development pipeline specialists with expertise in Unreal Engine, deep learning, procedural generation and optimisation.</b></span> 
-                <br>
-                <br>                
-                <span>Our studio is nestled in the <b>Austrian Alps</b>, providing an inspiring and tranquil environment where creativity and innovation flourish.</span>
+        {{ range $index, $element :=  where .Site.RegularPages "Type" "landing" }}
+            {{ if modBool $index 2 }}
+                <div class="row">
+            {{ else }}
+                <div class="row bg-accent">
+            {{ end }}
+                {{ .Content }}            
+                {{ partial "mountain-separator.html" . }}
             </div>
-            {{ partial "mountain-separator.html" . }}
-        </div>
-
-
-        {{ partial "about.html" . }}
-
-        {{ partial "team.html" . }}
-
-        {{ partial "contact.html" . }}
-        
+        {{ end }}        
     </div>
 
     <style>

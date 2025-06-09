@@ -1,8 +1,11 @@
 ---
 title: "About"
-type: "about"
+type: "landing"
 page: "section"
+weight: 2
 ---
+
+<div id="about" class="col-lg-8 full-height-screen">
 
 ### Our Story
 
@@ -19,3 +22,5 @@ With the largest national park in the Alps as our backdrop, inspiration is just 
 Day III Digital provides an environment where developers can learn, experiment and create together, while avoiding unfair business and employment practices. We value people and advocate for a healthy work-life balance. Through mentorship and collaboration, we empower each other, fostering growth and development as a team. 
 
 We believe in transparency and democracy in the workplace. Our commitment to fair and ethical practices translates into high-quality work, innovation, and a strong, satisfied workforce—benefits that directly enhance the services we provide to our clients.
+
+</div>
