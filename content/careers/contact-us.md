@@ -8,4 +8,4 @@ hideSummary: true
 
 Have a skill you don't think matches any advertised position?
 
-**HIRING@DAYIII.COM**
+**CAREERS@DAYIII.COM**
