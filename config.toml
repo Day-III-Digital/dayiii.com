@@ -43,10 +43,10 @@ publishDir = 'public'
     url = "/careers/"
     weight = 6
 
-[[menu.main]]
-    name = "News"
-    url = "/news/"
-    weight = 7
+# [[menu.main]]
+#     name = "News"
+#     url = "/news/"
+#     weight = 7
 
 [markup]
     [markup.goldmark]
