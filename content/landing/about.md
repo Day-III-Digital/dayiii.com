@@ -9,9 +9,10 @@ weight: 2
 
 ### Our Story
 
-Founded by [**Matthijs Janssens**](https://www.linkedin.com/in/matthijs-janssens-23858a59/), Day III Digital are specialists in open-world creation for AAA games. We take pride in pioneering tooling solutions that enable artists and designers to build rich, detailed worlds swiftly and flexibly. 
-
-With the largest national park in the Alps as our backdrop, inspiration is just a glance away. This stunning environment provides a treasure trove for photogrammetry and reference gathering across seasons, fuelling our creativity and precision.
+Day III Digital is a veteran-led development studio specializing in technical art, rendering, and deep learning for Unreal Engine and open-world AAA games.
+<br>
+<br>
+As the complexity and costs of next-generation AAA game production have escalated dramatically, our mission is to empower game studios through custom tools and streamlined workflows. We help developers push creative boundaries without inflating budgets, overcome technical challenges before they become roadblocks, and consistently exceed player expectations.
 
 <br>
 <br>
@@ -19,8 +20,9 @@ With the largest national park in the Alps as our backdrop, inspiration is just 
 
 ### Our Values
 
-Day III Digital provides an environment where developers can learn, experiment and create together, while avoiding unfair business and employment practices. We value people and advocate for a healthy work-life balance. Through mentorship and collaboration, we empower each other, fostering growth and development as a team. 
-
-We believe in transparency and democracy in the workplace. Our commitment to fair and ethical practices translates into high-quality work, innovation, and a strong, satisfied workforce—benefits that directly enhance the services we provide to our clients.
+We're committed to building a team of exceptionally skilled yet collaborative developers who share our vision for long-term partnership. Our approach centers on talent retention through complete transparency and a cooperative environment where every voice carries equal weight in shaping our direction.
+<br>
+<br>
+Our headquarters is located at edge of the Hohe Tauern, central Europe's largest national park. This stunning landscape provides both creative inspiration and exceptional photogrammetry resources for our open-world projects, while offering our team a peaceful retreat from the demands of cutting-edge game development.
 
 </div>
