@@ -8,9 +8,9 @@
     <div class="container">
         {{ range $index, $element :=  where .Site.RegularPages "Type" "landing" }}
             {{ if modBool $index 2 }}
-                <div class="row">
-            {{ else }}
                 <div class="row bg-accent">
+            {{ else }}
+                <div class="row">
             {{ end }}
                 {{ .Content }}            
                 {{ partial "mountain-separator.html" . }}
