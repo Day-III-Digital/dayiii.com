@@ -160,6 +160,10 @@ p{
   --theme: rgb(245, 245, 245);
 }
 
+.dark {
+  --primary: white;
+}
+
 .full-height-screen {
   min-height: 100vh;
   align-content: center;

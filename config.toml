@@ -7,7 +7,7 @@ publishDir = 'public'
 [params]
     hideFooter = true
     defaultTheme = "dark"
-    disableThemeToggle = true
+    disableThemeToggle = false
     disableScrollToTop = true
     customCSS = ["css/extended/custom.css"]
     label.icon = ""  
