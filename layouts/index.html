@@ -4,13 +4,34 @@
     {{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }} 
     {{- partial "home_info.html" . }} 
     {{- end }}
+
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <img class="headshot img-thumbnail"  src="{{.Site.Params.Headshot }}">
+        {{ range $index, $element :=  where .Site.RegularPages "Type" "landing" }}
+            {{ if modBool $index 2 }}
+                <div class="row bg-accent">
+            {{ else }}
+                <div class="row">
+            {{ end }}
+                {{ .Content }}            
+                {{ partial "mountain-separator.html" . }}
             </div>
-            <div class="col-lg-8">{{ .Content }}
-            </div>
-        </div>
+        {{ end }}        
     </div>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h3 {
+            text-align: center;
+            margin: 2rem;
+            font-size: xxx-large;
+        }
+
+        .header {
+            position: fixed;
+            z-index: 9999;
+        }
+    </style>
 {{- end }}
