@@ -7,7 +7,7 @@ weight: 2
 
 <div id="about" class="col-lg-8 full-height-screen">
 
-### Our Story
+### OUR STORY
 
 Day III Digital is a veteran-led development studio specializing in technical art, rendering, and deep learning for Unreal Engine and open-world AAA games.
 <br>
@@ -18,7 +18,7 @@ As the complexity and costs of next-generation AAA game production have escalate
 <br>
 <br>
 
-### Our Values
+### OUR VALUES
 
 We're committed to building a team of exceptionally skilled yet collaborative developers who share our vision for long-term partnership. Our approach centers on talent retention through complete transparency and a cooperative environment where every voice carries equal weight in shaping our direction.
 <br>

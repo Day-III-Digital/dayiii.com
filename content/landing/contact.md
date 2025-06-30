@@ -2,11 +2,11 @@
 title: "Contact"
 type: "landing"
 page: "section"
-weight: 4
+weight: 5
 ---
 
 <div id="contact" class="col-lg-8 full-height-screen">
-    <h3>Contact Us</h3>  
+    <h3>CONTACT US</h3>
     <div class="form">
         <form class="contactform" action="https://formspree.io/f/mwpepeqw" method="POST">
             <input type="text" id="name" name="name" placeholder="Name" required class="inputform">

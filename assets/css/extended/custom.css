@@ -195,3 +195,14 @@ p{
 body {
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
+
+.client-name, .client-project {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.section-subheading {
+  text-align: center;
+  margin-bottom: 64px;
+}
