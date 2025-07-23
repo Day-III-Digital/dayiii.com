@@ -26,7 +26,7 @@ weight: 5
                     value="consent"
                 />
                 <label for="dpa-consent">
-                    Consent to the storage and processing of data to answer your request in accordance with <a href="https://formspree.io/legal/privacy-policy/">our providers privacy policy</a>.
+                    Consent to the storage and processing of your data to answer your request, and in accordance with <a href="https://formspree.io/legal/privacy-policy/">our providers privacy policy</a>.
                 </label>
             </div>
             <br>
