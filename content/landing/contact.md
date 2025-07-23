@@ -15,6 +15,21 @@ weight: 5
             <br>
             <textarea id="message" name="message" placeholder="Message" required class="textareaform"></textarea>
             <br>
+            <div class="checkbox">
+                <input
+                    aria-describedby="dpa-consent-description"
+                    class="fs-checkbox"
+                    id="dpa-consent"
+                    name="dpa-consent"
+                    required
+                    type="checkbox"
+                    value="consent"
+                />
+                <label for="dpa-consent">
+                    Consent to the storage and processing of data to answer your request in accordance with <a href="https://formspree.io/legal/privacy-policy/">our providers privacy policy</a>.
+                </label>
+            </div>
+            <br>
             <button class="buttonform" type="submit">Submit</button>
         </form>
     </div>
