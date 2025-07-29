@@ -1,21 +1,16 @@
-{{- define "main" }} 
-    {{- $pages := union .RegularPages .Sections }} 
-    {{- $paginator := .Paginate $pages }} 
-    {{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }} 
-    {{- partial "home_info.html" . }} 
+{{- define "main" }}
+    {{- $pages := union .RegularPages .Sections }}
+    {{- $paginator := .Paginate $pages }}
+    {{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
+    {{- partial "home_info.html" . }}
     {{- end }}
 
     <div class="container">
         {{ range $index, $element :=  where .Site.RegularPages "Type" "landing" }}
-            {{ if modBool $index 2 }}
-                <div class="row bg-accent">
-            {{ else }}
-                <div class="row">
-            {{ end }}
-                {{ .Content }}            
-                {{ partial "mountain-separator.html" . }}
+            <div class="row">
+                {{ .Content }}
             </div>
-        {{ end }}        
+        {{ end }}
     </div>
 
     <style>
