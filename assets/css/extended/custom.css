@@ -140,7 +140,6 @@ p{
 
 .entry-header h2 {
   font-size: 1em;
-  color: #DCE6F2;
 }
 
 .post-content h3 {
@@ -206,4 +205,15 @@ body {
 .section-subheading {
   text-align: center;
   margin-bottom: 64px;
+}
+
+.heading-tagline {
+    margin-left: 50%;
+    width: 40%;
+    margin-right: 10%;
+    margin-top: -15%;
+    position: absolute;
+    font-weight: bold;
+    font-size: x-large;
+    color: white;
 }

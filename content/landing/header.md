@@ -7,10 +7,28 @@ weight: 1
 
 
 <div class="col-lg-8 full-height-screen">
-    {{< animated-logo >}}
-    <br>
-    <span><b>We are game development pipeline specialists with expertise in Unreal Engine, deep learning, procedural generation and optimisation.</b></span> 
-    <br>
-    <br>                
-    <span>Our studio is nestled in the <b>Austrian Alps</b>, providing an inspiring and tranquil environment where creativity and innovation flourish.</span>
+    <canvas id="canvas" width="1920" height="1080" style="width:100%;">
+    </canvas>
+    <div class="heading-tagline">TECHNICAL ART EXPERTS</div>
+    <script type="module">
+        import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm";
+        document.getElementById("canvas")
+        var lottie = new DotLottie({
+            autoplay: true,
+            loop: false,
+            useFrameInterpolation: true,
+            canvas: document.getElementById("canvas"),
+            src: "/images/dayiii_logo_anim_intro.json", // or .json file
+        });
+        lottie.addEventListener('complete', () => {
+            lottie.destroy();
+            new DotLottie({
+                autoplay: true,
+                loop: true,
+                speed: 0.9,
+                canvas: document.getElementById("canvas"),
+                src: "/images/dayiii_logo_anim_endloop.json", // or .json file
+            });
+        })
+    </script>
 </div>
