@@ -1,17 +1,17 @@
 @font-face {
-  font-family: "GabaritoExtraBold";
-  src: url("/fonts/Gabarito-ExtraBold.woff2");
+  font-family: "PoppinsExtraBold";
+  src: url("/fonts/Poppins-ExtraBold.ttf");
 }
 
 @font-face {
-  font-family: "GabaritoSemiBold";
-  src: url("/fonts/Gabarito-SemiBold.woff2");
+  font-family: "PoppinsSemiBold";
+  src: url("/fonts/Poppins-SemiBold.ttf");
 }
 
 .logo a {
   font-weight: 800;
   font-size: 1.5em;
-  font-family: "GabaritoExtraBold", sans-serif;
+  font-family: "PoppinsExtraBold", sans-serif;
 }
 
 .inputform{
@@ -20,7 +20,7 @@
   margin: 0px 0px 10px 0px;
   padding: 10px 18px;
   width: 100%;
-  font-family: "GabaritoSemiBold";
+  font-family: "PoppinsSemiBold";
   border: 3px solid rgb(196, 196, 197);
   font-style: rgb(218, 218, 219);
   color: rgb(218, 218, 219);
@@ -33,7 +33,7 @@
   padding: 10px 18px;
   width: 100%;
   height: 100px;
-  font-family: "GabaritoSemiBold";
+  font-family: "PoppinsSemiBold";
   resize: none;
   border: 3px solid rgb(196, 196, 197);
   font-style: rgb(218, 218, 219);
@@ -51,7 +51,7 @@
   font-size: 18px;
   width: 100%;
   font-weight: bold;
-  font-family: "GabaritoExtraBold";
+  font-family: "PoppinsExtraBold";
   border: 3px solid rgb(196, 196, 197);
 }
 
@@ -107,19 +107,19 @@ p{
   font-weight: 700;
   font-size: 1em;
   text-transform: uppercase;
-  font-family: "GabaritoSemiBold";
+  font-family: "PoppinsSemiBold";
 }
 
 #menu .active {
   font-weight: 700;
   text-transform: uppercase;
   border-bottom: 2px solid currentColor;
-  font-family: "GabaritoSemiBold", sans-serif;
+  font-family: "PoppinsSemiBold", sans-serif;
 }
 
 .page-header h1, .post-title {
   font-weight: 800;
-  font-family: "GabaritoExtraBold", sans-serif;
+  font-family: "PoppinsExtraBold", sans-serif;
   text-transform: uppercase;
   /* border-bottom: 2px solid currentColor; */
   /* border-top: 2px solid currentColor; */
@@ -129,7 +129,7 @@ p{
 
 .entry-header{
   font-size: 1em;
-  font-family: "GabaritoSemiBold", sans-serif;
+  font-family: "PoppinsSemiBold", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -140,19 +140,19 @@ p{
 
 .entry-header h2 {
   font-size: 1em;
-  color: rgb(245, 245, 245);
+  color: #DCE6F2;
 }
 
 .post-content h3 {
   font-size: 1em;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: "GabaritoSemiBold", sans-serif;
+  font-family: "PoppinsSemiBold", sans-serif;
 }
 
 /* .post-content strong {
   font-weight: 700;
-  font-family: "GabaritoExtraBold", sans-serif;
+  font-family: "PoppinsExtraBold", sans-serif;
   font-style: normal;
 } */
 
@@ -161,7 +161,8 @@ p{
 }
 
 .dark {
-  --primary: white;
+  --primary: #DCE6F2;
+  --theme: #111F32;
 }
 
 .full-height-screen {
@@ -170,7 +171,7 @@ p{
 }
 
 .header, .footer, .bg-accent {
-  background-color: var(--border);
+  background-color: #0A131F;
 }
 
 .bg-accent {
