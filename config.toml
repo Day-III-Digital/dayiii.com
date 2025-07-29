@@ -1,6 +1,6 @@
 baseURL = 'https://dayiii.com/'
 languageCode = 'en-us'
-title = 'DAY III DIGITAL'
+title = ' '
 theme = 'PaperMod'
 publishDir = 'public'
 
@@ -10,7 +10,7 @@ publishDir = 'public'
     disableThemeToggle = true
     disableScrollToTop = true
     customCSS = ["css/extended/custom.css"]
-    label.icon = ""
+    label.icon = "/images/day-iii-logo-header.svg"
 
 [[socialIcons]]
     name = "linkedin"
