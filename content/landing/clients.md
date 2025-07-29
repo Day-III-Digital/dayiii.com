@@ -2,7 +2,7 @@
 title: "About"
 type: "landing"
 page: "section"
-weight: 4
+weight: 6
 ---
 
 <div id="clients" class="col-lg-8 full-height-screen">

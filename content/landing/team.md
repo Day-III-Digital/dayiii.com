@@ -2,7 +2,7 @@
 title: "Team"
 type: "landing"
 page: "section"
-weight: 3
+weight: 5
 ---
 
 <div id="team" class="col-lg-8 full-height-screen">

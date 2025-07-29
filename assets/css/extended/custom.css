@@ -208,12 +208,43 @@ body {
 }
 
 .heading-tagline {
-    margin-left: 50%;
-    width: 40%;
-    margin-right: 10%;
-    margin-top: -15%;
-    position: absolute;
-    font-weight: bold;
-    font-size: x-large;
-    color: white;
+  margin-left: 50%;
+  width: 40%;
+  margin-right: 10%;
+  margin-top: -15%;
+  position: absolute;
+  font-weight: bold;
+  font-size: x-large;
+  color: white;
+}
+
+#tags {
+  background: linear-gradient(180deg, #A8EBD8, #77DDC2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#tags .tags-row {
+  display: flex;
+}
+
+#tags .tags-row div {
+  margin: auto;
+  width: 33%;
+}
+
+.inputform, .textareaform, .inputform:hover, .textareaform:hover, .inputform:focus, .textareaform:focus {
+  background: #1E3859;
+  border: 0;
+}
+
+::placeholder {
+  color: #7088A4;
+}
+
+.buttonform, .buttonform:hover, .buttonform:focus {
+  background: #247AE8;
+  border: 0;
+  color: #FFFFFF;
 }

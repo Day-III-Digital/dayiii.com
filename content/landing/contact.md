@@ -2,7 +2,7 @@
 title: "Contact"
 type: "landing"
 page: "section"
-weight: 5
+weight: 7
 ---
 
 <div id="contact" class="col-lg-8 full-height-screen">
