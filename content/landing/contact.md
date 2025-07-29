@@ -6,7 +6,7 @@ weight: 7
 ---
 
 <div id="contact" class="col-lg-8 full-height-screen" style="display: flex;">
-    <img src="/images/marmot-contact.svg" style="width: 40%; height: 100%;">
+    <img src="/images/marmot-contact.svg" style="width: 40%; height: 100%; margin-top: 5%;">
     <div class="contact-us" style="width: 60%;">
         <h3>CONTACT US</h3>
         <div class="form">

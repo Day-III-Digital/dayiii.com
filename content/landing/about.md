@@ -5,8 +5,7 @@ page: "section"
 weight: 3
 ---
 
-<div id="about" class="col-lg-8 full-height-screen" style="align-content: inherit; width: 70%;">
-
+<div id="about" class="col-lg-8 full-height-screen" style="align-content: inherit; width: 70%; margin-top: 10vh;">
 <h3 style="text-align: start; margin-left: 0;">ABOUT US</h3>
     <div>
         Day III Digital is a veteran-led development studio specializing in technical art, rendering, and deep learning for Unreal Engine and open-world AAA games.
