@@ -6,10 +6,10 @@ weight: 1
 ---
 
 
-<div class="col-lg-8 full-height-screen">
-    <canvas id="canvas" width="1920" height="1080" style="width:100%;">
+<div class="col-lg-8 full-height-screen" style="align-content: inherit;">
+    <canvas id="canvas" width="1920" height="1080" style="width:60%; margin: 5% 20% 0 20%;">
     </canvas>
-    <div class="heading-tagline">TECHNICAL ART EXPERTS</div>
+    <div id="heading-tagline" class="heading-tagline">TECHNICAL ART EXPERTS</div>
     <script type="module">
         import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm";
         document.getElementById("canvas")
@@ -21,6 +21,7 @@ weight: 1
             src: "/images/dayiii_logo_anim_intro.json", // or .json file
         });
         lottie.addEventListener('complete', () => {
+            document.getElementById("heading-tagline").style.visibility = "visible";
             lottie.destroy();
             new DotLottie({
                 autoplay: true,
