@@ -26,7 +26,7 @@ weight: 3
             <div>PROCEDURAL GENERATION</div>
         </div>
     </div>
-    <div style="align-content: inherit; width: 70%; margin-top: 10vh;">
+    <div class="first-3-quarter full-width-on-small-screens" style="margin-top: 10vh;" >
         <h3 style="text-align: start; margin-left: 0;">ABOUT US</h3>
         <div>
             Day III Digital is a veteran-led development studio specializing in technical art, rendering, and deep learning for Unreal Engine and open-world AAA games.

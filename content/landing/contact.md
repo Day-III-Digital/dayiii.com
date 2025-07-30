@@ -6,8 +6,8 @@ weight: 7
 ---
 
 <div id="contact" class="col-lg-8 full-height-screen" style="display: flex;">
-    <img src="/images/marmot-contact.svg" style="width: 40%; height: 100%; margin-top: 5%;">
-    <div class="contact-us" style="width: 60%;">
+    <img src="/images/marmot-contact.svg" class="contact-marmot hide-on-small-screens">
+    <div class="contact-us contact-area full-width-on-small-screens">
         <h3>CONTACT US</h3>
         <div class="form">
             <form class="contactform" action="https://formspree.io/f/mwpepeqw" method="POST">

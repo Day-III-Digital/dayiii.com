@@ -245,3 +245,44 @@ body {
   color: #FFFFFF;
   font-weight: normal;
 }
+
+.contact-marmot {
+  width: 40%;
+  height: 100%;
+  margin-top: 5%;
+}
+
+.contact-area {
+  width: 60%;
+}
+
+.first-3-quarter {
+  align-content: inherit;
+  width: 75%;
+}
+
+.last-3-quarter {
+  align-content: inherit;
+  width: 75%;
+  margin-left: auto;
+}
+
+@media (max-width: 984px) {
+  .heading-tagline {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .heading-tagline {
+    font-size: 1rem;
+  }
+
+  .hide-on-small-screens {
+    display: none;
+  }
+
+  .full-width-on-small-screens {
+    width: 100%;
+  }
+}
