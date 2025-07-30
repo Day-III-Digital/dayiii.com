@@ -206,10 +206,10 @@ body {
   margin-left: 50%;
   width: 40%;
   margin-right: 20%;
-  margin-top: -10%;
+  margin-top: -35%;
   position: absolute;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 2rem;
   color: white;
   visibility: hidden;
 }

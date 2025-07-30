@@ -7,7 +7,7 @@ weight: 1
 
 
 <div class="col-lg-8 full-height-screen" style="align-content: inherit;">
-    <canvas id="canvas" width="1920" height="1080" style="width:60%; margin: 5% 20% 0 20%;">
+    <canvas id="canvas" width="1920" height="1080" style="width:100%; margin: 20% auto;">
     </canvas>
     <div id="heading-tagline" class="heading-tagline">TECHNICAL ART EXPERTS</div>
     <script type="module">
