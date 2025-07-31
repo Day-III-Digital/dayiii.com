@@ -5,7 +5,7 @@ page: "section"
 weight: 6
 ---
 
-<div id="clients" class="col-lg-8 full-height-screen">
+<div id="clients" class="col-lg-8">
     <h3>CLIENTS</h3>
     <br>
     <div class="glider-contain">

@@ -170,10 +170,9 @@ p{
   align-content: center;
 }
 
-.header, .footer, .bg-accent {
+.footer, .bg-accent {
   background-color: #0A131F;
 }
-
 
 .footer {
   max-width: none;
@@ -206,7 +205,7 @@ body {
   margin-left: 50%;
   width: 40%;
   margin-right: 20%;
-  margin-top: -35%;
+  margin-top: -15%;
   position: absolute;
   font-weight: bold;
   font-size: 2rem;
@@ -247,13 +246,16 @@ body {
 }
 
 .contact-marmot {
-  width: 40%;
-  height: 100%;
-  margin-top: 5%;
+  width: 55%;
+  position: absolute;
+    top: 8%;
+    left: -15%;
+  filter: brightness(0) saturate(100%) invert(5%) sepia(16%) saturate(2868%) hue-rotate(179deg) brightness(95%) contrast(96%);
 }
 
 .contact-area {
-  width: 60%;
+  width: 65%;
+    margin-left: auto;
 }
 
 .first-3-quarter {
@@ -267,21 +269,105 @@ body {
   margin-left: auto;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+h3 {
+    text-align: center;
+    margin: 2rem;
+    font-size: xxx-large;
+}
+
+.header {
+    background-color: #554f62;
+    z-index: 1;
+}
+
+.row {
+    max-width: calc(var(--main-width) + var(--gap) * 2);
+    margin: auto;
+    padding: 0 var(--gap);
+    position: relative;
+    z-index: 1;
+}
+
+.main {
+    max-width: unset;
+}
+
+.parallax-layer {
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+.parallax-layer > svg {
+    width: 100%;
+    height: 100%;
+}
+
+.top-background {
+  background-color: #554f62;
+  width: 100%;
+}
+
+.bottom-background {
+  background-color: #0a121d;
+  width: 100%;
+  height: 128px;
+  z-index: 1;
+}
+
+.top-margin {
+  margin-top: 18em;
+}
+
+.nav {
+  max-width: 100%;
+}
+
+@media (max-width: 1430px) {
+  .top-background {
+    height: 128px;
+  }
+
+}
+
 @media (max-width: 984px) {
   .heading-tagline {
     font-size: 1.5rem;
   }
-}
-
-@media (max-width: 640px) {
-  .heading-tagline {
-    font-size: 1rem;
-  }
-
   .hide-on-small-screens {
     display: none;
   }
+  .contact-area {
+    width: 100%;
+  }
+  .margin-top-small-screen {
+    margin-top: -64px;
+  }
+  #tags {
+    font-size: medium;
+  }
+}
 
+@media (max-width: 740px) {
+  .top-background {
+    height: 256px;
+  }
+  .margin-top-small-screen {
+    margin-top: -160px;
+  }
+  .heading-tagline {
+    font-size: 1rem;
+  }
+  #tags {
+    font-size: small;
+  }
+}
+
+@media (max-width: 640px) {
   .full-width-on-small-screens {
     width: 100%;
   }

@@ -5,12 +5,12 @@ page: "section"
 weight: 7
 ---
 
-<div id="contact" class="col-lg-8 full-height-screen" style="display: flex;">
+<div id="contact" class="col-lg-8 full-width-on-small-screens" style="display: flex;">
     <img src="/images/marmot-contact.svg" class="contact-marmot hide-on-small-screens">
     <div class="contact-us contact-area full-width-on-small-screens">
         <h3>CONTACT US</h3>
         <div class="form">
-            <form class="contactform" action="https://formspree.io/f/mwpepeqw" method="POST">
+            <form class="contactform" action="https://formspree.io/f/mwpepeqw" method="POST" style="margin-bottom: 64px;">
                 <input type="text" id="name" name="name" placeholder="Name" required class="inputform">
                 <br>
                 <input type="email" id="email" name="email" placeholder="E-mail" required class="inputform">

@@ -5,9 +5,8 @@ page: "section"
 weight: 1
 ---
 
-
-<div class="col-lg-8 full-height-screen" style="align-content: inherit;">
-    <canvas id="canvas" width="1920" height="1080" style="width:100%; margin: 20% auto;">
+<div class="col-lg-8 full-height-screen margin-top-small-screen" style="align-content: inherit;">
+    <canvas id="canvas" width="1920" height="1080" style="width:100%; margin: auto;">
     </canvas>
     <div id="heading-tagline" class="heading-tagline">TECHNICAL ART EXPERTS</div>
     <script type="module">

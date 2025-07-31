@@ -5,7 +5,7 @@ page: "section"
 weight: 4
 ---
 
-<div id="values" class="col-lg-8 last-3-quarter full-height-screen full-width-on-small-screens">
+<div id="values" class="col-lg-8 last-3-quarter full-width-on-small-screens">
     <h3 style="text-align: end; margin-right: 0;">OUR VALUES</h3>
     <div>
         We're committed to building a team of exceptionally skilled yet collaborative developers who share our vision for long-term partnership. Our approach centers on talent retention through complete transparency and a cooperative environment where every voice carries equal weight in shaping our direction.

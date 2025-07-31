@@ -5,7 +5,7 @@ page: "section"
 weight: 3
 ---
 
-<div id="about" class="col-lg-8 full-height-screen">
+<div id="about" class="col-lg-8">
     <div id="tags">
         <div class="tags-row">
             <div>UNREAL ENGINE EXPERTS</div>
