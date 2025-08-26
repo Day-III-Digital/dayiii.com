@@ -1,6 +1,6 @@
 baseURL = 'https://dayiii.com/'
 languageCode = 'en-us'
-title = ' '
+title = 'Day III Digital'
 theme = 'PaperMod'
 publishDir = 'public'
 
