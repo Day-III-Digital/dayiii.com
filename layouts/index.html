@@ -1,50 +1,145 @@
 {{- define "main" }}
-    {{- $pages := union .RegularPages .Sections }}
-    {{- $paginator := .Paginate $pages }}
-    {{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
-    {{- partial "home_info.html" . }}
-    {{- end }}
+    <div class="container full-width-on-small-screens">
 
-    <div class="top-background"></div>
-    <div class="parallax-layer">{{ partial "images/scenery.svg" }}</div>
-    <div class="container">
-        {{ range $index, $element :=  where .Site.RegularPages "Type" "landing" }}
-            {{ if or (eq $index 0) (eq $index 1) }}
-                <div class="row content-row">
-            {{else}}
-                <div class="row content-row top-margin">
-            {{end}}
-                {{ .Content }}
+        <div class="header-title">Day III Digital</div>
+
+        <div class="full-height-screen" style="min-height: 70vh;">
+            <div style="display: flex; height: 100%; flex-wrap: wrap; margin: auto;" class="almost-full-width-on-small-screens">
+                <div class="half-width full-width-on-small-screens">
+                    <div class="large-heading-text">
+                        Building Solutions For Your Games
+                    </div>
+                </div>
+
+                <div class="half-width full-width-on-small-screens vertical-bar">
+                    <div style="font-weight: bold;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+
+                    <button class="button" style="margin: 1em 10px 10px 0px;">
+                        <a href="/#contact" title="Contact">
+                            <span>Contact</span>
+                        </a>
+                    </button>
+                </div>
             </div>
-        {{ end }}
+        </div>
+
+
+
+
+
+        <div id="services" class="divider">
+            <div>Our Services</div>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap;">
+            <div class="half-width blurry-background service-card">
+                <div class="service-heading">
+                    <img src="/images/icon-template.png" />
+                    <div class="service-title">Unreal Engine</div>
+                </div>
+                <div class="service-content">
+                    some text
+                </div>
+            </div>
+            <div class="half-width blurry-background service-card">
+                <div class="service-heading">
+                    <img src="/images/icon-template.png" />
+                    <div class="service-title">Unreal Engine</div>
+                </div>
+                <div class="service-content">
+                    some text
+                </div>
+
+            </div>
+            <div class="half-width blurry-background service-card">
+                <div class="service-heading">
+                    <img src="/images/icon-template.png" />
+                    <div class="service-title">Unreal Engine</div>
+                </div>
+                <div class="service-content">
+                    some text
+                </div>
+
+            </div>
+            <div class="half-width blurry-background service-card">
+                <div class="service-heading">
+                    <img src="/images/icon-template.png" />
+                    <div class="service-title">Unreal Engine</div>
+                </div>
+                <div class="service-content">
+                    some text
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="clients" class="flipped-divider">
+            <div>Our Clients</div>
+        </div>
+
+        <div class="blurry-background" style="height: 12em; display: flex; padding: 1.5em 0;">
+            <div class="client-logo" style="background-image: url(/logos/2K.svg);"></div>
+            <div class="client-logo" style="background-image: url(/logos/Hangar13.svg);"></div>
+        </div>
+
+        <div class="blurry-background" style="margin-top: 1rem; display: flex;">
+            <div class="client-showcase">
+                <img src="/screenshot/ss_3bc232192813ab9250abafd627333f1d8bd53bb9.1920x1080.jpg" alt="Image 1" />
+                <img src="/screenshot/ss_8c5af3a1b47337fe9d2f4f48d21975964eb23ccb.1920x1080.jpg" alt="Image 2" />
+                <img src="/screenshot/ss_19e3bf0b15bd64f10a8d2702758d82d5291220af.1920x1080.jpg" alt="Image 3" />
+                <img src="/screenshot/ss_44047e62744c4a7201a0238994d23f3ca72649cb.1920x1080.jpg" alt="Image 4" />
+                <img src="/screenshot/ss_a6ab7a19e69f59d741072c089ca7ad9f6bb60814.1920x1080.jpg" alt="Image 5" />
+                <img src="/screenshot/ss_b0790cd935e11df0aca08f947c6e90ddce39e683.1920x1080.jpg" alt="Image 6" />
+                <img src="/screenshot/ss_d76f955486c5c2a46c06a8ef41079abca11874ff.1920x1080.jpg" alt="Image 7" />
+                <img src="/screenshot/ss_ecfbf9a220417bb61285a981a8a6630d98d56d27.1920x1080.jpg" alt="Image 8" />
+            </div>
+        </div>
+
+
+
+
+        <div id="contact" class="divider">
+            <div>Contact Us</div>
+        </div>
+
+        <div class="blurry-background" style="display: flex; margin: 2% 1%; padding: 1em;">
+
+            <div class="hide-on-small-screens contact-marmot" style="width: 55%;">
+            </div>
+
+            <div class="contact-area full-width-on-small-screens">
+                <h3>CONTACT US</h3>
+                <div class="form">
+                    <form action="https://formspree.io/f/mwpepeqw" method="POST">
+                        <input type="text" id="name" name="name" placeholder="Name" required class="contact-form">
+                        <br>
+                        <input type="email" id="email" name="email" placeholder="E-mail" required class="contact-form">
+                        <br>
+                        <textarea id="message" name="message" placeholder="Message" required class="contact-form"></textarea>
+                        <br>
+                        <div class="checkbox" style="text-align: left;">
+                            <input
+                                aria-describedby="dpa-consent-description"
+                                class="fs-checkbox"
+                                id="dpa-consent"
+                                name="dpa-consent"
+                                required
+                                type="checkbox"
+                                value="consent"
+                            />
+                            <label for="dpa-consent">
+                                Consent to the storage and processing of your data to answer your request, and in accordance with <a href="https://formspree.io/legal/privacy-policy/">our providers privacy policy</a>.
+                            </label>
+                        </div>
+                        <br>
+                        <button class="button" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="bottom-background"></div>
-    <script>
-        function parallaxScrollHandler() {
-            var layers = document.getElementsByClassName('parallax-layer');
-            for(var i = 0; i < layers.length; i++) {
-                //layers[i].style.transform = "translateY(-" + window.pageYOffset + "px)";
-            }
-        }
-
-        function correctHeight() {
-            var layers = document.getElementsByClassName('parallax-layer');
-            var longestLayer = 0;
-            for(var i = 0; i < layers.length; i++) {
-                if (layers[i].clientHeight > longestLayer) {
-                    longestLayer = layers[i].clientHeight;
-                }
-            }
-            var rows = document.getElementsByClassName('content-row');
-            if (rows.length > 1) {
-                rows[0].style.height = Math.max(rows[0].clientHeight, longestLayer)+"px";
-            }
-        }
-
-        window.addEventListener('scroll', parallaxScrollHandler);
-        parallaxScrollHandler();
-
-        window.addEventListener('resize', correctHeight);
-        correctHeight();
-    </script>
 {{- end }}
