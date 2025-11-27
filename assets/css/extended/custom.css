@@ -30,7 +30,8 @@ body {
 
 .main {
 	max-width: unset;
-	padding: 0px;
+	padding: 0 8px;
+	margin-top: calc(var(--header-height) * 2);
 }
 
 .nav {
@@ -50,6 +51,8 @@ body {
 
 .header {
 	width: 100%;
+	position: fixed;
+	top: 0;
 }
 
 .full-height-screen {
@@ -101,39 +104,33 @@ body {
 }
 
 .divider {
-	background: url('/images/mountain-div.png') no-repeat center center fixed;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
 	font-size: 3em;
-	padding: 1rem;
 	font-weight: bold;
-	width: 75%;
-	transform: scaleX(-1);
-	filter: FlipX;
-	margin: 1em 0;
+	line-height: 1em;
+	margin: 5em 0 1.5em;
+	display: flex;
+}
+
+.divider .text-container {
+	width: 50%;
 	border-bottom: 4px solid white;
 }
 
-.divider div {
+
+.divider .mountain {
+	width: 25%;
+	height: 100%;
+	margin-top: auto;
+}
+
+.divider.flipped {
 	transform: scaleX(-1);
-}
-
-.flipped-divider {
-	background: url('/images/mountain-div.png') no-repeat center center fixed;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	font-size: 3em;
-	padding: 1rem;
-	font-weight: bold;
-	width: 75%;
-	transform: scaleX(1);
 	filter: FlipX;
-	margin: 1em 0 1em 25%;
-	border-bottom: 4px solid white;
 }
 
-.flipped-divider div {
+.divider.flipped .text-container .text {
 	text-align: right;
+	transform: scaleX(-1);
 }
 
 .header-title {
@@ -142,14 +139,20 @@ body {
 	text-align: center;
 	text-transform: uppercase;
 	font-family: "PoppinsExtraBold";
-	color: #ffffff40;
+	color: #ffffff80;
+	line-height: 1em;
+}
+
+.header-subtitle {
+	font-size: 2em;
+	color: #ffffff30;
 }
 
 .service-card {
 	width: 48%;
 	height: 12em;
-	margin: 2% 1%;
-	padding: 1rem;
+	margin: 0 1% 2em 1%;
+	padding: 1em;
 }
 
 .service-card .service-heading {
@@ -157,7 +160,7 @@ body {
 }
 
 .service-card .service-heading img {
-	width: 5rem;
+	width: 4em;
 }
 
 .service-title {
@@ -196,16 +199,16 @@ body {
 }
 
 .client-showcase img {
-  position: absolute;
+	position: absolute;
 	animation: round 48s infinite;
 	opacity: 0;
-            max-width: 100%;
-            max-height: 100%;
-margin: auto;
-left: 0;
-right: 0;
-top: 0;
-bottom: 0;
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 
 .client-showcase img:nth-child(1) {
@@ -242,12 +245,13 @@ bottom: 0;
 
 
 @keyframes round {
-  25% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-  }
+	25% {
+		opacity: 1;
+	}
+
+	40% {
+		opacity: 0;
+	}
 }
 
 .contact-marmot {
@@ -317,15 +321,55 @@ textarea.contact-form {
 	}
 }
 
+@media (max-width: 1680px) {
+	.divider .text-container {
+		border-bottom: 3px solid white;
+	}
+}
+
+@media (max-width: 1200px) {
+	.divider .text-container {
+		border-bottom: 2px solid white;
+	}
+}
+
 @media (max-width: 640px) {
 	.full-width-on-small-screens {
 		width: 100%;
 	}
+
+	.divider .text-container {
+		width: 75%;
+	}
+
 	.almost-full-width-on-small-screens {
 		width: 90%;
 	}
+
 	.header-title {
 		font-size: 4em;
+	}
+
+	.service-card {
+    	width: 98%;
+	}
+
+	.nav a span {
+		font-size: 1rem;
+	}
+
+	.service-card .service-heading img {
+		width: 2em;
+	}
+
+	.large-heading-text {
+		text-align: center;
+	}
+
+	.service-title {
+		font-size: 1em;
+		height: 1em;
+		line-height: 2em;
 	}
 
 	.vertical-bar {
@@ -333,5 +377,18 @@ textarea.contact-form {
 		padding-left: 0;
 		border-top: 4px solid white;
 		padding-top: 4em;
+		margin-top: 1em;
+	}
+
+	.header-subtitle {
+		font-size: 1em;
+	}
+
+	.divider .text-container {
+		border-bottom: 1px solid white;
+	}
+
+	.divider {
+		margin: 2em 0 1.5em;
 	}
 }
