@@ -11,7 +11,7 @@
 :root {
 	--theme: white;
 	--main-width: 1024px;
-	--header-height: 100px;
+	--header-height: 96px;
 }
 
 .dark {
@@ -334,6 +334,7 @@ textarea.contact-form {
 }
 
 @media (max-width: 640px) {
+
 	.full-width-on-small-screens {
 		width: 100%;
 	}
@@ -346,6 +347,10 @@ textarea.contact-form {
 		width: 90%;
 	}
 
+	.header {
+		position: static;
+	}
+
 	.header-title {
 		font-size: 4em;
 	}
@@ -355,7 +360,11 @@ textarea.contact-form {
 	}
 
 	.nav a span {
-		font-size: 1rem;
+		font-size: 1.5em;
+	}
+
+	.nav {
+  		overflow: scroll;
 	}
 
 	.service-card .service-heading img {
@@ -390,5 +399,9 @@ textarea.contact-form {
 
 	.divider {
 		margin: 2em 0 1.5em;
+	}
+
+	.main {
+		margin-top: 48px;
 	}
 }
