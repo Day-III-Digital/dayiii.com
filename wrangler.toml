@@ -1,0 +1,9 @@
+name = "dayiii-com"
+compatibility_date = "2026-02-17"
+
+[build]
+command = "hugo --gc --minify"
+
+[assets]
+directory = "./public"
+not_found_handling = "404-page"
