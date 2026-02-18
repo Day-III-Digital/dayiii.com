@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	
+
 	const navLogo = '/images/logo_square_rounded.png';
 
 	let isMenuOpen = $state(false);
@@ -20,7 +20,7 @@
 			<img src={navLogo} alt="Day III Digital logo" class="logo-icon" />
 			<span>DAY III DIGITAL</span>
 		</a>
-		
+
 		<button class="menu-toggle" onclick={toggleMenu} aria-label="Toggle menu">
 			<span class="hamburger"></span>
 			<span class="hamburger"></span>
@@ -31,7 +31,6 @@
 			<li><a href="/" onclick={closeMenu} class:active={$page.url.pathname === '/'}>HOME</a></li>
 			<li><a href="/#projects" onclick={closeMenu}>PROJECTS</a></li>
 			<li><a href="/careers" onclick={closeMenu} class:active={$page.url.pathname === '/careers'}>CAREERS</a></li>
-			<li><a href="/blog" onclick={closeMenu} class:active={$page.url.pathname === '/blog'}>BLOG</a></li>
 			<li><a href="/#contact" onclick={closeMenu}>CONTACT</a></li>
 		</ul>
 	</div>
