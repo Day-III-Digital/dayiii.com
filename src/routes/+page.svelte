@@ -185,7 +185,7 @@
 		border: 1px solid #1a1f3a; /* subtle border to reveal the shape */
 		overflow: hidden;
 		padding-top: 0.75rem;
-		padding-bottom: 0;
+		padding-bottom: 0.75rem;
 		margin: 5.5rem 1.5rem 2.5rem; /* clear top bar and give comfortable space */
 		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
 	}
