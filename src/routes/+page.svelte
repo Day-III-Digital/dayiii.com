@@ -61,7 +61,7 @@
 			<h2 class="services-heading"><span class="services-prefix">Our</span> <span class="services-highlight">Services</span></h2>
 			<div class="services-grid">
 				<div class="service-card">
-					<div class="service-icon">🎨</div>
+					<div class="service-icon"><img src="/images/marmot_painting_icon.png" alt="Technical Art" /></div>
 					<h3>Technical Art</h3>
 					<p>
 						Expert technical art solutions including shader development, procedural content
@@ -69,7 +69,7 @@
 					</p>
 				</div>
 				<div class="service-card">
-					<div class="service-icon">⚙️</div>
+					<div class="service-icon"><img src="/images/marmot_unreal_icon.png" alt="Unreal Engine Development" /></div>
 					<h3>Unreal Engine Development</h3>
 					<p>
 						Full-stack Unreal Engine development services, from prototyping to production-ready
@@ -77,7 +77,7 @@
 					</p>
 				</div>
 				<div class="service-card">
-					<div class="service-icon">🚀</div>
+					<div class="service-icon"><img src="/images/marmot_performance_icon.png" alt="Performance Optimization" /></div>
 					<h3>Performance Optimization</h3>
 					<p>
 						Profiling, optimization, and performance tuning to ensure your project runs smoothly
@@ -85,7 +85,7 @@
 					</p>
 				</div>
 				<div class="service-card">
-					<div class="service-icon">🤝</div>
+					<div class="service-icon"><img src="/images/marmot_codev_icon.png" alt="Co-Development" /></div>
 					<h3>Co-Development</h3>
 					<p>
 						Collaborative partnerships to augment your team with specialized technical art and
