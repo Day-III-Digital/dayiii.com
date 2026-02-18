@@ -417,9 +417,20 @@
 		line-height: 1.6;
 	}
 
+	.service-icon {
+		font-size: 3rem;
+		margin-bottom: 0;
+	}
+
+	.service-icon img {
+		width: 140px;
+		height: 140px;
+		object-fit: contain;
+	}
+
 	/* Projects Section */
 	.projects {
-		background: #0d1129;
+		background: #0a0e27;
 	}
 
 	/* Heading alignment overrides for section titles */
