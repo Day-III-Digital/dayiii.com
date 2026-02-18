@@ -514,7 +514,7 @@
 
 	/* Partner Section */
 	.partner {
-		background: #0d1129;
+		background: #0a0e27;
 	}
 
 	.badge {
