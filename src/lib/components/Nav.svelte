@@ -18,7 +18,7 @@
 			<img src={navLogo} alt="Day III Digital logo" class="logo-icon" />
 			<span>DAY III DIGITAL</span>
 		</a>
-		
+
 		<button class="menu-toggle" onclick={toggleMenu} aria-label="Toggle menu">
 			<span class="hamburger"></span>
 			<span class="hamburger"></span>
@@ -28,7 +28,6 @@
 		<ul class="nav-links" class:open={isMenuOpen}>
 			<li><a href="/" onclick={closeMenu}>HOME</a></li>
 			<li><a href="/#projects" onclick={closeMenu}>PROJECTS</a></li>
-			<li><a href="/blog" onclick={closeMenu}>BLOG</a></li>
 			<li><a href="/#contact" onclick={closeMenu}>CONTACT</a></li>
 		</ul>
 	</div>
