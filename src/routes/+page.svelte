@@ -31,28 +31,29 @@
 
 	const clientProjects = [
 		// Console
-		{ members: 3, name: 'Lego Horizon Adventures', 					logo: 'https://cdn.mobygames.com/covers/19376424-lego-horizon-adventures-nintendo-switch-front-cover.jpg' },
-		{ members: 2, name: 'Hogwarts Legacy', 							logo: 'https://cdn.mobygames.com/covers/11331518-hogwarts-legacy-playstation-4-front-cover.jpg' },
-		{ members: 1, name: 'The Settlers: New Allies', 				logo: 'https://cdn.mobygames.com/covers/15541921-the-settlers-new-allies-windows-front-cover.jpg' },
-		{ members: 1, name: 'Song of Nunu: A League of Legends Story', 	logo: 'https://cdn.mobygames.com/covers/17795665-song-of-nunu-a-league-of-legends-story-windows-front-cover.jpg' },
-		{ members: 1, name: 'Watch Dogs: Legion', 						logo: 'https://cdn.mobygames.com/covers/9328358-watch-dogs-legion-playstation-4-front-cover.jpg' },
-		{ members: 1, name: 'Gylt', 									logo: 'https://cdn.mobygames.com/covers/17378699-gylt-playstation-4-front-cover.jpg' },
-		{ members: 1, name: 'For Honor', 								logo: 'https://cdn.mobygames.com/covers/1784962-for-honor-playstation-4-front-cover.jpg' },
-		{ members: 1, name: 'Tom Clancy\'s Ghost Recon Wildlands', 		logo: 'https://cdn.mobygames.com/covers/2153415-tom-clancys-ghost-recon-wildlands-playstation-4-front-cover.jpg' },
-		{ members: 1, name: 'Tom Clancy\'s Rainbow Six Siege', 			logo: 'https://cdn.mobygames.com/covers/1131178-tom-clancys-rainbow-six-siege-xbox-one-front-cover.png' },
-		{ members: 1, name: 'Beyond Good and Evil 2', 					logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Beyond_Good_and_Evil_2_boxshot.jpg/250px-Beyond_Good_and_Evil_2_boxshot.jpg' },
-		{ members: 1, name: 'The Sexy Brutale', 						logo: 'https://cdn.mobygames.com/covers/1292064-the-sexy-brutale-nintendo-switch-front-cover.jpg' },
+		{ members: 2, name: 'Hogwarts Legacy', 							logo: '/images/hogwarts_legacy.png', wide: true },
+		{ members: 3, name: 'Horizon Adventures', 						logo: '/images/horizon_adventures.png', wide: true },
+		{ members: 1, name: 'The Settlers: New Allies', 				logo: 'https://cdn.mobygames.com/covers/15541921-the-settlers-new-allies-windows-front-cover.jpg', wide: false },
+		{ members: 1, name: 'Song of Nunu: A League of Legends Story', 	logo: 'https://cdn.mobygames.com/covers/17795665-song-of-nunu-a-league-of-legends-story-windows-front-cover.jpg', wide: false },
+		{ members: 1, name: 'Watch Dogs: Legion', 						logo: 'https://cdn.mobygames.com/covers/9328358-watch-dogs-legion-playstation-4-front-cover.jpg', wide: false },
+		{ members: 1, name: 'Gylt', 									logo: 'https://cdn.mobygames.com/covers/17378699-gylt-playstation-4-front-cover.jpg', wide: false },
+		{ members: 1, name: 'For Honor', 								logo: 'https://cdn.mobygames.com/covers/1784962-for-honor-playstation-4-front-cover.jpg', wide: false },
+		{ members: 1, name: 'Tom Clancy\'s Ghost Recon Wildlands', 		logo: 'https://cdn.mobygames.com/covers/2153415-tom-clancys-ghost-recon-wildlands-playstation-4-front-cover.jpg', wide: false },
+		{ members: 1, name: 'Tom Clancy\'s Rainbow Six Siege', 			logo: 'https://cdn.mobygames.com/covers/1131178-tom-clancys-rainbow-six-siege-xbox-one-front-cover.png', wide: false },
+		{ members: 1, name: 'Beyond Good and Evil 2', 					logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Beyond_Good_and_Evil_2_boxshot.jpg/250px-Beyond_Good_and_Evil_2_boxshot.jpg', wide: false },
+		{ members: 1, name: 'The Sexy Brutale', 						logo: 'https://cdn.mobygames.com/covers/1292064-the-sexy-brutale-nintendo-switch-front-cover.jpg', wide: false },
 
 		// Mobile
-		{ members: 1, name: 'Star Wars: Hunters', 						logo: 'https://cdn.mobygames.com/covers/10937779-star-wars-hunters-android-front-cover.jpg' },
-		{ members: 1, name: 'CSR 2', 									logo: 'https://cdn.mobygames.com/covers/8385924-csr-racing-2-android-front-cover.png' },
-		{ members: 1, name: 'Race Kings', 								logo: 'https://cdn.mobygames.com/covers/2624785-race-kings-iphone-front-cover.jpg' },
-		{ members: 2, name: 'CSR Classics', 							logo: 'https://cdn.mobygames.com/covers/9313795-csr-classics-iphone-front-cover.jpg' },
-		{ members: 2, name: 'CSR Racing', 								logo: 'https://cdn.mobygames.com/covers/9313786-csr-racing-iphone-front-cover.jpg' },
+		{ members: 1, name: 'Star Wars: Hunters', 						logo: 'https://cdn.mobygames.com/covers/10937779-star-wars-hunters-android-front-cover.jpg', wide: false },
+		{ members: 1, name: 'CSR 2', 									logo: 'https://cdn.mobygames.com/covers/8385924-csr-racing-2-android-front-cover.png', wide: false },
+		{ members: 1, name: 'Race Kings', 								logo: 'https://cdn.mobygames.com/covers/2624785-race-kings-iphone-front-cover.jpg', wide: false },
+		{ members: 2, name: 'CSR Classics', 							logo: 'https://cdn.mobygames.com/covers/9313795-csr-classics-iphone-front-cover.jpg', wide: false },
+		{ members: 2, name: 'CSR Racing', 								logo: 'https://cdn.mobygames.com/covers/9313786-csr-racing-iphone-front-cover.jpg', wide: false },
 	];
 
 	const featuredProject = {
 		title: 'Mafia: The Old Country',
+		years: '2024-2025',
 		description: 'Full-spectrum technical art and engineering support for Hangar 13\'s open-world AAA title. Our team delivered deep performance optimization across CPU, GPU, and memory, custom shader development for stylized rendering and environmental effects, procedural environment tools for large-scale world building, automated reporting pipelines for performance tracking and asset validation, and core gameplay engineering using C++ and Blueprints. We worked closely with the Hangar 13 team to hit performance targets on all platforms while maintaining the visual quality expected from a next-gen AAA experience.',
 		tags: ['Performance Optimization', 'Shader Tech Art', 'Environment Art', 'Engineering', 'Tools & Reporting'],
 		images: [
@@ -100,15 +101,20 @@
 				<h1 class="title sr-only">Day III Digital</h1>
 				<img src="/images/logo_horizontal_rounded.png" alt="Day III Digital" class="hero-logo" />
 				<div class="hero-taglines">
-<p class="subtitle"><span class="full-spectrum">Full Spectrum</span> <span class="subtitle-highlight">Technical Art</span></p>
+					<p class="subtitle"><span class="full-spectrum">Full Spectrum</span> <span class="subtitle-highlight">Technical Art</span></p>
 				</div>
 				<span class="partner-badge"><img src="/images/unreal_icon.png" alt="Unreal Engine" class="partner-icon" /> Official Unreal Engine Service Partner</span>
 				<a href="#contact" class="cta-button">Get in Touch</a>
 			</div>
 			<div class="hero-right">
 				<div class="hero-about">
-<h2 class="about-heading"><span class="about-highlight">HI</span> <span class="about-prefix">THERE!</span></h2>
-					<p class="about-text">A veteran-led development studio for Unreal Engine and open-world AAA games, specializing in <span class="keyword">technical art</span>, <span class="keyword">rendering</span>, and <span class="keyword">deep learning</span>.</p>
+					<h2 class="about-heading"><span class="about-highlight">HI</span> <span class="about-prefix">THERE !!!</span></h2>
+					<p class="about-text">A veteran-led development studio for Unreal Engine and open-world AAA games, specializing in:</p>
+					<ul class="about-list">
+						<li><span class="keyword">Technical art</span></li>
+						<li><span class="keyword">Rendering</span></li>
+						<li><span class="keyword">Deep learning</span></li>
+					</ul>
 					<p class="about-text">Our custom tools and streamlined workflows help studios overcome technical challenges, control budgets, and exceed player expectations.</p>
 				</div>
 			</div>
@@ -166,8 +172,8 @@
 					<p>Dynamic and baked lighting solutions for mood, atmosphere, and performance.</p>
 				</div>
 				<div class="expertise-card">
-					<h3>Tech Art</h3>
-					<p>Shaders, materials, and procedural systems bridging art and engineering.</p>
+					<h3>Shaders and Mesh Workflows</h3>
+					<p>Shaders and materials bridging art and engineering.</p>
 				</div>
 				<div class="expertise-card">
 					<h3>Tech Animation</h3>
@@ -191,7 +197,7 @@
 				</div>
 			</div>
 
-<a href="https://partners.unrealengine.com/s/partner-detail?partnerAccountId=001QP00001C00VKYAZ" target="_blank" rel="noopener noreferrer" class="unreal-partner">
+			<a href="https://partners.unrealengine.com/s/partner-detail?partnerAccountId=001QP00001C00VKYAZ" target="_blank" rel="noopener noreferrer" class="unreal-partner">
 				<div class="unreal-logos">
 					<img src="/images/unreal_icon.png" alt="Unreal Engine" class="unreal-logo" />
 					<img src="/images/unreal_icon.png" alt="Epic Games" class="unreal-logo" />
@@ -224,7 +230,7 @@
 	<section id="projects" class="projects">
 		<div class="section-content">
 			<h2 class="projects-heading"><span class="projects-prefix">FEATURED</span> <span class="projects-highlight">PROJECTS</span></h2>
-<p class="projects-notice">Currently working on <span class="notice-highlight">3+ unannounced</span> Unreal Engine projects</p>
+			<p class="projects-notice">Currently working on <span class="notice-highlight">3+ unannounced</span> Unreal Engine projects</p>
 
 			<div class="featured-project-card">
 				<div class="featured-gallery">
@@ -244,6 +250,7 @@
 
 				<div class="featured-content">
 					<h3 class="featured-title">{featuredProject.title}</h3>
+					<span class="featured-years">{featuredProject.years}</span>
 					<div class="featured-tags">
 						{#each featuredProject.tags as tag}
 							<span class="featured-tag">{tag}</span>
@@ -261,17 +268,17 @@
 				</div>
 			</div>
 
-<h2 class="projects-heading experience-heading"><span class="projects-prefix">OUR TEAM'S PAST</span> <span class="projects-highlight">EXPERIENCE</span></h2>
+			<h2 class="projects-heading experience-heading"><span class="projects-prefix">OUR TEAM'S PAST</span> <span class="projects-highlight">EXPERIENCE</span></h2>
 			<div class="clients-grid">
 				{#each clientProjects as client}
 					<div class="client-card">
-						<div class="client-logo-wrapper">
+						<div class="client-logo-wrapper" class:wide={client.wide}>
 							<img src={client.logo} alt={client.name} class="client-logo" />
 						</div>
 						<div class="members-label">{client.name}</div>
 						<div class="client-members">
 							<span class="members-count">{client.members}</span>
-<span class="members-label">team members have worked on this</span>
+							<span class="members-label">team members have worked on this</span>
 						</div>
 					</div>
 				{/each}
@@ -279,14 +286,13 @@
 		</div>
 	</section>
 
-
 	<!-- Contact Section -->
 	<section id="contact" class="contact">
 		<div class="section-content">
 			<h2 class="contact-heading"><span class="contact-prefix">GET IN</span> <span class="contact-highlight">TOUCH</span></h2>
 
 			<div class="contact-box">
-				<p class="contact-intro">Ready to bring your project to life? Let's talk.</p>
+<p class="contact-intro">Looking for technical art help? Let's talk.</p>
 				<a href="mailto:{email}" class="contact-cta">{email}</a>
 				<div class="contact-footer">
 					<a href="/careers" class="contact-careers">We're hiring →</a>
@@ -327,7 +333,7 @@
 		padding-top: 0;
 	}
 
-section {
+	section {
 		padding: 2rem;
 		border-top: 1px solid rgba(107, 143, 255, 0.15);
 		transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -894,6 +900,18 @@ section {
 		margin-bottom: 0;
 	}
 
+	.about-list {
+		margin: 0 0 1rem 0;
+		padding-left: 1.5rem;
+		color: #ffffff;
+		font-size: 1.02rem;
+		line-height: 1.75;
+	}
+
+	.about-list li {
+		margin-bottom: 0.25rem;
+	}
+
 	.keyword {
 		color: #FFD84D;
 		font-weight: 600;
@@ -1253,10 +1271,19 @@ section {
 
 	.featured-title {
 		font-size: 1.8rem;
-		margin: 0 0 1rem 0;
+		margin: 0 0 0.25rem 0;
 		color: #FFD84D;
 		font-weight: 900;
 		text-transform: uppercase;
+		font-family: 'Gabarito', sans-serif;
+	}
+
+	.featured-years {
+		display: block;
+		font-size: 0.9rem;
+		color: #6B8FFF;
+		font-weight: 700;
+		margin-bottom: 0.75rem;
 		font-family: 'Gabarito', sans-serif;
 	}
 
@@ -1346,12 +1373,17 @@ section {
 		height: 80px;
 		border-radius: 12px;
 		overflow: hidden;
-		background: #000;
-		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: rgba(5, 10, 30, 0.95);
+		border: 1px solid rgba(107, 143, 255, 0.2);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 0.75rem;
+		padding: 0.5rem;
+	}
+
+	.client-logo-wrapper.wide {
+		width: 100%;
+		height: 90px;
 	}
 
 	.client-logo {
@@ -1550,7 +1582,7 @@ section {
 	}
 
 	.contact h2 {
-		text-align: right;
+		text-align: center;
 	}
 
 	.contact-heading {
