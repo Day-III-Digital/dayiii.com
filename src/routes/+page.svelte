@@ -278,7 +278,7 @@
 						<div class="members-label">{client.name}</div>
 						<div class="client-members">
 							<span class="members-count">{client.members}</span>
-							<span class="members-label">team members have worked on this</span>
+							<span class="members-label">team member{#if client.members > 1}s{/if} {#if client.members > 1}have{:else}has{/if}  worked on this</span>
 						</div>
 					</div>
 				{/each}
