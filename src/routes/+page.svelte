@@ -42,6 +42,7 @@
 
 	const featuredProject = {
 		title: 'Mafia: The Old Country',
+		years: '2024-2025',
 		description: 'Full-spectrum technical art and engineering support for Hangar 13\'s open-world AAA title. Our team delivered deep performance optimization across CPU, GPU, and memory, custom shader development for stylized rendering and environmental effects, procedural environment tools for large-scale world building, automated reporting pipelines for performance tracking and asset validation, and core gameplay engineering using C++ and Blueprints. We worked closely with the Hangar 13 team to hit performance targets on all platforms while maintaining the visual quality expected from a next-gen AAA experience.',
 		tags: ['Performance Optimization', 'Shader Tech Art', 'Environment Art', 'Engineering', 'Tools & Reporting'],
 		images: [
@@ -238,6 +239,7 @@
 
 				<div class="featured-content">
 					<h3 class="featured-title">{featuredProject.title}</h3>
+					<span class="featured-years">{featuredProject.years}</span>
 					<div class="featured-tags">
 						{#each featuredProject.tags as tag}
 							<span class="featured-tag">{tag}</span>
@@ -1258,10 +1260,19 @@ section {
 
 	.featured-title {
 		font-size: 1.8rem;
-		margin: 0 0 1rem 0;
+		margin: 0 0 0.25rem 0;
 		color: #FFD84D;
 		font-weight: 900;
 		text-transform: uppercase;
+		font-family: 'Gabarito', sans-serif;
+	}
+
+	.featured-years {
+		display: block;
+		font-size: 0.9rem;
+		color: #6B8FFF;
+		font-weight: 700;
+		margin-bottom: 0.75rem;
 		font-family: 'Gabarito', sans-serif;
 	}
 
