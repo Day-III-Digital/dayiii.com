@@ -250,6 +250,7 @@
 				</div>
 			</div>
 
+<h2 class="projects-heading experience-heading"><span class="projects-prefix">PREVIOUS</span> <span class="projects-highlight">EXPERIENCE</span></h2>
 			<div class="clients-grid">
 				{#each clientProjects as client}
 					<div class="client-card">
@@ -258,7 +259,7 @@
 						</div>
 						<div class="client-members">
 							<span class="members-count">{client.members}</span>
-							<span class="members-label">team members</span>
+<span class="members-label">team members have worked on this</span>
 						</div>
 					</div>
 				{/each}
@@ -1090,6 +1091,9 @@ section {
 
 	.projects h2.experience-heading {
 		text-align: left;
+		margin-top: 3rem;
+		padding-top: 2.5rem;
+		border-top: 1px solid rgba(107, 143, 255, 0.2);
 	}
 
 	.projects-heading {
@@ -1303,7 +1307,6 @@ section {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 1rem;
-		margin-top: 2.5rem;
 	}
 
 	.client-card {
@@ -1365,6 +1368,7 @@ section {
 		color: #6a6a7a;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
+		text-align: center;
 	}
 
 	/* Team & Partner Section */
