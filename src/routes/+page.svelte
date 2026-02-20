@@ -280,7 +280,7 @@
 			<h2 class="contact-heading"><span class="contact-prefix">GET IN</span> <span class="contact-highlight">TOUCH</span></h2>
 
 			<div class="contact-box">
-				<p class="contact-intro">Ready to bring your project to life? Let's talk.</p>
+<p class="contact-intro">Looking for technical art help? Let's talk.</p>
 				<a href="mailto:{email}" class="contact-cta">{email}</a>
 				<div class="contact-footer">
 					<a href="/careers" class="contact-careers">We're hiring →</a>
