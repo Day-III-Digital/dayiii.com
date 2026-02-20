@@ -34,7 +34,7 @@
 		{ members: 2, name: 'Hogwarts Legacy', 							logo: '/images/hogwarts_legacy.png', wide: true },
 		{ members: 3, name: 'Horizon Adventures', 						logo: '/images/horizon_adventures.png', wide: true },
 		{ members: 1, name: 'The Settlers: New Allies', 				logo: 'https://cdn.mobygames.com/covers/15541921-the-settlers-new-allies-windows-front-cover.jpg', wide: false },
-		{ members: 1, name: 'Song of Nunu: A League of Legends Story', 	logo: 'https://cdn.mobygames.com/covers/17795665-song-of-nunu-a-league-of-legends-story-windows-front-cover.jpg', wide: false },
+		{ members: 1, name: 'Song of Nunu: A League of Legends Story', 	logo: 'https://cdn.mobygames.com/covers/17795665-song-of-nunu-a-league-of-legends-story-windows-front-cover.jpg', wide: true },
 		{ members: 1, name: 'Watch Dogs: Legion', 						logo: 'https://cdn.mobygames.com/covers/9328358-watch-dogs-legion-playstation-4-front-cover.jpg', wide: false },
 		{ members: 1, name: 'Gylt', 									logo: 'https://cdn.mobygames.com/covers/17378699-gylt-playstation-4-front-cover.jpg', wide: false },
 		{ members: 1, name: 'For Honor', 								logo: 'https://cdn.mobygames.com/covers/1784962-for-honor-playstation-4-front-cover.jpg', wide: false },
@@ -1400,7 +1400,7 @@
 	}
 
 	.members-count {
-		font-size: 1.8rem;
+		font-size: 1rem;
 		font-weight: 900;
 		color: #FFD84D;
 		font-family: 'Gabarito', sans-serif;
