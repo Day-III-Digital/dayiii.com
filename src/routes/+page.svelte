@@ -250,7 +250,7 @@
 				</div>
 			</div>
 
-<h2 class="projects-heading experience-heading"><span class="projects-prefix">PREVIOUS</span> <span class="projects-highlight">EXPERIENCE</span></h2>
+<h2 class="projects-heading experience-heading"><span class="projects-prefix">OUR TEAM'S PAST</span> <span class="projects-highlight">EXPERIENCE</span></h2>
 			<div class="clients-grid">
 				{#each clientProjects as client}
 					<div class="client-card">
