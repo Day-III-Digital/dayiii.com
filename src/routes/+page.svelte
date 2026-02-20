@@ -90,19 +90,19 @@
 				<h1 class="title sr-only">Day III Digital</h1>
 				<img src="/images/logo_horizontal_rounded.png" alt="Day III Digital" class="hero-logo" />
 				<div class="hero-taglines">
-<p class="subtitle"><span class="full-spectrum">Full Spectrum</span> <span class="subtitle-highlight">Technical Art</span></p>
+					<p class="subtitle"><span class="full-spectrum">Full Spectrum</span> <span class="subtitle-highlight">Technical Art</span></p>
 				</div>
 				<span class="partner-badge"><img src="/images/unreal_icon.png" alt="Unreal Engine" class="partner-icon" /> Official Unreal Engine Service Partner</span>
 				<a href="#contact" class="cta-button">Get in Touch</a>
 			</div>
 			<div class="hero-right">
 				<div class="hero-about">
-<h2 class="about-heading"><span class="about-highlight">HI</span> <span class="about-prefix">THERE !!!</span></h2>
+					<h2 class="about-heading"><span class="about-highlight">HI</span> <span class="about-prefix">THERE !!!</span></h2>
 					<p class="about-text">A veteran-led development studio for Unreal Engine and open-world AAA games, specializing in:</p>
 					<ul class="about-list">
-<li><span class="keyword">Technical art</span></li>
+						<li><span class="keyword">Technical art</span></li>
 						<li><span class="keyword">Rendering</span></li>
-<li><span class="keyword">Deep learning</span></li>
+						<li><span class="keyword">Deep learning</span></li>
 					</ul>
 					<p class="about-text">Our custom tools and streamlined workflows help studios overcome technical challenges, control budgets, and exceed player expectations.</p>
 				</div>
@@ -161,8 +161,8 @@
 					<p>Dynamic and baked lighting solutions for mood, atmosphere, and performance.</p>
 				</div>
 				<div class="expertise-card">
-<h3>Shaders and Mesh Workflows</h3>
-<p>Shaders and materials bridging art and engineering.</p>
+					<h3>Shaders and Mesh Workflows</h3>
+					<p>Shaders and materials bridging art and engineering.</p>
 				</div>
 				<div class="expertise-card">
 					<h3>Tech Animation</h3>
@@ -186,7 +186,7 @@
 				</div>
 			</div>
 
-<a href="https://partners.unrealengine.com/s/partner-detail?partnerAccountId=001QP00001C00VKYAZ" target="_blank" rel="noopener noreferrer" class="unreal-partner">
+			<a href="https://partners.unrealengine.com/s/partner-detail?partnerAccountId=001QP00001C00VKYAZ" target="_blank" rel="noopener noreferrer" class="unreal-partner">
 				<div class="unreal-logos">
 					<img src="/images/unreal_icon.png" alt="Unreal Engine" class="unreal-logo" />
 					<img src="/images/unreal_icon.png" alt="Epic Games" class="unreal-logo" />
@@ -219,7 +219,7 @@
 	<section id="projects" class="projects">
 		<div class="section-content">
 			<h2 class="projects-heading"><span class="projects-prefix">FEATURED</span> <span class="projects-highlight">PROJECTS</span></h2>
-<p class="projects-notice">Currently working on <span class="notice-highlight">3+ unannounced</span> Unreal Engine projects</p>
+			<p class="projects-notice">Currently working on <span class="notice-highlight">3+ unannounced</span> Unreal Engine projects</p>
 
 			<div class="featured-project-card">
 				<div class="featured-gallery">
@@ -257,7 +257,7 @@
 				</div>
 			</div>
 
-<h2 class="projects-heading experience-heading"><span class="projects-prefix">OUR TEAM'S PAST</span> <span class="projects-highlight">EXPERIENCE</span></h2>
+			<h2 class="projects-heading experience-heading"><span class="projects-prefix">OUR TEAM'S PAST</span> <span class="projects-highlight">EXPERIENCE</span></h2>
 			<div class="clients-grid">
 				{#each clientProjects as client}
 					<div class="client-card">
@@ -266,14 +266,13 @@
 						</div>
 						<div class="client-members">
 							<span class="members-count">{client.members}</span>
-<span class="members-label">team members have worked on this</span>
+							<span class="members-label">team members have worked on this</span>
 						</div>
 					</div>
 				{/each}
 			</div>
 		</div>
 	</section>
-
 
 	<!-- Contact Section -->
 	<section id="contact" class="contact">
@@ -322,7 +321,7 @@
 		padding-top: 0;
 	}
 
-section {
+	section {
 		padding: 2rem;
 		border-top: 1px solid rgba(107, 143, 255, 0.15);
 		transition: opacity 0.6s ease-out, transform 0.6s ease-out;
