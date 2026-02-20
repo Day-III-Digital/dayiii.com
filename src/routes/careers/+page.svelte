@@ -4,22 +4,15 @@
 	let careers = $state([
 		{
 			id: 1,
-			title: 'Technical Art',
-			shortDescription: 'Shaders, procedural systems, materials, rigging, VFX, and tools development.',
-			fullDescription: "We're building a world-class team of Technical Artists. If you have a strong portfolio and passion for real-time graphics, procedural systems, shaders, materials, rigging, or tools development, we'd love to hear from you. Whether you're a generalist who bridges art and code, or a specialist in rendering, VFX, or animation, there may be a place for you at Day III Digital. Send us your resume, portfolio, and a brief note about what excites you most about technical art. We review all applications and will reach out if there's a potential fit.",
-			expanded: false
-		},
-		{
-			id: 2,
-			title: 'Unreal Engine Engineering',
-			shortDescription: 'C++, Blueprints, gameplay systems, tools, and performance optimization.',
-			fullDescription: "We're building a world-class team of Unreal Engine engineers. If you have strong C++ and Blueprints skills with a passion for gameplay systems, tools development, performance optimization, or graphics programming, we'd love to hear from you. Whether you specialize in core engine work, multiplayer systems, or custom tooling, there may be a place for you at Day III Digital. Send us your resume, portfolio or code samples, and a brief note about what excites you most about Unreal Engine development. We review all applications and will reach out if there's a potential fit.",
+			title: 'Open Application',
+			shortDescription: null,
+			fullDescription: "We're always on the lookout for exceptional talent! If you believe you'd be a great addition to our team but can’t find a role that fits your expertise, we encourage you to take a moment to submit an open application.",
 			expanded: false
 		}
 	]);
 
 	function toggleCareer(id: number) {
-		careers = careers.map(c => 
+		careers = careers.map(c =>
 			c.id === id ? { ...c, expanded: !c.expanded } : c
 		);
 	}
@@ -29,14 +22,16 @@
 	<div class="careers-container">
 		<h1 class="page-title"><span class="title-prefix">JOIN OUR</span> <span class="title-highlight">TEAM</span></h1>
 		<p class="page-intro">We're always looking for talented individuals to join Day III Digital. Check out our open positions below.</p>
-		
+
 		<div class="careers-list">
 			{#each careers as career}
 				<div class="career-card">
 					<div class="career-header" on:click={() => toggleCareer(career.id)} on:keypress={() => toggleCareer(career.id)} role="button" tabindex="0">
 						<div class="career-info">
 							<h2>{career.title}</h2>
-							<p class="career-short">{career.shortDescription}</p>
+							{#if career.shortDescription != null}
+								<p class="career-short">{career.shortDescription}</p>
+							{/if}
 						</div>
 						<span class="career-toggle">{career.expanded ? '−' : '+'}</span>
 					</div>
