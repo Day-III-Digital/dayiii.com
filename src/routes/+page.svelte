@@ -1,8 +1,47 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	let email = 'contact@dayiii.com';
 
+	onMount(() => {
+		const sections = document.querySelectorAll('section:not(.hero)');
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+				} else {
+					entry.target.classList.remove('visible');
+				}
+			});
+		}, {
+			threshold: 0.15
+		});
+
+		// Small delay to ensure CSS is ready, then add animation class and observe
+		requestAnimationFrame(() => {
+			sections.forEach(section => {
+				section.classList.add('scroll-animate');
+				observer.observe(section);
+			});
+		});
+
+		return () => observer.disconnect();
+	});
+
+	const clientProjects = [
+		{ name: 'Hangar 13', logo: '/images/hanger13_logo.png', members: 3 },
+		{ name: '2K Games', logo: '/images/2k_logo.svg', members: 2 },
+		{ name: 'Epic Games', logo: '/images/unreal_icon.png', members: 1 },
+		{ name: 'Ubisoft', logo: '/images/unreal_icon.png', members: 2 },
+		{ name: 'EA', logo: '/images/unreal_icon.png', members: 1 },
+		{ name: 'Rockstar', logo: '/images/unreal_icon.png', members: 2 },
+		{ name: 'CD Projekt', logo: '/images/unreal_icon.png', members: 1 },
+		{ name: 'Bethesda', logo: '/images/unreal_icon.png', members: 2 }
+	];
+
 	const featuredProject = {
-		title: 'Mafia: Old Country',
+		title: 'Mafia: The Old Country',
 		description: 'Full-spectrum technical art and engineering support for Hangar 13\'s open-world AAA title. Our team delivered deep performance optimization across CPU, GPU, and memory, custom shader development for stylized rendering and environmental effects, procedural environment tools for large-scale world building, automated reporting pipelines for performance tracking and asset validation, and core gameplay engineering using C++ and Blueprints. We worked closely with the Hangar 13 team to hit performance targets on all platforms while maintaining the visual quality expected from a next-gen AAA experience.',
 		tags: ['Performance Optimization', 'Shader Tech Art', 'Environment Art', 'Engineering', 'Tools & Reporting'],
 		images: [
@@ -210,6 +249,20 @@
 					{/each}
 				</div>
 			</div>
+
+			<div class="clients-grid">
+				{#each clientProjects as client}
+					<div class="client-card">
+						<div class="client-logo-wrapper">
+							<img src={client.logo} alt={client.name} class="client-logo" />
+						</div>
+						<div class="client-members">
+							<span class="members-count">{client.members}</span>
+							<span class="members-label">team members</span>
+						</div>
+					</div>
+				{/each}
+			</div>
 		</div>
 	</section>
 
@@ -264,6 +317,17 @@
 section {
 		padding: 2rem;
 		border-top: 1px solid rgba(107, 143, 255, 0.15);
+		transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+	}
+
+	section.scroll-animate {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	section.scroll-animate.visible {
+		opacity: 1;
+		transform: translateY(0);
 	}
 
 	section.hero {
@@ -1024,6 +1088,10 @@ section {
 		text-align: right;
 	}
 
+	.projects h2.experience-heading {
+		text-align: left;
+	}
+
 	.projects-heading {
 		font-size: clamp(2rem, 4vw, 3rem);
 		font-weight: 900;
@@ -1228,6 +1296,75 @@ section {
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
+	}
+
+	/* Client Cards */
+	.clients-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1rem;
+		margin-top: 2.5rem;
+	}
+
+	.client-card {
+		background: rgba(19, 26, 54, 0.88);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		padding: 1.5rem;
+		border-radius: 12px;
+		border: 1px solid rgba(107, 143, 255, 0.15);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		transition: all 0.3s ease;
+	}
+
+	.client-card:hover {
+		border-color: rgba(107, 143, 255, 0.4);
+		transform: translateY(-4px);
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+	}
+
+	.client-logo-wrapper {
+		width: 80px;
+		height: 80px;
+		border-radius: 12px;
+		overflow: hidden;
+		background: #000;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.75rem;
+	}
+
+	.client-logo {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	.client-members {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.25rem;
+	}
+
+	.members-count {
+		font-size: 1.8rem;
+		font-weight: 900;
+		color: #FFD84D;
+		font-family: 'Gabarito', sans-serif;
+		line-height: 1;
+	}
+
+	.members-label {
+		font-size: 0.75rem;
+		color: #6a6a7a;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 
 	/* Team & Partner Section */
@@ -1604,6 +1741,10 @@ section {
 		}
 
 		.expertise-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.clients-grid {
 			grid-template-columns: repeat(2, 1fr);
 		}
 

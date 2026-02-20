@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	const navLogo = '/images/logo_square_rounded.png';
 
 	let isMenuOpen = $state(false);
+	let isHidden = $state(false);
+	let lastScrollY = 0;
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
@@ -12,9 +15,26 @@
 	function closeMenu() {
 		isMenuOpen = false;
 	}
+
+	onMount(() => {
+		const handleScroll = () => {
+			const currentScrollY = window.scrollY;
+			
+			if (currentScrollY > lastScrollY && currentScrollY > 80) {
+				isHidden = true;
+			} else {
+				isHidden = false;
+			}
+			
+			lastScrollY = currentScrollY;
+		};
+
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		return () => window.removeEventListener('scroll', handleScroll);
+	});
 </script>
 
-<nav class="nav">
+<nav class="nav" class:hidden={isHidden}>
 	<div class="nav-container">
 		<a href="/" class="logo">
 			<img src={navLogo} alt="Day III Digital logo" class="logo-icon" />
@@ -47,6 +67,11 @@
 		border-bottom: 2px solid #1a1f3a;
 		z-index: 1000;
 		font-family: 'Gabarito', sans-serif;
+		transition: transform 0.3s ease;
+	}
+
+	.nav.hidden {
+		transform: translateY(-100%);
 	}
 
 	.nav-container {
