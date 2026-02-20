@@ -199,8 +199,7 @@
 
 			<a href="https://partners.unrealengine.com/s/partner-detail?partnerAccountId=001QP00001C00VKYAZ" target="_blank" rel="noopener noreferrer" class="unreal-partner">
 				<div class="unreal-logos">
-					<img src="/images/unreal_icon.png" alt="Unreal Engine" class="unreal-logo" />
-					<img src="/images/unreal_icon.png" alt="Epic Games" class="unreal-logo" />
+					<img src="/images/ue_approved.png" alt="Unreal Engine" class="unreal-logo" />
 				</div>
 				<div class="unreal-content">
 					<h3>Official Unreal Engine Service Partner</h3>
@@ -1549,7 +1548,7 @@
 		height: 80px;
 		flex-shrink: 0;
 		transition: transform 0.3s ease;
-		background: #000;
+		background: rgba(0, 0, 0, 0);
 		border-radius: 12px;
 		padding: 0.5rem;
 		object-fit: contain;
