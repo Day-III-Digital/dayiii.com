@@ -5,51 +5,71 @@
 		{
 			id: 1,
 			title: 'AAA Game Optimization',
-			description: 'Performance optimization for next-gen console title, achieving 60fps target across all platforms.',
-			tags: ['Unreal Engine 5', 'Optimization', 'Console']
+			projectName: 'Project Name',
+			description: 'Performance optimization for next-gen console title, achieving 60fps target across all platforms. Implemented advanced LOD systems, GPU-driven rendering, and memory optimization strategies.',
+			tags: ['Unreal Engine 5', 'Optimization', 'Console'],
+			images: ['/images/mountain_background.png', '/images/mountain_background.png']
 		},
 		{
 			id: 2,
 			title: 'Procedural Environment System',
-			description: 'Custom procedural generation tools for large-scale open world environments with dynamic LOD systems.',
-			tags: ['Technical Art', 'Blueprints', 'PCG']
+			projectName: 'Project Name',
+			description: 'Custom procedural generation tools for large-scale open world environments with dynamic LOD systems. Created artist-friendly tools for rapid iteration and seamless world streaming.',
+			tags: ['Technical Art', 'Blueprints', 'PCG'],
+			images: ['/images/mountain_background.png', '/images/mountain_background.png']
 		},
 		{
 			id: 3,
 			title: 'Real-time Cinematics Pipeline',
-			description: 'End-to-end cinematic pipeline using Sequencer and MetaHuman for interactive storytelling.',
-			tags: ['Cinematics', 'MetaHuman', 'Sequencer']
+			projectName: 'Project Name',
+			description: 'End-to-end cinematic pipeline using Sequencer and MetaHuman for interactive storytelling. Developed custom tools for facial animation and real-time lighting workflows.',
+			tags: ['Cinematics', 'MetaHuman', 'Sequencer'],
+			images: ['/images/mountain_background.png', '/images/mountain_background.png']
 		},
 		{
 			id: 4,
 			title: 'Custom Shader Framework',
-			description: 'Advanced material system with custom HLSL shaders for stylized rendering and VFX.',
-			tags: ['Shaders', 'Materials', 'VFX']
+			projectName: 'Project Name',
+			description: 'Advanced material system with custom HLSL shaders for stylized rendering and VFX. Built a modular shader library with support for procedural textures and dynamic effects.',
+			tags: ['Shaders', 'Materials', 'VFX'],
+			images: ['/images/mountain_background.png', '/images/mountain_background.png']
 		}
 	];
 </script>
 
+<div class="page-bg">
+	<div class="bubble bubble-1"></div>
+	<div class="bubble bubble-2"></div>
+	<div class="bubble bubble-3"></div>
+	<div class="bubble bubble-4"></div>
+	<div class="bubble bubble-5"></div>
+	<div class="bubble bubble-6"></div>
+	<div class="bubble bubble-7"></div>
+	<div class="bubble bubble-8"></div>
+	<div class="bubble bubble-9"></div>
+	<div class="bubble bubble-10"></div>
+	<div class="bubble bubble-11"></div>
+	<div class="bubble bubble-12"></div>
+	<div class="bg-glow"></div>
+</div>
 <div class="container">
-	<!-- Hero Section with About side-by-side -->
+	<!-- Hero Section - Split Layout -->
 	<section class="hero">
-		<div class="hero-inner">
-			<div class="hero-title-block">
+		<div class="hero-split">
+			<div class="hero-left">
 				<h1 class="title sr-only">Day III Digital</h1>
-				<img src="/images/logo_horizontal.png" alt="Day III Digital" class="hero-logo" />
-			</div>
-			<div class="hero-columns">
-				<div class="hero-content">
-					<p class="subtitle"><strong>Technical Art <span class="hero-co-dev">Co-Development</span> Studio</strong></p>
-					<p class="tagline">Official Unreal Engine Service Partner</p>
-					<a href="#contact" class="cta-button">Get in Touch</a>
+				<img src="/images/logo_horizontal_rounded.png" alt="Day III Digital" class="hero-logo" />
+				<div class="hero-taglines">
+<p class="subtitle"><span class="full-spectrum">Full Spectrum</span> <span class="subtitle-highlight">Technical Art</span></p>
 				</div>
+				<span class="partner-badge"><img src="/images/unreal_icon.png" alt="Unreal Engine" class="partner-icon" /> Official Unreal Engine Service Partner</span>
+				<a href="#contact" class="cta-button">Get in Touch</a>
+			</div>
+			<div class="hero-right">
 				<div class="hero-about">
-					<p>
-						Day III Digital is a veteran-led development studio specializing in technical art, rendering, and deep learning for Unreal Engine and open-world AAA games.
-					</p>
-					<p>
-					    As AAA game development grows more complex and costly, we empower studios with custom tools and streamlined workflows, helping developers overcome technical challenges, control budgets, and exceed player expectations.
-					     </p>
+					<h2 class="about-heading"><span class="about-highlight">WHO</span> <span class="about-prefix">WE ARE</span></h2>
+					<p class="about-text">A veteran-led development studio for Unreal Engine and open-world AAA games, specializing in <span class="keyword">technical art</span>, <span class="keyword">rendering</span>, and <span class="keyword">deep learning</span>.</p>
+					<p class="about-text">Our custom tools and streamlined workflows help studios overcome technical challenges, control budgets, and exceed player expectations.</p>
 				</div>
 			</div>
 		</div>
@@ -58,7 +78,7 @@
 	<!-- Services Section -->
 	<section class="services">
 		<div class="section-content">
-			<h2 class="services-heading"><span class="services-prefix">Our</span> <span class="services-highlight">Services</span></h2>
+			<h2 class="services-heading"><span class="services-prefix">OUR</span> <span class="services-highlight">SERVICES</span></h2>
 			<div class="services-grid">
 				<div class="service-card">
 					<div class="service-icon"><img src="/images/marmot_painting_icon.png" alt="Technical Art" /></div>
@@ -93,22 +113,96 @@
 					</p>
 				</div>
 			</div>
+
+			<div class="section-divider"></div>
+
+			<div class="expertise-grid">
+				<div class="expertise-card">
+					<h3>Environment Art & Proceduralism</h3>
+					<p>World building, procedural generation, and environmental storytelling at scale.</p>
+				</div>
+				<div class="expertise-card">
+					<h3>Lighting Art</h3>
+					<p>Dynamic and baked lighting solutions for mood, atmosphere, and performance.</p>
+				</div>
+				<div class="expertise-card">
+					<h3>Tech Art</h3>
+					<p>Shaders, materials, and procedural systems bridging art and engineering.</p>
+				</div>
+				<div class="expertise-card">
+					<h3>Tech Animation</h3>
+					<p>Rigging, animation systems, and real-time character pipelines.</p>
+				</div>
+				<div class="expertise-card">
+					<h3>Engineering</h3>
+					<p>C++ and Blueprints development for gameplay, tools, and optimization.</p>
+				</div>
+				<div class="expertise-card">
+					<h3>Tools & Pipeline</h3>
+					<p>Custom tools, automation, and production pipelines for efficient workflows.</p>
+				</div>
+				<div class="expertise-card">
+					<h3>Graphics Programming</h3>
+					<p>Low-level rendering, GPU optimization, and custom graphics solutions.</p>
+				</div>
+				<div class="expertise-card">
+					<h3>AI Solutions</h3>
+					<p>Machine learning and deep learning solutions for games and real-time applications.</p>
+				</div>
+			</div>
+
+			<div class="unreal-partner">
+				<img src="/images/unreal_icon.png" alt="Unreal Engine" class="unreal-logo" />
+				<div class="unreal-content">
+					<h3>Official Unreal Engine Service Partner</h3>
+					<p>Certified by Epic Games as a trusted partner for Unreal Engine development. This recognition means we meet Epic's highest standards for technical expertise, project delivery, and professional service.</p>
+				</div>
+			</div>
+
+			<h2 class="pillars-heading"><span class="pillars-prefix">OUR</span> <span class="pillars-highlight">PILLARS</span></h2>
+			<div class="pillars-grid">
+				<div class="pillar-card">
+					<h3>Peak</h3>
+					<p>We push what's possible. <span class="keyword">Technical excellence</span> and <span class="keyword">creative ambition</span> are at the heart of everything we build. We stay sharp, stay curious, and set the bar high — for our tools, our pipelines, and our craft.</p>
+				</div>
+				<div class="pillar-card">
+					<h3>Flow</h3>
+					<p>We work smart, not hard. <span class="keyword">Efficient pipelines</span>, <span class="keyword">sustainable practices</span> and <span class="keyword">innovative tooling</span> mean we deliver next-gen quality without burning out. Great work happens when the process gets out of the way.</p>
+				</div>
+				<div class="pillar-card">
+					<h3>Grounded</h3>
+					<p>We rise together. Our studio culture is shaped by our structure. <span class="keyword">Transparency</span>, <span class="keyword">shared decision-making</span>, and <span class="keyword">deep roots</span> in our craft keep us stable and focused.</p>
+				</div>
+			</div>
 		</div>
 	</section>
 
 	<!-- Projects Section -->
 	<section id="projects" class="projects">
 		<div class="section-content">
-			<h2>Featured Projects</h2>
-			<div class="projects-grid">
+			<h2 class="projects-heading"><span class="projects-prefix">FEATURED</span> <span class="projects-highlight">PROJECTS</span></h2>
+<p class="projects-notice">Currently working on <span class="notice-highlight">2+ unannounced</span> Unreal Engine projects</p>
+			<div class="projects-list">
 				{#each projects as project}
 					<div class="project-card">
-						<h3>{project.title}</h3>
-						<p>{project.description}</p>
-						<div class="tags">
-							{#each project.tags as tag}
-								<span class="tag">{tag}</span>
+						<div class="project-images">
+							{#each project.images as image, i}
+								<div class="project-image-wrapper">
+									<img src={image} alt="{project.title} screenshot {i + 1}" class="project-image" />
+								</div>
 							{/each}
+						</div>
+						<div class="project-content">
+							<div class="project-header">
+								<h3>{project.title}</h3>
+								<span class="project-name">{project.projectName}</span>
+							</div>
+							<div class="tags">
+								{#each project.tags as tag}
+									<span class="tag">{tag}</span>
+								{/each}
+							</div>
+							<p>{project.description}</p>
 						</div>
 					</div>
 				{/each}
@@ -116,31 +210,30 @@
 		</div>
 	</section>
 
-	<!-- Partner Badge Section -->
-	<section class="partner">
-		<div class="section-content">
-			<div class="badge">
-				<div class="badge-icon">🏆</div>
-				<h3>Official Unreal Engine Service Partner</h3>
-				<p>Certified and recognized by Epic Games for excellence in Unreal Engine services.</p>
-			</div>
-		</div>
-	</section>
 
 	<!-- Contact Section -->
 	<section id="contact" class="contact">
 		<div class="section-content">
-			<h2>Get in Touch</h2>
-			<p class="contact-text">
-				Ready to bring your project to life? Let's discuss how we can help.
-			</p>
-			<a href="mailto:{email}" class="email-link">{email}</a>
+			<h2 class="contact-heading"><span class="contact-prefix">GET IN</span> <span class="contact-highlight">TOUCH</span></h2>
+			
+			<div class="contact-box">
+				<p class="contact-intro">Ready to bring your project to life? Let's talk.</p>
+				<a href="mailto:{email}" class="contact-cta">{email}</a>
+				<div class="contact-footer">
+					<span class="contact-meta">Remote-first · Europe & North America</span>
+					<span class="contact-sep">•</span>
+					<a href="/careers" class="contact-careers">We're hiring →</a>
+				</div>
+			</div>
 		</div>
 	</section>
 
 	<!-- Footer -->
 	<footer>
-		<p>&copy; {new Date().getFullYear()} Day III Digital. All rights reserved.</p>
+		<div class="footer-content">
+			<img src="/images/logo_square_rounded.png" alt="Day III Digital" class="footer-logo" />
+			<p class="footer-text">&copy; {new Date().getFullYear()} Day III Digital. All rights reserved.</p>
+		</div>
 	</footer>
 </div>
 
@@ -157,6 +250,8 @@
 	.container {
 		max-width: 1200px;
 		margin: 4.5rem auto 0; /* add space below fixed top bar */
+		position: relative;
+		z-index: 1;
 	}
 
 	/* Let the hero card control its own spacing from the top bar */
@@ -164,54 +259,301 @@
 		padding-top: 0;
 	}
 
-	section {
-		/* Minimal vertical padding between sections */
-		padding: 0.75rem 2rem;
+section {
+		padding: 2rem;
+		border-top: 1px solid rgba(107, 143, 255, 0.15);
 	}
 
-	/* Hero Section - mountains background with title on top */
+	section.hero {
+		border-top: none;
+		padding: 0;
+	}
+
+	/* Hero Section - Split Layout */
 	.hero {
-		min-height: 38vh; /* slightly shorter mountains hero */
+		display: flex;
+		align-items: center;
+		position: relative;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+		background: transparent;
+	}
+
+	/* Animated Background - Full Page */
+	.page-bg {
+		position: fixed;
+		inset: 0;
+		overflow: hidden;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.bubble {
+		position: absolute;
+		border-radius: 50%;
+		filter: blur(60px);
+	}
+
+	.bubble-1 {
+		width: 280px;
+		height: 280px;
+		background: rgba(107, 143, 255, 0.7);
+		animation: float1 140s ease-in-out infinite;
+	}
+
+	.bubble-2 {
+		width: 80px;
+		height: 80px;
+		background: rgba(255, 216, 77, 0.7);
+		animation: float2 110s ease-in-out infinite;
+	}
+
+	.bubble-3 {
+		width: 220px;
+		height: 220px;
+		background: rgba(255, 140, 50, 0.6);
+		animation: float3 150s ease-in-out infinite;
+	}
+
+	.bubble-4 {
+		width: 100px;
+		height: 100px;
+		background: rgba(107, 143, 255, 0.7);
+		animation: float4 100s ease-in-out infinite;
+	}
+
+	.bubble-5 {
+		width: 300px;
+		height: 300px;
+		background: rgba(255, 216, 77, 0.5);
+		animation: float5 200s ease-in-out infinite;
+	}
+
+	.bubble-6 {
+		width: 70px;
+		height: 70px;
+		background: rgba(255, 140, 50, 0.7);
+		animation: float6 90s ease-in-out infinite;
+	}
+
+	.bubble-7 {
+		width: 250px;
+		height: 250px;
+		background: rgba(107, 143, 255, 0.55);
+		animation: float7 180s ease-in-out infinite;
+	}
+
+	.bubble-8 {
+		width: 90px;
+		height: 90px;
+		background: rgba(255, 216, 77, 0.65);
+		animation: float8 105s ease-in-out infinite;
+	}
+
+	.bubble-9 {
+		width: 180px;
+		height: 180px;
+		background: rgba(255, 140, 50, 0.6);
+		animation: float9 160s ease-in-out infinite;
+	}
+
+	.bubble-10 {
+		width: 60px;
+		height: 60px;
+		background: rgba(107, 143, 255, 0.75);
+		animation: float10 80s ease-in-out infinite;
+	}
+
+	.bubble-11 {
+		width: 320px;
+		height: 320px;
+		background: rgba(255, 216, 77, 0.45);
+		animation: float11 220s ease-in-out infinite;
+	}
+
+	.bubble-12 {
+		width: 120px;
+		height: 120px;
+		background: rgba(255, 140, 50, 0.65);
+		animation: float12 120s ease-in-out infinite;
+	}
+
+	@keyframes float1 {
+		0% { transform: translate(20vw, 30vh); }
+		50% { transform: translate(70vw, 60vh); }
+		100% { transform: translate(20vw, 30vh); }
+	}
+
+	@keyframes float2 {
+		0% { transform: translate(80vw, 20vh); }
+		50% { transform: translate(30vw, 70vh); }
+		100% { transform: translate(80vw, 20vh); }
+	}
+
+	@keyframes float3 {
+		0% { transform: translate(50vw, 50vh); }
+		33% { transform: translate(10vw, 20vh); }
+		66% { transform: translate(85vw, 80vh); }
+		100% { transform: translate(50vw, 50vh); }
+	}
+
+	@keyframes float4 {
+		0% { transform: translate(15vw, 70vh); }
+		50% { transform: translate(60vw, 15vh); }
+		100% { transform: translate(15vw, 70vh); }
+	}
+
+	@keyframes float5 {
+		0% { transform: translate(70vw, 40vh); }
+		33% { transform: translate(25vw, 80vh); }
+		66% { transform: translate(40vw, 10vh); }
+		100% { transform: translate(70vw, 40vh); }
+	}
+
+	@keyframes float6 {
+		0% { transform: translate(35vw, 85vh); }
+		50% { transform: translate(75vw, 25vh); }
+		100% { transform: translate(35vw, 85vh); }
+	}
+
+	@keyframes float7 {
+		0% { transform: translate(60vw, 10vh); }
+		33% { transform: translate(20vw, 50vh); }
+		66% { transform: translate(80vw, 75vh); }
+		100% { transform: translate(60vw, 10vh); }
+	}
+
+	@keyframes float8 {
+		0% { transform: translate(90vw, 55vh); }
+		50% { transform: translate(40vw, 30vh); }
+		100% { transform: translate(90vw, 55vh); }
+	}
+
+	@keyframes float9 {
+		0% { transform: translate(5vw, 45vh); }
+		33% { transform: translate(55vw, 85vh); }
+		66% { transform: translate(85vw, 35vh); }
+		100% { transform: translate(5vw, 45vh); }
+	}
+
+	@keyframes float10 {
+		0% { transform: translate(45vw, 15vh); }
+		50% { transform: translate(10vw, 65vh); }
+		100% { transform: translate(45vw, 15vh); }
+	}
+
+	@keyframes float11 {
+		0% { transform: translate(75vw, 75vh); }
+		33% { transform: translate(30vw, 25vh); }
+		66% { transform: translate(60vw, 50vh); }
+		100% { transform: translate(75vw, 75vh); }
+	}
+
+	@keyframes float12 {
+		0% { transform: translate(25vw, 55vh); }
+		50% { transform: translate(65vw, 90vh); }
+		100% { transform: translate(25vw, 55vh); }
+	}
+
+	.bg-glow {
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		width: 150%;
+		height: 150%;
+		transform: translate(-50%, -50%);
+		background: radial-gradient(ellipse at center, rgba(107, 143, 255, 0.1) 0%, rgba(255, 140, 50, 0.04) 30%, transparent 60%);
+		animation: pulseGlow 6s ease-in-out infinite;
+	}
+
+	@keyframes pulseGlow {
+		0%, 100% {
+			opacity: 0.5;
+			transform: translate(-50%, -50%) scale(1);
+		}
+		50% {
+			opacity: 0.8;
+			transform: translate(-50%, -50%) scale(1.1);
+		}
+	}
+
+	/* Staggered grid animation */
+	@keyframes fadeSlideUp {
+		0% {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fadeIn {
+		0% { opacity: 0; }
+		100% { opacity: 1; }
+	}
+
+	@keyframes slideInLeft {
+		0% {
+			opacity: 0;
+			transform: translateX(-20px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes slideInRight {
+		0% {
+			opacity: 0;
+			transform: translateX(20px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	.hero-split {
+		display: flex;
+		width: 100%;
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 2.5rem 3rem;
+		gap: 3rem;
+		align-items: center;
+		position: relative;
+		z-index: 1;
+	}
+
+	.hero-left {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		animation: slideInLeft 0.8s ease-out both;
+	}
+
+	.hero-right {
+		flex: 1;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		/* Blue-tinted overlay so the image is visible but matches site palette */
-		background:
-			linear-gradient(rgba(18, 32, 90, 0.55), rgba(5, 10, 40, 0.8)),
-			url('/images/mountain_background.png') center top/cover no-repeat;
-		text-align: center;
-		position: relative;
-		border-radius: 32px; /* more pronounced rounded corners */
-		border: 1px solid #1a1f3a; /* subtle border to reveal the shape */
-		overflow: hidden;
-		padding-top: 0.75rem;
-		padding-bottom: 0.75rem;
-		margin: 5.5rem 1.5rem 2.5rem; /* clear top bar and give comfortable space */
-		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
-	}
-
-	.hero-inner {
-		position: relative;
-		z-index: 1;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-		width: 100%;
-	}
-
-	.hero-title-block {
-		text-align: left; /* align logo to the left */
-		width: 100%;
-		align-self: flex-start; /* override hero-inner center alignment */
+		animation: slideInRight 0.8s ease-out 0.2s both;
 	}
 
 	.hero-logo {
 		display: block;
-		max-width: 720px;
-		width: auto; /* don't center by percentage width */
+		max-width: 480px;
+		width: 100%;
 		height: auto;
+		margin-bottom: 1.5rem;
+		filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
 	}
+
 	/* Visually hidden but accessible heading */
 	.sr-only {
 		position: absolute;
@@ -225,50 +567,6 @@
 		border: 0;
 	}
 
-	.hero-columns {
-		display: flex;
-		gap: 1rem;
-		align-items: flex-start;
-		justify-content: space-between;
-		width: 100%;
-		text-align: left;
-	}
-
-	.hero-content,
-	.hero-about {
-		flex: 1;
-	}
-
-	.hero::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: radial-gradient(
-			circle at 50% 50%,
-			rgba(255, 255, 255, 0.05) 0%,
-			transparent 50%
-		);
-		animation: pulse 4s ease-in-out infinite;
-	}
-
-	@keyframes pulse {
-		0%,
-		100% {
-			opacity: 0.3;
-		}
-		50% {
-			opacity: 0.6;
-		}
-	}
-
-	.hero-content {
-		position: relative;
-		z-index: 1;
-	}
-
 	.title {
 		font-size: clamp(4rem, 9vw, 5.75rem); /* slightly bigger hero title */
 		font-weight: 1000;
@@ -279,28 +577,134 @@
 		font-family: 'Gabarito', sans-serif;
 	}
 
+	.hero-taglines {
+		margin-bottom: 1rem;
+	}
+
 	.subtitle {
-		font-size: 2.3rem;
+		font-size: 2rem;
 		color: #6B8FFF;
-		margin: 0.1rem 0;
-		line-height: 1.1; /* reduce space between lines */
-		font-weight: 700;
+		margin: 0;
+		line-height: 1.1;
+		font-weight: 900;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
 	}
 
-	/* Make just the "Co-Development" word in the hero subtitle yellow */
-	.hero-co-dev {
+	.subtitle-accent {
+		font-size: 2rem;
+		color: #FFD84D;
+		margin: 0.2rem 0 0 0;
+		line-height: 1.1;
+		font-weight: 900;
+		text-transform: uppercase;
+		font-family: 'Gabarito', sans-serif;
+	}
+
+	.studio-text {
+		color: #ffffff;
+	}
+
+	.amp-text {
 		color: #FFD84D;
 	}
 
-	.tagline {
-		font-size: clamp(1rem, 2vw, 1.3rem);
+	.subtitle-highlight {
+		color: #FFD84D;
+	}
+
+	/* Full Spectrum Rainbow Shimmer Effect */
+	.full-spectrum {
+		position: relative;
+		display: inline-block;
+	}
+
+	.full-spectrum::before {
+		content: 'Full Spectrum';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+			105deg,
+			transparent 0%,
+			rgba(255,80,80,0.9) 10%, rgba(255,160,0,0.9) 20%,
+			rgba(255,255,0,0.9) 30%, rgba(0,255,120,0.9) 40%,
+			rgba(0,200,255,0.9) 50%, rgba(100,80,255,0.9) 60%,
+			rgba(255,0,200,0.9) 70%, rgba(255,80,80,0.9) 80%,
+			transparent 100%
+		);
+		background-size: 300% 100%;
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		opacity: 0;
+		pointer-events: none;
+		animation: spectrumTrigger 3s ease-in-out infinite;
+	}
+
+	.full-spectrum::after {
+		content: '';
+		position: absolute;
+		inset: -6px;
+		border-radius: 4px;
+		background: linear-gradient(
+			105deg,
+			transparent 0%,
+			rgba(255,80,80,0.25) 15%, rgba(255,200,0,0.25) 25%,
+			rgba(0,255,150,0.25) 38%, rgba(0,180,255,0.25) 50%,
+			rgba(140,60,255,0.25) 62%, rgba(255,0,180,0.25) 75%,
+			transparent 100%
+		);
+		background-size: 300% 100%;
+		filter: blur(8px);
+		opacity: 0;
+		pointer-events: none;
+		z-index: -1;
+		animation: glowScan 3s ease-in-out infinite;
+	}
+
+	@keyframes spectrumTrigger {
+		0%   { opacity: 0; background-position: -100% 0; }
+		3%   { opacity: 0.9; }
+		35%  { background-position: 200% 0; opacity: 0.9; }
+		47%  { opacity: 0; }
+		100% { opacity: 0; background-position: 200% 0; }
+	}
+
+	@keyframes glowScan {
+		0%   { opacity: 0; background-position: -100% 0; }
+		3%   { opacity: 1; }
+		35%  { background-position: 200% 0; opacity: 1; }
+		47%  { opacity: 0; }
+		100% { opacity: 0; background-position: 200% 0; }
+	}
+
+	.partner-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.5rem 1rem;
+		background: rgba(107, 143, 255, 0.15);
+		border: 1px solid rgba(107, 143, 255, 0.3);
+		border-radius: 6px;
 		color: #6B8FFF;
-		margin: 0.4rem 0 0.75rem;
+		font-size: 0.85rem;
 		font-weight: 600;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
+		letter-spacing: 0.08em;
+		margin-bottom: 1rem;
+		transition: all 0.3s ease;
+	}
+
+	.partner-badge:hover {
+		background: rgba(107, 143, 255, 0.25);
+		border-color: rgba(107, 143, 255, 0.5);
+	}
+
+	.partner-icon {
+		width: 28px;
+		height: 28px;
+		object-fit: contain;
 	}
 
 	.cta-button {
@@ -339,36 +743,91 @@
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
 		letter-spacing: 0.02em;
+		position: relative;
+		z-index: 10;
 	}
 
 	/* About Section */
+	.about {
+		background: transparent;
+	}
+
 	.hero-about {
-		max-width: 50rem; /* a bit wider while still readable */
-		/* Exactly match service card background gradient and styling */
-		background: linear-gradient(to bottom, #131a36 0%, #1e274a 100%) !important;
-		padding: 1.25rem;
-		border-radius: 16px;
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
-}
+		position: relative;
+		max-width: 560px;
+		width: 100%;
+		min-height: 280px;
+		background: rgba(19, 26, 54, 0.92);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		padding: 1.75rem 2.5rem 2.5rem 2.5rem;
+		border-radius: 20px;
+		border: 1px solid rgba(107, 143, 255, 0.2);
+		box-shadow: 
+			0 25px 60px rgba(0, 0, 0, 0.5),
+			0 0 40px rgba(107, 143, 255, 0.08),
+			inset 0 0 80px rgba(107, 143, 255, 0.03);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 
-	.hero-about p {
-		font-size: 1.05rem; /* keep same font size */
-		line-height: 1.5 !important;   /* balanced line spacing */
+	.hero-about::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: linear-gradient(90deg, #6B8FFF, #FFD84D);
+		border-radius: 20px 20px 0 0;
+	}
+
+
+	.about-heading {
+		font-size: 1.6rem;
+		margin: 0 0 1rem 0;
+		text-align: left;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		font-weight: 900;
+	}
+
+	.about-highlight {
+		color: #FFD84D;
+	}
+
+	.about-prefix {
 		color: #ffffff;
-		margin: 0 0 1rem !important; /* force clear space between hero-about paragraphs */
-		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.9); /* clear edge against bright areas */
-}
+	}
 
-	.hero-about p:last-child {
-		margin-bottom: 0 !important; /* avoid extra space after final paragraph */
-}
+	.about-text {
+		font-size: 1.02rem;
+		line-height: 1.75;
+		color: #ffffff;
+		margin: 0 0 1rem;
+		text-align: justify;
+	}
+
+	.about-text:last-child {
+		margin-bottom: 0;
+	}
+
+	.keyword {
+		color: #FFD84D;
+		font-weight: 600;
+		transition: all 0.2s ease;
+	}
+
+	.keyword:hover {
+		text-shadow: 0 0 8px rgba(255, 216, 77, 0.5);
+	}
 
 	/* Services Section */
 	.services {
-		background: #0a0e27;
-		/* No extra space above Our Services heading */
-		padding-top: 0;
+		background: transparent;
 	}
 
 	.services-grid {
@@ -380,31 +839,43 @@
 
 	.service-card {
 		position: relative;
-		/* Medium-dark vertical gradient: subtle blue (top) → deeper blue (bottom), no black */
-		background: linear-gradient(to bottom, #131a36 0%, #1e274a 100%) !important;
-		padding: 1.25rem;
+		background: rgba(19, 26, 54, 0.88);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		padding: 2rem 1.25rem 1.25rem 1.25rem;
 		border-radius: 16px;
-		border: 1px solid rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(107, 143, 255, 0.15);
 		transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 		text-align: center;
 		overflow: hidden;
+		animation: fadeSlideUp 0.6s ease-out both;
 	}
+
+	.service-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: linear-gradient(90deg, #6B8FFF, #FFD84D);
+		border-radius: 16px 16px 0 0;
+	}
+
+	.service-card:nth-child(1) { animation-delay: 0s; }
+	.service-card:nth-child(2) { animation-delay: 0.1s; }
+	.service-card:nth-child(3) { animation-delay: 0.2s; }
+	.service-card:nth-child(4) { animation-delay: 0.3s; }
 
 	.service-card:hover {
 		transform: translateY(-6px);
 		border-color: #6B8FFF;
-		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
-	}
-
-	.service-card:hover {
-		transform: translateY(-5px);
-		border-color: #6B8FFF;
-		box-shadow: 0 8px 25px rgba(107, 143, 255, 0.3);
+		box-shadow: 0 12px 30px rgba(107, 143, 255, 0.25);
 	}
 
 	.service-card h3 {
 		font-size: 1.5rem;
-		margin-bottom: 0.05rem; /* very tight space below title */
+		margin: 0 0 0.25rem 0;
 		line-height: 1 !important; /* force compact title line height */
 		color: #6B8FFF; /* cooler blue to match site accent instead of yellow */
 		font-weight: 900;
@@ -419,18 +890,19 @@
 
 	.service-icon {
 		font-size: 3rem;
-		margin-bottom: 0;
+		margin-bottom: -0.5rem;
 	}
 
 	.service-icon img {
-		width: 140px;
-		height: 140px;
+		width: 120px;
+		height: 120px;
 		object-fit: contain;
 	}
 
 	/* Projects Section */
 	.projects {
-		background: #0a0e27;
+		background: transparent;
+		scroll-margin-top: 5rem;
 	}
 
 	/* Heading alignment overrides for section titles */
@@ -444,6 +916,7 @@
 		text-transform: none !important; /* override global h2 uppercase */
 		font-family: 'Gabarito', sans-serif;
 		letter-spacing: 0.02em;
+		animation: fadeIn 0.6s ease-out both;
 	}
 
 	.services-prefix {
@@ -451,47 +924,263 @@
 	}
 
 	.services-highlight {
-		color: #FFD84D; /* "Services" in yellow */
+		color: #FFD84D;
 	}
 
-	.projects h2 {
+	.section-divider {
+		height: 1px;
+		background: linear-gradient(90deg, transparent, rgba(107, 143, 255, 0.3), transparent);
+		margin: 2.5rem 0;
+	}
+
+	/* Expertise Subsection */
+	.expertise-heading {
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 900;
+		text-transform: none !important;
+		font-family: 'Gabarito', sans-serif;
+		letter-spacing: 0.02em;
+		animation: fadeIn 0.6s ease-out both;
+		margin-top: 3rem;
 		text-align: left;
-		color: #FF4D4D; /* red for Featured Projects heading */
 	}
 
-	.projects-grid {
+	.expertise-prefix {
+		color: #ffffff;
+	}
+
+	.expertise-highlight {
+		color: #FFD84D;
+	}
+
+	/* Pillars Section */
+	.pillars-heading {
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 900;
+		text-transform: none !important;
+		font-family: 'Gabarito', sans-serif;
+		letter-spacing: 0.02em;
+		animation: fadeIn 0.6s ease-out both;
+		margin-top: 3rem;
+		text-align: left !important;
+	}
+
+	.pillars-prefix {
+		color: #ffffff;
+	}
+
+	.pillars-highlight {
+		color: #FFD84D;
+	}
+
+	.pillars-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		grid-template-columns: repeat(3, 1fr);
 		gap: 1.5rem;
+		margin-top: 0.5rem;
 	}
 
-	.project-card {
-		background: #0a0e27;
-		padding: 1.25rem;
-		border-radius: 8px;
-		border: 2px solid #1a1f3a;
+	.pillar-card {
+		background: rgba(19, 26, 54, 0.88);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		padding: 1.5rem;
+		border-radius: 16px;
+		border: 1px solid rgba(107, 143, 255, 0.15);
 		transition: all 0.3s ease;
+		animation: fadeSlideUp 0.6s ease-out both;
 	}
 
-	.project-card:hover {
-		transform: translateY(-5px);
-		border-color: #FFD84D;
-		box-shadow: 0 8px 25px rgba(255, 216, 77, 0.2);
+	.pillar-card:nth-child(1) { animation-delay: 0s; }
+	.pillar-card:nth-child(2) { animation-delay: 0.1s; }
+	.pillar-card:nth-child(3) { animation-delay: 0.2s; }
+
+	.pillar-card:hover {
+		transform: translateY(-6px);
+		border-color: #6B8FFF;
+		box-shadow: 0 12px 30px rgba(107, 143, 255, 0.25);
 	}
 
-	.project-card h3 {
+	.pillar-card h3 {
 		font-size: 1.5rem;
-		margin-bottom: 0.5rem;
-		color: #6B8FFF; /* blue for Featured Projects card titles */
+		margin: 0 0 0.75rem 0;
+		color: #6B8FFF;
 		font-weight: 900;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
 	}
 
+	.pillar-card p {
+		color: #ffffff;
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	.projects h2 {
+		text-align: right;
+	}
+
+	.projects-heading {
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 900;
+		text-transform: none !important;
+		font-family: 'Gabarito', sans-serif;
+		letter-spacing: 0.02em;
+		animation: fadeIn 0.6s ease-out both;
+	}
+
+	.projects-prefix {
+		color: #ffffff;
+	}
+
+	.projects-highlight {
+		color: #FFD84D;
+	}
+
+	.projects-notice {
+		position: relative;
+		background: rgba(19, 26, 54, 0.92);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		border: 1px solid rgba(107, 143, 255, 0.25);
+		border-radius: 12px;
+		padding: 1rem 1.5rem;
+		margin: 0 0 2rem 0;
+		font-size: 1.15rem;
+		font-weight: 600;
+		color: #ffffff;
+		font-family: 'Gabarito', sans-serif;
+		text-align: center;
+		box-shadow: 0 8px 24px rgba(107, 143, 255, 0.15);
+		overflow: hidden;
+	}
+
+	.projects-notice::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background: linear-gradient(90deg, #6B8FFF, #FFD84D);
+		border-radius: 12px 12px 0 0;
+	}
+
+	.notice-highlight {
+		color: #FFD84D;
+		font-weight: 900;
+		text-shadow: 0 0 12px rgba(255, 216, 77, 0.4);
+	}
+
+	.projects-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.project-card {
+		position: relative;
+		display: flex;
+		gap: 2rem;
+		background: rgba(19, 26, 54, 0.88);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		padding: 1.5rem;
+		border-radius: 16px;
+		border: 1px solid rgba(107, 143, 255, 0.15);
+		transition: all 0.3s ease;
+		animation: fadeSlideUp 0.6s ease-out both;
+		overflow: hidden;
+	}
+
+	.project-card::before {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 4px;
+		background: linear-gradient(180deg, #6B8FFF, #FFD84D);
+		border-radius: 0 16px 16px 0;
+	}
+
+	.project-card:nth-child(1) { animation-delay: 0s; }
+	.project-card:nth-child(2) { animation-delay: 0.15s; }
+	.project-card:nth-child(3) { animation-delay: 0.3s; }
+	.project-card:nth-child(4) { animation-delay: 0.45s; }
+
+	.project-card:hover {
+		border-color: rgba(107, 143, 255, 0.3);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+	}
+
+	.project-images {
+		display: flex;
+		gap: 0.75rem;
+		flex-shrink: 0;
+	}
+
+	.project-image-wrapper {
+		width: 140px;
+		height: 140px;
+		border-radius: 12px;
+		overflow: hidden;
+		background: rgba(0, 0, 0, 0.3);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.project-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.4s ease;
+	}
+
+	.project-card:hover .project-image {
+		transform: scale(1.08);
+	}
+
+	.project-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.project-header {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 0.75rem;
+		flex-wrap: wrap;
+	}
+
+	.project-card h3 {
+		font-size: 1.4rem;
+		margin: 0;
+		color: #FFD84D;
+		font-weight: 900;
+		text-transform: uppercase;
+		font-family: 'Gabarito', sans-serif;
+	}
+
+	.project-name {
+		color: #6B8FFF;
+		font-size: 0.95rem;
+		font-weight: 600;
+		font-family: 'Gabarito', sans-serif;
+		padding-left: 1rem;
+		border-left: 2px solid rgba(107, 143, 255, 0.4);
+	}
+
+	.project-card .tags {
+		margin-bottom: 0.75rem;
+	}
+
 	.project-card p {
 		color: #b0b0b0;
-		line-height: 1.5;
-		margin-bottom: 0.75rem;
+		line-height: 1.6;
+		margin: 0;
+		flex: 1;
 	}
 
 	.tags {
@@ -503,102 +1192,395 @@
 	.tag {
 		background: rgba(107, 143, 255, 0.2);
 		color: #6B8FFF;
-		padding: 0.3rem 0.8rem;
+		padding: 0.25rem 0.6rem;
 		border-radius: 4px;
-		font-size: 0.85rem;
+		font-size: 0.75rem;
 		font-weight: 700;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
 		letter-spacing: 0.03em;
+		transition: all 0.2s ease;
 	}
 
-	/* Partner Section */
-	.partner {
-		background: #0a0e27;
+	.tag:hover {
+		background: rgba(107, 143, 255, 0.35);
+		transform: translateY(-1px);
 	}
 
-	.badge {
+	/* Team & Partner Section */
+	.team-partner {
+		background: transparent;
+	}
+
+	.team-partner h2 {
+		text-align: right;
+	}
+
+	.team-heading {
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 900;
+		text-transform: none !important;
+		font-family: 'Gabarito', sans-serif;
+		letter-spacing: 0.02em;
+		animation: fadeIn 0.6s ease-out both;
+	}
+
+	.team-prefix {
+		color: #ffffff;
+	}
+
+	.team-highlight {
+		color: #FFD84D;
+	}
+
+	.expertise-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.25rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.expertise-card {
+		background: rgba(19, 26, 54, 0.88);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		padding: 1.5rem 1rem;
+		border-radius: 12px;
+		border: 1px solid rgba(107, 143, 255, 0.15);
 		text-align: center;
-		padding: 1.5rem;
-		background: #0a0e27;
-		border-radius: 8px;
-		border: 3px solid #6B8FFF;
+		transition: all 0.3s ease;
+		animation: fadeSlideUp 0.6s ease-out both;
 	}
 
-	.badge-icon {
-		font-size: 4rem;
-		margin-bottom: 0.5rem;
+	.expertise-card:nth-child(1) { animation-delay: 0s; }
+	.expertise-card:nth-child(2) { animation-delay: 0.08s; }
+	.expertise-card:nth-child(3) { animation-delay: 0.16s; }
+	.expertise-card:nth-child(4) { animation-delay: 0.24s; }
+	.expertise-card:nth-child(5) { animation-delay: 0.32s; }
+	.expertise-card:nth-child(6) { animation-delay: 0.4s; }
+	.expertise-card:nth-child(7) { animation-delay: 0.48s; }
+	.expertise-card:nth-child(8) { animation-delay: 0.56s; }
+
+	.expertise-card:hover {
+		border-color: rgba(107, 143, 255, 0.4);
+		transform: translateY(-4px);
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 	}
 
-	.badge h3 {
-		font-size: 2rem;
+	.expertise-icon {
+		font-size: 2.5rem;
+		margin-bottom: 0.75rem;
+		filter: grayscale(1) brightness(2);
+		transition: transform 0.3s ease;
+	}
+
+	.expertise-card:hover .expertise-icon {
+		transform: scale(1.15) rotate(5deg);
+	}
+
+	.expertise-card h3 {
+		font-size: 1rem;
 		color: #6B8FFF;
-		margin: 0.5rem 0;
+		margin: 0 0 0.5rem 0;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-family: 'Gabarito', sans-serif;
+		letter-spacing: 0.02em;
+	}
+
+	.expertise-card p {
+		color: #ffffff;
+		font-size: 0.85rem;
+		line-height: 1.5;
+		margin: 0;
+	}
+
+	.unreal-partner {
+		background: rgba(19, 26, 54, 0.88);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		padding: 2rem;
+		border-radius: 16px;
+		border: 2px solid rgba(107, 143, 255, 0.4);
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		animation: fadeSlideUp 0.6s ease-out 0.6s both;
+		transition: all 0.3s ease;
+	}
+
+	.unreal-partner:hover {
+		border-color: rgba(107, 143, 255, 0.6);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+	}
+
+	.unreal-logo {
+		width: 100px;
+		height: 100px;
+		flex-shrink: 0;
+		transition: transform 0.3s ease;
+	}
+
+	.unreal-partner:hover .unreal-logo {
+		transform: scale(1.1);
+	}
+
+	.unreal-content h3 {
+		font-size: 1.4rem;
+		color: #FFD84D;
+		margin: 0 0 0.75rem 0;
 		font-weight: 900;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
 	}
 
-	.badge p {
-		font-size: 1.1rem;
+	.unreal-content p {
 		color: #b0b0b0;
+		line-height: 1.7;
+		margin: 0;
+		font-size: 1rem;
 	}
 
 	/* Contact Section */
 	.contact {
-		background: #0a0e27;
+		background: transparent;
+		scroll-margin-top: 5rem;
+	}
+
+	.contact h2 {
+		text-align: left;
+	}
+
+	.contact-heading {
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 900;
+		text-transform: none !important;
+		font-family: 'Gabarito', sans-serif;
+		letter-spacing: 0.02em;
+		animation: fadeIn 0.6s ease-out both;
+	}
+
+	.contact-prefix {
+		color: #ffffff;
+	}
+
+	.contact-highlight {
+		color: #FFD84D;
+	}
+
+	.contact-box {
+		padding: 2.5rem;
+		background: rgba(19, 26, 54, 0.88);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		border-radius: 16px;
+		border: 1px solid rgba(107, 143, 255, 0.2);
 		text-align: center;
-	}
-
-	.contact-text {
-		font-size: 1.2rem;
-		color: #b0b0b0;
-		margin-bottom: 0.75rem;
-	}
-
-	.email-link {
-		font-size: 1.5rem;
-		color: #6B8FFF;
-		text-decoration: none;
-		border-bottom: 2px solid transparent;
+		animation: fadeSlideUp 0.6s ease-out both;
 		transition: all 0.3s ease;
+	}
+
+	.contact-box:hover {
+		border-color: rgba(107, 143, 255, 0.4);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+	}
+
+	.contact-intro {
+		font-size: 1.1rem;
+		color: #b0b0b0;
+		margin: 0 0 1rem 0;
+	}
+
+	.contact-cta {
+		font-size: 1.6rem;
+		color: #FFD84D;
+		text-decoration: none;
 		font-weight: 700;
 		font-family: 'Gabarito', sans-serif;
+		transition: all 0.3s ease;
+		display: inline-block;
+		margin-bottom: 1.5rem;
+		position: relative;
 	}
 
-	.email-link:hover {
-		border-bottom-color: #FFD84D;
+	.contact-cta::after {
+		content: '';
+		position: absolute;
+		bottom: -2px;
+		left: 50%;
+		width: 0;
+		height: 2px;
+		background: #FFD84D;
+		transition: all 0.3s ease;
+		transform: translateX(-50%);
+	}
+
+	.contact-cta:hover {
+		color: #ffffff;
+		transform: scale(1.02);
+	}
+
+	.contact-cta:hover::after {
+		width: 100%;
+		background: #ffffff;
+	}
+
+	.contact-footer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+	}
+
+	.contact-meta {
+		color: #6a6a7a;
+		font-size: 0.85rem;
+	}
+
+	.contact-sep {
+		color: #6a6a7a;
+	}
+
+	.contact-careers {
+		color: #6B8FFF;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 0.85rem;
+		font-family: 'Gabarito', sans-serif;
+		transition: color 0.3s ease;
+	}
+
+	.contact-careers:hover {
 		color: #FFD84D;
 	}
 
 	/* Footer */
 	footer {
-		background: #050812;
+		position: relative;
+		background: rgba(5, 8, 18, 0.95);
 		text-align: center;
-		padding: 1.5rem;
-		color: #666;
-		border-top: 1px solid #1a1f3a;
+		padding: 2rem;
+		border-top: 1px solid rgba(107, 143, 255, 0.2);
+	}
+
+	footer::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: linear-gradient(90deg, transparent, #6B8FFF, #FFD84D, transparent);
+	}
+
+	.footer-content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	.footer-logo {
+		width: 28px;
+		height: 28px;
+		border-radius: 4px;
+		opacity: 0.7;
+		transition: opacity 0.3s ease;
+	}
+
+	.footer-logo:hover {
+		opacity: 1;
+	}
+
+	.footer-text {
+		color: #6a6a7a;
+		font-size: 0.9rem;
+		margin: 0;
+		font-family: 'Gabarito', sans-serif;
+		letter-spacing: 0.02em;
 	}
 
 	/* Responsive Design */
+	@media (max-width: 900px) {
+		.hero-split {
+			flex-direction: column;
+			padding: 3rem 1.5rem;
+			gap: 2rem;
+		}
+
+		.hero-left {
+			align-items: center;
+			text-align: center;
+		}
+
+		.hero-logo {
+			max-width: 320px;
+		}
+
+		.subtitle {
+			font-size: 1.6rem;
+		}
+
+		.hero-about {
+			max-width: 100%;
+		}
+
+		.about-heading {
+			text-align: center;
+		}
+	}
+
 	@media (max-width: 768px) {
 		section {
 			padding: 1.75rem 1.25rem;
 		}
 
-		.hero-columns {
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-			gap: 2rem;
-		}
-
-		.hero {
-			text-align: center;
-		}
-
 		.services-grid {
 			grid-template-columns: 1fr;
+		}
+
+		.project-card {
+			flex-direction: column;
+			gap: 1.25rem;
+		}
+
+		.project-images {
+			justify-content: center;
+		}
+
+		.project-image-wrapper {
+			width: 120px;
+			height: 120px;
+		}
+
+		.project-content {
+			text-align: center;
+		}
+
+		.project-card .tags {
+			justify-content: center;
+		}
+
+		.expertise-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.unreal-partner {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.unreal-logo {
+			width: 80px;
+			height: 80px;
+		}
+
+		.contact-box {
+			padding: 2rem 1.5rem;
+		}
+
+		.contact-cta {
+			font-size: 1.3rem;
 		}
 	}
 </style>

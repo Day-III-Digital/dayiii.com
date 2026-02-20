@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Spectrum Technical Art</title>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --panel-bg: #0a0e1a;
+    --panel-surface: #131929;
+    --panel-border: #1e2d4a;
+    --text-primary: #c8d8f0;
+    --text-muted: #5a7aaa;
+    --text-label: #8aaad0;
+    --input-bg: #0d1525;
+    --input-border: #1e3050;
+    --green: #3ddc84;
+    --gold: #f5c842;
+  }
+
+  body {
+    background: #060a14;
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px 60px;
+    gap: 32px;
+    color: var(--text-primary);
+  }
+
+  /* ── BANNER ── */
+  .banner {
+    position: relative;
+    padding: 36px 56px;
+    background: #111827;
+    border-radius: 8px;
+    box-shadow: 0 0 60px rgba(0,0,0,0.6);
+  }
+
+  .text-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.35em;
+    font-family: 'Gabarito', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  .technical-art { color: #f5c842; }
+
+  .full-spectrum {
+    color: #7b9ef5;
+    position: relative;
+    display: inline-block;
+  }
+
+  .full-spectrum::before {
+    content: 'FULL SPECTRUM';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,80,80,0.9) 10%, rgba(255,160,0,0.9) 20%,
+      rgba(255,255,0,0.9) 30%, rgba(0,255,120,0.9) 40%,
+      rgba(0,200,255,0.9) 50%, rgba(100,80,255,0.9) 60%,
+      rgba(255,0,200,0.9) 70%, rgba(255,80,80,0.9) 80%,
+      transparent 100%
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .full-spectrum::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 4px;
+    background-size: 300% 100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 25%;
+    opacity: 0;
+  }
+
+  /* ── CONTROLS PANEL ── */
+  .controls-panel {
+    width: 100%;
+    max-width: 800px;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .panel-header {
+    background: var(--panel-surface);
+    border-bottom: 1px solid var(--panel-border);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .panel-title {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .panel-actions { display: flex; gap: 8px; }
+
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.63rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 4px;
+    border: 1px solid;
+    cursor: pointer;
+    transition: all 0.15s;
+    background: transparent;
+  }
+  .btn-copy  { color: var(--gold);    border-color: rgba(245,200,66,0.35); }
+  .btn-copy:hover  { background: rgba(245,200,66,0.08); }
+  .btn-paste { color: #7b9ef5;        border-color: rgba(123,158,245,0.35); }
+  .btn-paste:hover { background: rgba(123,158,245,0.08); }
+  .btn-reset { color: var(--text-muted); border-color: rgba(90,122,170,0.3); }
+  .btn-reset:hover { color: var(--text-primary); background: rgba(90,122,170,0.08); }
+
+  .panel-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--panel-border);
+  }
+
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .control-group { display: flex; flex-direction: column; gap: 7px; }
+
+  .control-group label {
+    font-size: 0.6rem;
+    color: var(--text-label);
+    letter-spacing: 0.05em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .control-group label .val {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.68rem;
+  }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    outline: none;
+    cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 13px; height: 13px;
+    border-radius: 50%;
+    background: #7b9ef5;
+    border: 2px solid #060a14;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  input[type=range]::-webkit-slider-thumb:hover { background: #aac4ff; }
+
+  /* Toggle */
+  .particles-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .section-label-inline {
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label-inline::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--panel-border);
+  }
+
+  .toggle-wrap {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+  }
+  .toggle-wrap input { display: none; }
+  .toggle-track {
+    width: 32px; height: 17px;
+    border-radius: 9px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    position: relative;
+    transition: all 0.2s;
+  }
+  .toggle-track::after {
+    content: '';
+    position: absolute;
+    top: 2px; left: 2px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    transition: all 0.2s;
+  }
+  .toggle-wrap input:checked + .toggle-track {
+    background: rgba(61,220,132,0.12);
+    border-color: var(--green);
+  }
+  .toggle-wrap input:checked + .toggle-track::after {
+    transform: translateX(15px);
+    background: var(--green);
+  }
+  .toggle-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .particle-controls { transition: opacity 0.2s; }
+  .particle-controls.disabled { opacity: 0.3; pointer-events: none; }
+
+  /* Toast */
+  .toast {
+    position: fixed;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: #0d1f0d;
+    border: 1px solid var(--green);
+    color: var(--green);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s, transform 0.18s;
+    white-space: nowrap;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .toast.err  { background: #1f0d0d; border-color: #ff5555; color: #ff5555; }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <div class="particles" id="particleContainer"></div>
+  <div class="text-wrap">
+    <span class="full-spectrum" id="fullSpectrum">FULL SPECTRUM</span>
+    <span class="technical-art">TECHNICAL ART</span>
+  </div>
+</div>
+
+<div class="controls-panel">
+  <div class="panel-header">
+    <span class="panel-title">⚙ VFX Controls</span>
+    <div class="panel-actions">
+      <button class="btn btn-copy"  onclick="copySettings()">Copy JSON</button>
+      <button class="btn btn-paste" onclick="pasteSettings()">Paste JSON</button>
+      <button class="btn btn-reset" onclick="resetSettings()">Reset</button>
+    </div>
+  </div>
+
+  <div class="panel-body">
+
+    <!-- Shimmer section -->
+    <div>
+      <div class="section-label">Shimmer VFX</div>
+      <div class="grid-3">
+        <div class="control-group">
+          <label>Frequency (s) <span class="val" id="val-frequency">3.0</span></label>
+          <input type="range" id="ctrl-frequency" min="0.5" max="12" step="0.1" value="3">
+        </div>
+        <div class="control-group">
+          <label>Sweep Speed <span class="val" id="val-speed">1.0</span></label>
+          <input type="range" id="ctrl-speed" min="0.2" max="4" step="0.1" value="1">
+        </div>
+        <div class="control-group">
+          <label>Intensity <span class="val" id="val-intensity">0.90</span></label>
+          <input type="range" id="ctrl-intensity" min="0.05" max="1" step="0.05" value="0.9">
+        </div>
+        <div class="control-group">
+          <label>Hold Duration <span class="val" id="val-hold">0.35</span></label>
+          <input type="range" id="ctrl-hold" min="0.05" max="0.7" step="0.05" value="0.35">
+        </div>
+        <div class="control-group">
+          <label>Glow Blur (px) <span class="val" id="val-glowblur">8</span></label>
+          <input type="range" id="ctrl-glowblur" min="0" max="30" step="1" value="8">
+        </div>
+        <div class="control-group">
+          <label>Glow Opacity <span class="val" id="val-glowopacity">0.25</span></label>
+          <input type="range" id="ctrl-glowopacity" min="0" max="0.8" step="0.05" value="0.25">
+        </div>
+      </div>
+    </div>
+
+    <!-- Particles section -->
+    <div>
+      <div class="particles-row">
+        <div class="section-label-inline">Particles</div>
+        <label class="toggle-wrap">
+          <input type="checkbox" id="ctrl-particles-enabled">
+          <div class="toggle-track"></div>
+          <span class="toggle-label">Enable</span>
+        </label>
+      </div>
+
+      <div class="particle-controls disabled" id="particleControls">
+        <div class="grid-3">
+          <div class="control-group">
+            <label>Count <span class="val" id="val-pcount">10</span></label>
+            <input type="range" id="ctrl-pcount" min="1" max="40" step="1" value="10">
+          </div>
+          <div class="control-group">
+            <label>Min Size (px) <span class="val" id="val-pminsize">2</span></label>
+            <input type="range" id="ctrl-pminsize" min="1" max="15" step="1" value="2">
+          </div>
+          <div class="control-group">
+            <label>Max Size (px) <span class="val" id="val-pmaxsize">5</span></label>
+            <input type="range" id="ctrl-pmaxsize" min="1" max="24" step="1" value="5">
+          </div>
+          <div class="control-group">
+            <label>Spread (px) <span class="val" id="val-pspread">110</span></label>
+            <input type="range" id="ctrl-pspread" min="20" max="300" step="5" value="110">
+          </div>
+          <div class="control-group">
+            <label>Fade At % <span class="val" id="val-pfade">30</span></label>
+            <input type="range" id="ctrl-pfade" min="5" max="70" step="5" value="30">
+          </div>
+          <div class="control-group">
+            <label>Stagger (ms) <span class="val" id="val-pstagger">150</span></label>
+            <input type="range" id="ctrl-pstagger" min="0" max="500" step="10" value="150">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── DEFAULTS ──────────────────────────────────────────────────────────────────
+const DEFAULTS = {
+  frequency: 3,
+  speed: 1,
+  intensity: 0.9,
+  hold: 0.35,
+  glowblur: 8,
+  glowopacity: 0.25,
+  particlesEnabled: false,
+  pcount: 10,
+  pminsize: 2,
+  pmaxsize: 5,
+  pspread: 110,
+  pfade: 30,
+  pstagger: 150
+};
+
+let S = { ...DEFAULTS };
+
+const COLORS = [
+  '#ff5050','#ffcc00','#00ff88','#00ccff',
+  '#aa44ff','#ff00cc','#ff8800','#44ffcc',
+  '#ffffff','#ff6699','#88ff44','#ff4488',
+  '#ff9933','#33ffee','#ee33ff','#33eeff'
+];
+
+// Style injection targets
+const kfStyle   = (() => { const s = document.createElement('style'); document.head.appendChild(s); return s; })();
+const pseudoSt  = (() => { const s = document.createElement('style'); document.head.appendChild(s); return s; })();
+
+// ── APPLY ─────────────────────────────────────────────────────────────────────
+function apply() {
+  const { frequency: f, intensity: i, hold: h, speed: sp,
+          glowblur: gb, glowopacity: go,
+          pfade, pstagger, pcount, pminsize, pmaxsize, pspread,
+          particlesEnabled } = S;
+
+  const holdPct   = Math.round(h * 100);
+  const fadePct   = Math.min(holdPct + 12, 90);
+  const sweepDur  = (f / sp).toFixed(2);
+
+  // Keyframes
+  kfStyle.textContent = `
+    @keyframes spectrumTrigger {
+      0%         { opacity:0; background-position:-100% 0; }
+      3%         { opacity:${i}; }
+      ${holdPct}%{ background-position:200% 0; opacity:${i}; }
+      ${fadePct}%{ opacity:0; }
+      100%       { opacity:0; background-position:200% 0; }
+    }
+    @keyframes glowScan {
+      0%         { opacity:0; background-position:-100% 0; }
+      3%         { opacity:1; }
+      ${holdPct}%{ background-position:200% 0; opacity:1; }
+      ${fadePct}%{ opacity:0; }
+      100%       { opacity:0; background-position:200% 0; }
+    }
+    @keyframes particleBurst {
+      0%           { opacity:0; transform:translate(0,0) scale(1); }
+      3%           { opacity:1; }
+      ${pfade}%    { opacity:0.85; transform:translate(var(--dx),var(--dy)) scale(0.5); }
+      ${Math.min(pfade+14, 95)}% { opacity:0; transform:translate(calc(var(--dx)*1.3),calc(var(--dy)*1.3)) scale(0); }
+      100%         { opacity:0; transform:translate(0,0); }
+    }
+  `;
+
+  // Pseudo element styles
+  pseudoSt.textContent = `
+    .full-spectrum::before {
+      animation: spectrumTrigger ${f}s ease-in-out infinite;
+    }
+    .full-spectrum::after {
+      background: linear-gradient(
+        105deg,
+        transparent 0%,
+        rgba(255,80,80,${go}) 15%,   rgba(255,200,0,${go}) 25%,
+        rgba(0,255,150,${go}) 38%,   rgba(0,180,255,${go}) 50%,
+        rgba(140,60,255,${go}) 62%,  rgba(255,0,180,${go}) 75%,
+        transparent 100%
+      );
+      background-size: 300% 100%;
+      filter: blur(${gb}px);
+      animation: glowScan ${f}s ease-in-out infinite;
+    }
+  `;
+
+  // Particles
+  const container = document.getElementById('particleContainer');
+  container.innerHTML = '';
+
+  if (particlesEnabled) {
+    for (let idx = 0; idx < pcount; idx++) {
+      const el = document.createElement('div');
+      el.className = 'particle';
+      const angle = (idx / pcount) * Math.PI * 2 + (Math.random() - 0.5) * 0.8;
+      const dist  = pspread * (0.45 + Math.random() * 0.55);
+      const dx    = Math.cos(angle) * dist;
+      const dy    = Math.sin(angle) * dist * 0.55;
+      const size  = pminsize + Math.random() * Math.max(0, pmaxsize - pminsize);
+      const color = COLORS[idx % COLORS.length];
+      const delay = ((idx * pstagger) / 1000).toFixed(3);
+      el.style.cssText = `
+        --dx:${dx.toFixed(1)}px; --dy:${dy.toFixed(1)}px;
+        width:${size.toFixed(1)}px; height:${size.toFixed(1)}px;
+        background:${color};
+        animation: particleBurst ${f}s ease-out ${delay}s infinite;
+      `;
+      container.appendChild(el);
+    }
+  }
+
+  document.getElementById('particleControls')
+    .classList.toggle('disabled', !particlesEnabled);
+}
+
+// ── SLIDER MAP ────────────────────────────────────────────────────────────────
+const SLIDERS = {
+  frequency:   { fmt: v => parseFloat(v).toFixed(1) },
+  speed:       { fmt: v => parseFloat(v).toFixed(1) },
+  intensity:   { fmt: v => parseFloat(v).toFixed(2) },
+  hold:        { fmt: v => parseFloat(v).toFixed(2) },
+  glowblur:    { fmt: v => parseInt(v) },
+  glowopacity: { fmt: v => parseFloat(v).toFixed(2) },
+  pcount:      { fmt: v => parseInt(v) },
+  pminsize:    { fmt: v => parseInt(v) },
+  pmaxsize:    { fmt: v => parseInt(v) },
+  pspread:     { fmt: v => parseInt(v) },
+  pfade:       { fmt: v => parseInt(v) },
+  pstagger:    { fmt: v => parseInt(v) },
+};
+
+function syncUIToS() {
+  Object.keys(SLIDERS).forEach(key => {
+    const el = document.getElementById('ctrl-' + key);
+    if (el) S[key] = parseFloat(el.value);
+  });
+  S.particlesEnabled = document.getElementById('ctrl-particles-enabled').checked;
+}
+
+function syncSToUI() {
+  Object.keys(SLIDERS).forEach(key => {
+    const el  = document.getElementById('ctrl-' + key);
+    const val = document.getElementById('val-' + key);
+    if (el)  el.value       = S[key];
+    if (val) val.textContent = SLIDERS[key].fmt(S[key]);
+  });
+  document.getElementById('ctrl-particles-enabled').checked = S.particlesEnabled;
+}
+
+function updateVal(key, raw) {
+  const val = document.getElementById('val-' + key);
+  if (val) val.textContent = SLIDERS[key].fmt(raw);
+}
+
+// ── EVENTS ────────────────────────────────────────────────────────────────────
+Object.keys(SLIDERS).forEach(key => {
+  const el = document.getElementById('ctrl-' + key);
+  if (!el) return;
+  el.addEventListener('input', () => {
+    updateVal(key, el.value);
+    syncUIToS();
+    apply();
+  });
+});
+document.getElementById('ctrl-particles-enabled').addEventListener('change', () => {
+  syncUIToS();
+  apply();
+});
+
+// ── TOAST ─────────────────────────────────────────────────────────────────────
+function toast(msg, err = false) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'toast show' + (err ? ' err' : '');
+  clearTimeout(el._t);
+  el._t = setTimeout(() => el.className = 'toast', 2200);
+}
+
+// ── JSON OPS ──────────────────────────────────────────────────────────────────
+function copySettings() {
+  const json = JSON.stringify(S, null, 2);
+  navigator.clipboard.writeText(json)
+    .then(() => toast('✓ Copied to clipboard'))
+    .catch(() => {
+      // Fallback
+      const ta = Object.assign(document.createElement('textarea'),
+        { value: json, style: 'position:fixed;opacity:0' });
+      document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta);
+      toast('✓ Copied to clipboard');
+    });
+}
+
+function pasteSettings() {
+  navigator.clipboard.readText()
+    .then(text => {
+      let parsed;
+      try { parsed = JSON.parse(text); } catch { toast('✗ Invalid JSON', true); return; }
+      const merged = { ...DEFAULTS };
+      Object.keys(DEFAULTS).forEach(k => {
+        if (parsed[k] !== undefined) merged[k] = parsed[k];
+      });
+      S = merged;
+      syncSToUI();
+      apply();
+      toast('✓ Settings applied');
+    })
+    .catch(() => toast('✗ Clipboard access denied', true));
+}
+
+function resetSettings() {
+  S = { ...DEFAULTS };
+  syncSToUI();
+  apply();
+  toast('✓ Reset to defaults');
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+syncSToUI();
+apply();
+</script>
+</body>
+</html>
