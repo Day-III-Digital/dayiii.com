@@ -30,14 +30,14 @@
 	});
 
 	const clientProjects = [
-		{ name: 'Hangar 13', logo: '/images/hanger13_logo.png', members: 3 },
-		{ name: '2K Games', logo: '/images/2k_logo.svg', members: 2 },
-		{ name: 'Epic Games', logo: '/images/unreal_icon.png', members: 1 },
-		{ name: 'Ubisoft', logo: '/images/unreal_icon.png', members: 2 },
-		{ name: 'EA', logo: '/images/unreal_icon.png', members: 1 },
-		{ name: 'Rockstar', logo: '/images/unreal_icon.png', members: 2 },
-		{ name: 'CD Projekt', logo: '/images/unreal_icon.png', members: 1 },
-		{ name: 'Bethesda', logo: '/images/unreal_icon.png', members: 2 }
+		{ name: 'Hogwarts Legacy', logo: '/images/hogwarts_legacy.png', members: 2, wide: true },
+		{ name: 'Horizon Adventures', logo: '/images/horizon_adventures.png', members: 3, wide: true },
+		{ name: '', logo: '', members: 0 },
+		{ name: '', logo: '', members: 0 },
+		{ name: '', logo: '', members: 0 },
+		{ name: '', logo: '', members: 0 },
+		{ name: '', logo: '', members: 0 },
+		{ name: '', logo: '', members: 0 }
 	];
 
 	const featuredProject = {
@@ -96,8 +96,13 @@
 			</div>
 			<div class="hero-right">
 				<div class="hero-about">
-<h2 class="about-heading"><span class="about-highlight">HI</span> <span class="about-prefix">THERE!</span></h2>
-					<p class="about-text">A veteran-led development studio for Unreal Engine and open-world AAA games, specializing in <span class="keyword">technical art</span>, <span class="keyword">rendering</span>, and <span class="keyword">deep learning</span>.</p>
+<h2 class="about-heading"><span class="about-highlight">HI</span> <span class="about-prefix">THERE !!!</span></h2>
+					<p class="about-text">A veteran-led development studio for Unreal Engine and open-world AAA games, specializing in:</p>
+					<ul class="about-list">
+						<li><span class="keyword">Technical art</span></li>
+						<li><span class="keyword">Rendering</span></li>
+<li><span class="keyword">Deep learning</span></li>
+					</ul>
 					<p class="about-text">Our custom tools and streamlined workflows help studios overcome technical challenges, control budgets, and exceed player expectations.</p>
 				</div>
 			</div>
@@ -254,7 +259,7 @@
 			<div class="clients-grid">
 				{#each clientProjects as client}
 					<div class="client-card">
-						<div class="client-logo-wrapper">
+						<div class="client-logo-wrapper" class:wide={client.wide}>
 							<img src={client.logo} alt={client.name} class="client-logo" />
 						</div>
 						<div class="client-members">
@@ -882,6 +887,18 @@ section {
 		margin-bottom: 0;
 	}
 
+	.about-list {
+		margin: 0 0 1rem 0;
+		padding-left: 1.5rem;
+		color: #ffffff;
+		font-size: 1.02rem;
+		line-height: 1.75;
+	}
+
+	.about-list li {
+		margin-bottom: 0.25rem;
+	}
+
 	.keyword {
 		color: #FFD84D;
 		font-weight: 600;
@@ -1334,12 +1351,17 @@ section {
 		height: 80px;
 		border-radius: 12px;
 		overflow: hidden;
-		background: #000;
-		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: rgba(5, 10, 30, 0.95);
+		border: 1px solid rgba(107, 143, 255, 0.2);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 0.75rem;
+		padding: 0.5rem;
+	}
+
+	.client-logo-wrapper.wide {
+		width: 100%;
+		height: 90px;
 	}
 
 	.client-logo {
@@ -1538,7 +1560,7 @@ section {
 	}
 
 	.contact h2 {
-		text-align: right;
+		text-align: center;
 	}
 
 	.contact-heading {
