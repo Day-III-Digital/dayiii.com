@@ -1534,7 +1534,7 @@ section {
 	}
 
 	.contact h2 {
-		text-align: left;
+		text-align: right;
 	}
 
 	.contact-heading {
