@@ -99,7 +99,7 @@
 <h2 class="about-heading"><span class="about-highlight">HI</span> <span class="about-prefix">THERE !!!</span></h2>
 					<p class="about-text">A veteran-led development studio for Unreal Engine and open-world AAA games, specializing in:</p>
 					<ul class="about-list">
-						<li><span class="keyword">Technical art</span></li>
+<li><span class="keyword">Technical art</span></li>
 						<li><span class="keyword">Rendering</span></li>
 <li><span class="keyword">Deep learning</span></li>
 					</ul>
@@ -160,8 +160,8 @@
 					<p>Dynamic and baked lighting solutions for mood, atmosphere, and performance.</p>
 				</div>
 				<div class="expertise-card">
-					<h3>Tech Art</h3>
-					<p>Shaders, materials, and procedural systems bridging art and engineering.</p>
+<h3>Shaders and Mesh Workflows</h3>
+<p>Shaders and materials bridging art and engineering.</p>
 				</div>
 				<div class="expertise-card">
 					<h3>Tech Animation</h3>
