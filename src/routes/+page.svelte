@@ -1,40 +1,30 @@
 <script lang="ts">
 	let email = 'contact@dayiii.com';
 
-	const projects = [
-		{
-			id: 1,
-			title: 'AAA Game Optimization',
-			projectName: 'Project Name',
-			description: 'Performance optimization for next-gen console title, achieving 60fps target across all platforms. Implemented advanced LOD systems, GPU-driven rendering, and memory optimization strategies.',
-			tags: ['Unreal Engine 5', 'Optimization', 'Console'],
-			images: ['/images/mountain_background.png', '/images/mountain_background.png']
-		},
-		{
-			id: 2,
-			title: 'Procedural Environment System',
-			projectName: 'Project Name',
-			description: 'Custom procedural generation tools for large-scale open world environments with dynamic LOD systems. Created artist-friendly tools for rapid iteration and seamless world streaming.',
-			tags: ['Technical Art', 'Blueprints', 'PCG'],
-			images: ['/images/mountain_background.png', '/images/mountain_background.png']
-		},
-		{
-			id: 3,
-			title: 'Real-time Cinematics Pipeline',
-			projectName: 'Project Name',
-			description: 'End-to-end cinematic pipeline using Sequencer and MetaHuman for interactive storytelling. Developed custom tools for facial animation and real-time lighting workflows.',
-			tags: ['Cinematics', 'MetaHuman', 'Sequencer'],
-			images: ['/images/mountain_background.png', '/images/mountain_background.png']
-		},
-		{
-			id: 4,
-			title: 'Custom Shader Framework',
-			projectName: 'Project Name',
-			description: 'Advanced material system with custom HLSL shaders for stylized rendering and VFX. Built a modular shader library with support for procedural textures and dynamic effects.',
-			tags: ['Shaders', 'Materials', 'VFX'],
-			images: ['/images/mountain_background.png', '/images/mountain_background.png']
-		}
-	];
+	const featuredProject = {
+		title: 'Mafia: Old Country',
+		description: 'Full-spectrum technical art and engineering support for Hangar 13\'s upcoming open-world AAA title. Our team delivered deep performance optimization across CPU, GPU, and memory, custom shader development for stylized rendering and environmental effects, procedural environment tools for large-scale world building, automated reporting pipelines for performance tracking and asset validation, and core gameplay engineering using C++ and Blueprints. We worked closely with the Hangar 13 team to hit performance targets on all platforms while maintaining the visual quality expected from a next-gen AAA experience.',
+		tags: ['Performance Optimization', 'Shader Tech Art', 'Environment Art', 'Engineering', 'Tools & Reporting'],
+		images: [
+			'/images/mafia_the_old_country.jpg',
+			'/images/mafia_the_old_country.jpg',
+			'/images/mafia_the_old_country.jpg'
+		],
+		companyLogos: [
+			{ src: '/images/hanger13_logo.png', alt: 'Hangar 13' },
+			{ src: '/images/2k_logo.svg', alt: '2K Games' }
+		]
+	};
+
+	let currentImageIndex = 0;
+
+	function nextImage() {
+		currentImageIndex = (currentImageIndex + 1) % featuredProject.images.length;
+	}
+
+	function prevImage() {
+		currentImageIndex = (currentImageIndex - 1 + featuredProject.images.length) % featuredProject.images.length;
+	}
 </script>
 
 <div class="page-bg">
@@ -67,7 +57,7 @@
 			</div>
 			<div class="hero-right">
 				<div class="hero-about">
-					<h2 class="about-heading"><span class="about-highlight">WHO</span> <span class="about-prefix">WE ARE</span></h2>
+<h2 class="about-heading"><span class="about-highlight">HI</span> <span class="about-prefix">THERE!</span></h2>
 					<p class="about-text">A veteran-led development studio for Unreal Engine and open-world AAA games, specializing in <span class="keyword">technical art</span>, <span class="keyword">rendering</span>, and <span class="keyword">deep learning</span>.</p>
 					<p class="about-text">Our custom tools and streamlined workflows help studios overcome technical challenges, control budgets, and exceed player expectations.</p>
 				</div>
@@ -151,13 +141,16 @@
 				</div>
 			</div>
 
-			<div class="unreal-partner">
-				<img src="/images/unreal_icon.png" alt="Unreal Engine" class="unreal-logo" />
+<a href="https://partners.unrealengine.com/s/partner-detail?partnerAccountId=001QP00001C00VKYAZ" target="_blank" rel="noopener noreferrer" class="unreal-partner">
+				<div class="unreal-logos">
+					<img src="/images/unreal_icon.png" alt="Unreal Engine" class="unreal-logo" />
+					<img src="/images/unreal_icon.png" alt="Epic Games" class="unreal-logo" />
+				</div>
 				<div class="unreal-content">
 					<h3>Official Unreal Engine Service Partner</h3>
 					<p>Certified by Epic Games as a trusted partner for Unreal Engine development. This recognition means we meet Epic's highest standards for technical expertise, project delivery, and professional service.</p>
 				</div>
-			</div>
+			</a>
 
 			<h2 class="pillars-heading"><span class="pillars-prefix">OUR</span> <span class="pillars-highlight">PILLARS</span></h2>
 			<div class="pillars-grid">
@@ -181,31 +174,41 @@
 	<section id="projects" class="projects">
 		<div class="section-content">
 			<h2 class="projects-heading"><span class="projects-prefix">FEATURED</span> <span class="projects-highlight">PROJECTS</span></h2>
-<p class="projects-notice">Currently working on <span class="notice-highlight">2+ unannounced</span> Unreal Engine projects</p>
-			<div class="projects-list">
-				{#each projects as project}
-					<div class="project-card">
-						<div class="project-images">
-							{#each project.images as image, i}
-								<div class="project-image-wrapper">
-									<img src={image} alt="{project.title} screenshot {i + 1}" class="project-image" />
-								</div>
+<p class="projects-notice">Currently working on <span class="notice-highlight">3+ unannounced</span> Unreal Engine projects</p>
+			
+			<div class="featured-project-card">
+				<div class="featured-gallery">
+					<div class="gallery-container">
+						<img src={featuredProject.images[currentImageIndex]} alt="{featuredProject.title} screenshot" class="gallery-image" />
+					</div>
+					<div class="gallery-controls">
+						<button class="gallery-btn" on:click={prevImage}>‹</button>
+						<div class="gallery-dots">
+							{#each featuredProject.images as _, i}
+								<span class="gallery-dot" class:active={i === currentImageIndex}></span>
 							{/each}
 						</div>
-						<div class="project-content">
-							<div class="project-header">
-								<h3>{project.title}</h3>
-								<span class="project-name">{project.projectName}</span>
-							</div>
-							<div class="tags">
-								{#each project.tags as tag}
-									<span class="tag">{tag}</span>
-								{/each}
-							</div>
-							<p>{project.description}</p>
-						</div>
+						<button class="gallery-btn" on:click={nextImage}>›</button>
 					</div>
-				{/each}
+				</div>
+				
+				<div class="featured-content">
+					<h3 class="featured-title">{featuredProject.title}</h3>
+					<div class="featured-tags">
+						{#each featuredProject.tags as tag}
+							<span class="featured-tag">{tag}</span>
+						{/each}
+					</div>
+					<p class="featured-description">{featuredProject.description}</p>
+				</div>
+				
+				<div class="featured-logos">
+					{#each featuredProject.companyLogos as logo}
+						<div class="company-logo-wrapper">
+							<img src={logo.src} alt={logo.alt} class="company-logo" />
+						</div>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</section>
@@ -220,8 +223,6 @@
 				<p class="contact-intro">Ready to bring your project to life? Let's talk.</p>
 				<a href="mailto:{email}" class="contact-cta">{email}</a>
 				<div class="contact-footer">
-					<span class="contact-meta">Remote-first · Europe & North America</span>
-					<span class="contact-sep">•</span>
 					<a href="/careers" class="contact-careers">We're hiring →</a>
 				</div>
 			</div>
@@ -238,13 +239,14 @@
 </div>
 
 <style>
-	:global(body) {
+	:global(html, body) {
 		margin: 0;
 		padding: 0;
 		font-family: 'Gabarito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 		background: #0a0e27;
 		color: #e0e0e0;
 		line-height: 1.6;
+		overflow-x: hidden;
 	}
 
 	.container {
@@ -296,87 +298,87 @@ section {
 	}
 
 	.bubble-1 {
-		width: 280px;
-		height: 280px;
-		background: rgba(107, 143, 255, 0.7);
-		animation: float1 140s ease-in-out infinite;
+		width: 25vmin;
+		height: 25vmin;
+		background: rgba(99, 102, 241, 0.5);
+		animation: float1 70s ease-in-out infinite;
 	}
 
 	.bubble-2 {
-		width: 80px;
-		height: 80px;
-		background: rgba(255, 216, 77, 0.7);
-		animation: float2 110s ease-in-out infinite;
+		width: 8vmin;
+		height: 8vmin;
+		background: rgba(139, 92, 246, 0.5);
+		animation: float2 55s ease-in-out infinite;
 	}
 
 	.bubble-3 {
-		width: 220px;
-		height: 220px;
-		background: rgba(255, 140, 50, 0.6);
-		animation: float3 150s ease-in-out infinite;
+		width: 20vmin;
+		height: 20vmin;
+		background: rgba(59, 130, 246, 0.45);
+		animation: float3 75s ease-in-out infinite;
 	}
 
 	.bubble-4 {
-		width: 100px;
-		height: 100px;
-		background: rgba(107, 143, 255, 0.7);
-		animation: float4 100s ease-in-out infinite;
+		width: 10vmin;
+		height: 10vmin;
+		background: rgba(14, 165, 233, 0.5);
+		animation: float4 50s ease-in-out infinite;
 	}
 
 	.bubble-5 {
-		width: 300px;
-		height: 300px;
-		background: rgba(255, 216, 77, 0.5);
-		animation: float5 200s ease-in-out infinite;
+		width: 28vmin;
+		height: 28vmin;
+		background: rgba(168, 85, 247, 0.35);
+		animation: float5 100s ease-in-out infinite;
 	}
 
 	.bubble-6 {
-		width: 70px;
-		height: 70px;
-		background: rgba(255, 140, 50, 0.7);
-		animation: float6 90s ease-in-out infinite;
+		width: 7vmin;
+		height: 7vmin;
+		background: rgba(79, 70, 229, 0.55);
+		animation: float6 45s ease-in-out infinite;
 	}
 
 	.bubble-7 {
-		width: 250px;
-		height: 250px;
-		background: rgba(107, 143, 255, 0.55);
-		animation: float7 180s ease-in-out infinite;
+		width: 22vmin;
+		height: 22vmin;
+		background: rgba(56, 189, 248, 0.4);
+		animation: float7 90s ease-in-out infinite;
 	}
 
 	.bubble-8 {
-		width: 90px;
-		height: 90px;
-		background: rgba(255, 216, 77, 0.65);
-		animation: float8 105s ease-in-out infinite;
+		width: 9vmin;
+		height: 9vmin;
+		background: rgba(129, 140, 248, 0.5);
+		animation: float8 52s ease-in-out infinite;
 	}
 
 	.bubble-9 {
-		width: 180px;
-		height: 180px;
-		background: rgba(255, 140, 50, 0.6);
-		animation: float9 160s ease-in-out infinite;
+		width: 16vmin;
+		height: 16vmin;
+		background: rgba(192, 132, 252, 0.4);
+		animation: float9 80s ease-in-out infinite;
 	}
 
 	.bubble-10 {
-		width: 60px;
-		height: 60px;
-		background: rgba(107, 143, 255, 0.75);
-		animation: float10 80s ease-in-out infinite;
+		width: 6vmin;
+		height: 6vmin;
+		background: rgba(96, 165, 250, 0.55);
+		animation: float10 40s ease-in-out infinite;
 	}
 
 	.bubble-11 {
-		width: 320px;
-		height: 320px;
-		background: rgba(255, 216, 77, 0.45);
-		animation: float11 220s ease-in-out infinite;
+		width: 30vmin;
+		height: 30vmin;
+		background: rgba(99, 102, 241, 0.3);
+		animation: float11 110s ease-in-out infinite;
 	}
 
 	.bubble-12 {
-		width: 120px;
-		height: 120px;
-		background: rgba(255, 140, 50, 0.65);
-		animation: float12 120s ease-in-out infinite;
+		width: 11vmin;
+		height: 11vmin;
+		background: rgba(34, 211, 238, 0.45);
+		animation: float12 60s ease-in-out infinite;
 	}
 
 	@keyframes float1 {
@@ -1008,12 +1010,14 @@ section {
 		font-weight: 900;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
+		text-align: center;
 	}
 
 	.pillar-card p {
 		color: #ffffff;
 		line-height: 1.7;
 		margin: 0;
+		text-align: center;
 	}
 
 	.projects h2 {
@@ -1039,172 +1043,191 @@ section {
 
 	.projects-notice {
 		position: relative;
-		background: rgba(19, 26, 54, 0.92);
-		backdrop-filter: blur(16px);
-		-webkit-backdrop-filter: blur(16px);
-		border: 1px solid rgba(107, 143, 255, 0.25);
+		background: rgba(255, 216, 77, 0.25);
+		border: 1px solid rgba(255, 216, 77, 0.3);
 		border-radius: 12px;
-		padding: 1rem 1.5rem;
+		padding: 1.25rem 1.5rem;
 		margin: 0 0 2rem 0;
-		font-size: 1.15rem;
-		font-weight: 600;
+		font-size: 1.25rem;
+		font-weight: 700;
 		color: #ffffff;
 		font-family: 'Gabarito', sans-serif;
 		text-align: center;
-		box-shadow: 0 8px 24px rgba(107, 143, 255, 0.15);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 		overflow: hidden;
 	}
 
 	.projects-notice::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 3px;
-		background: linear-gradient(90deg, #6B8FFF, #FFD84D);
-		border-radius: 12px 12px 0 0;
+		display: none;
 	}
 
 	.notice-highlight {
 		color: #FFD84D;
 		font-weight: 900;
-		text-shadow: 0 0 12px rgba(255, 216, 77, 0.4);
 	}
 
-	.projects-list {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
-
-	.project-card {
+	/* Featured Project Card */
+	.featured-project-card {
 		position: relative;
-		display: flex;
+		display: grid;
+		grid-template-columns: 1fr 1.4fr auto;
 		gap: 2rem;
 		background: rgba(19, 26, 54, 0.88);
 		backdrop-filter: blur(16px);
 		-webkit-backdrop-filter: blur(16px);
-		padding: 1.5rem;
+		padding: 2rem;
 		border-radius: 16px;
 		border: 1px solid rgba(107, 143, 255, 0.15);
-		transition: all 0.3s ease;
 		animation: fadeSlideUp 0.6s ease-out both;
 		overflow: hidden;
+		min-height: 320px;
 	}
 
-	.project-card::before {
+	.featured-project-card::before {
 		content: '';
 		position: absolute;
-		right: 0;
 		top: 0;
-		bottom: 0;
-		width: 4px;
-		background: linear-gradient(180deg, #6B8FFF, #FFD84D);
-		border-radius: 0 16px 16px 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: linear-gradient(90deg, #6B8FFF, #FFD84D);
+		border-radius: 16px 16px 0 0;
 	}
 
-	.project-card:nth-child(1) { animation-delay: 0s; }
-	.project-card:nth-child(2) { animation-delay: 0.15s; }
-	.project-card:nth-child(3) { animation-delay: 0.3s; }
-	.project-card:nth-child(4) { animation-delay: 0.45s; }
-
-	.project-card:hover {
-		border-color: rgba(107, 143, 255, 0.3);
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-	}
-
-	.project-images {
+	.featured-gallery {
 		display: flex;
+		flex-direction: column;
 		gap: 0.75rem;
-		flex-shrink: 0;
 	}
 
-	.project-image-wrapper {
-		width: 140px;
-		height: 140px;
+	.gallery-container {
+		width: 100%;
+		aspect-ratio: 16 / 10;
 		border-radius: 12px;
 		overflow: hidden;
 		background: rgba(0, 0, 0, 0.3);
 		border: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
-	.project-image {
+	.gallery-image {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform 0.4s ease;
+		transition: opacity 0.3s ease;
 	}
 
-	.project-card:hover .project-image {
-		transform: scale(1.08);
-	}
-
-	.project-content {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-	}
-
-	.project-header {
+	.gallery-controls {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		gap: 1rem;
-		margin-bottom: 0.75rem;
-		flex-wrap: wrap;
 	}
 
-	.project-card h3 {
-		font-size: 1.4rem;
-		margin: 0;
+	.gallery-btn {
+		background: rgba(107, 143, 255, 0.2);
+		border: 1px solid rgba(107, 143, 255, 0.3);
+		color: #6B8FFF;
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		font-size: 1.2rem;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.gallery-btn:hover {
+		background: rgba(107, 143, 255, 0.4);
+		color: #ffffff;
+	}
+
+	.gallery-dots {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.gallery-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: rgba(107, 143, 255, 0.3);
+		transition: all 0.2s ease;
+	}
+
+	.gallery-dot.active {
+		background: #6B8FFF;
+		transform: scale(1.2);
+	}
+
+	.featured-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.featured-title {
+		font-size: 1.8rem;
+		margin: 0 0 1rem 0;
 		color: #FFD84D;
 		font-weight: 900;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
 	}
 
-	.project-name {
-		color: #6B8FFF;
-		font-size: 0.95rem;
-		font-weight: 600;
-		font-family: 'Gabarito', sans-serif;
-		padding-left: 1rem;
-		border-left: 2px solid rgba(107, 143, 255, 0.4);
-	}
-
-	.project-card .tags {
-		margin-bottom: 0.75rem;
-	}
-
-	.project-card p {
-		color: #b0b0b0;
-		line-height: 1.6;
-		margin: 0;
-		flex: 1;
-	}
-
-	.tags {
+	.featured-tags {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem;
+		margin-bottom: 1rem;
 	}
 
-	.tag {
+	.featured-tag {
 		background: rgba(107, 143, 255, 0.2);
 		color: #6B8FFF;
-		padding: 0.25rem 0.6rem;
+		padding: 0.35rem 0.75rem;
 		border-radius: 4px;
-		font-size: 0.75rem;
+		font-size: 0.8rem;
 		font-weight: 700;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
 		letter-spacing: 0.03em;
-		transition: all 0.2s ease;
 	}
 
-	.tag:hover {
-		background: rgba(107, 143, 255, 0.35);
-		transform: translateY(-1px);
+	.featured-description {
+		color: #b0b0b0;
+		line-height: 1.7;
+		margin: 0;
+		font-size: 1rem;
+	}
+
+	.featured-logos {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		justify-content: center;
+		padding-left: 1.5rem;
+		border-left: 1px solid rgba(107, 143, 255, 0.2);
+	}
+
+	.company-logo-wrapper {
+		width: 70px;
+		height: 70px;
+		border-radius: 12px;
+		overflow: hidden;
+		background: rgba(0, 0, 0, 0.3);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.5rem;
+	}
+
+	.company-logo {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
 	}
 
 	/* Team & Partner Section */
@@ -1296,29 +1319,55 @@ section {
 	}
 
 	.unreal-partner {
-		background: rgba(19, 26, 54, 0.88);
+		position: relative;
+		background: rgba(255, 216, 77, 0.15);
 		backdrop-filter: blur(16px);
 		-webkit-backdrop-filter: blur(16px);
 		padding: 2rem;
 		border-radius: 16px;
-		border: 2px solid rgba(107, 143, 255, 0.4);
+		border: 2px solid rgba(255, 216, 77, 0.4);
 		display: flex;
 		align-items: center;
 		gap: 2rem;
 		animation: fadeSlideUp 0.6s ease-out 0.6s both;
 		transition: all 0.3s ease;
+		text-decoration: none;
+		cursor: pointer;
+		overflow: hidden;
+	}
+
+	.unreal-partner::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: #FFD84D;
+		border-radius: 16px 16px 0 0;
 	}
 
 	.unreal-partner:hover {
-		border-color: rgba(107, 143, 255, 0.6);
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+		border-color: rgba(255, 216, 77, 0.7);
+		box-shadow: 0 10px 30px rgba(255, 216, 77, 0.2);
+	}
+
+	.unreal-logos {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+		flex-shrink: 0;
 	}
 
 	.unreal-logo {
-		width: 100px;
-		height: 100px;
+		width: 80px;
+		height: 80px;
 		flex-shrink: 0;
 		transition: transform 0.3s ease;
+		background: #000;
+		border-radius: 12px;
+		padding: 0.5rem;
+		object-fit: contain;
 	}
 
 	.unreal-partner:hover .unreal-logo {
@@ -1457,20 +1506,8 @@ section {
 	/* Footer */
 	footer {
 		position: relative;
-		background: rgba(5, 8, 18, 0.95);
 		text-align: center;
 		padding: 2rem;
-		border-top: 1px solid rgba(107, 143, 255, 0.2);
-	}
-
-	footer::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 2px;
-		background: linear-gradient(90deg, transparent, #6B8FFF, #FFD84D, transparent);
 	}
 
 	.footer-content {
@@ -1539,26 +1576,31 @@ section {
 			grid-template-columns: 1fr;
 		}
 
-		.project-card {
-			flex-direction: column;
-			gap: 1.25rem;
+		.featured-project-card {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
 		}
 
-		.project-images {
-			justify-content: center;
-		}
-
-		.project-image-wrapper {
-			width: 120px;
-			height: 120px;
-		}
-
-		.project-content {
+		.featured-content {
 			text-align: center;
 		}
 
-		.project-card .tags {
+		.featured-tags {
 			justify-content: center;
+		}
+
+		.featured-logos {
+			flex-direction: row;
+			justify-content: center;
+			border-left: none;
+			padding-left: 0;
+			padding-top: 1rem;
+			border-top: 1px solid rgba(107, 143, 255, 0.2);
+		}
+
+		.company-logo-wrapper {
+			width: 60px;
+			height: 60px;
 		}
 
 		.expertise-grid {
@@ -1581,6 +1623,19 @@ section {
 
 		.contact-cta {
 			font-size: 1.3rem;
+		}
+
+		.pillars-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.contact-footer {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.contact-sep {
+			display: none;
 		}
 	}
 </style>
