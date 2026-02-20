@@ -30,14 +30,25 @@
 	});
 
 	const clientProjects = [
-		{ name: 'Hangar 13', logo: '/images/hanger13_logo.png', members: 3 },
-		{ name: '2K Games', logo: '/images/2k_logo.svg', members: 2 },
-		{ name: 'Epic Games', logo: '/images/unreal_icon.png', members: 1 },
-		{ name: 'Ubisoft', logo: '/images/unreal_icon.png', members: 2 },
-		{ name: 'EA', logo: '/images/unreal_icon.png', members: 1 },
-		{ name: 'Rockstar', logo: '/images/unreal_icon.png', members: 2 },
-		{ name: 'CD Projekt', logo: '/images/unreal_icon.png', members: 1 },
-		{ name: 'Bethesda', logo: '/images/unreal_icon.png', members: 2 }
+		// Console
+		{ members: 3, name: 'Lego Horizon Adventures', 					logo: 'https://cdn.mobygames.com/covers/19376424-lego-horizon-adventures-nintendo-switch-front-cover.jpg' },
+		{ members: 2, name: 'Hogwarts Legacy', 							logo: 'https://cdn.mobygames.com/covers/11331518-hogwarts-legacy-playstation-4-front-cover.jpg' },
+		{ members: 1, name: 'The Settlers: New Allies', 				logo: 'https://cdn.mobygames.com/covers/15541921-the-settlers-new-allies-windows-front-cover.jpg' },
+		{ members: 1, name: 'Song of Nunu: A League of Legends Story', 	logo: 'https://cdn.mobygames.com/covers/17795665-song-of-nunu-a-league-of-legends-story-windows-front-cover.jpg' },
+		{ members: 1, name: 'Watch Dogs: Legion', 						logo: 'https://cdn.mobygames.com/covers/9328358-watch-dogs-legion-playstation-4-front-cover.jpg' },
+		{ members: 1, name: 'Gylt', 									logo: 'https://cdn.mobygames.com/covers/17378699-gylt-playstation-4-front-cover.jpg' },
+		{ members: 1, name: 'For Honor', 								logo: 'https://cdn.mobygames.com/covers/1784962-for-honor-playstation-4-front-cover.jpg' },
+		{ members: 1, name: 'Tom Clancy\'s Ghost Recon Wildlands', 		logo: 'https://cdn.mobygames.com/covers/2153415-tom-clancys-ghost-recon-wildlands-playstation-4-front-cover.jpg' },
+		{ members: 1, name: 'Tom Clancy\'s Rainbow Six Siege', 			logo: 'https://cdn.mobygames.com/covers/1131178-tom-clancys-rainbow-six-siege-xbox-one-front-cover.png' },
+		{ members: 1, name: 'Beyond Good and Evil 2', 					logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Beyond_Good_and_Evil_2_boxshot.jpg/250px-Beyond_Good_and_Evil_2_boxshot.jpg' },
+		{ members: 1, name: 'The Sexy Brutale', 						logo: 'https://cdn.mobygames.com/covers/1292064-the-sexy-brutale-nintendo-switch-front-cover.jpg' },
+
+		// Mobile
+		{ members: 1, name: 'Star Wars: Hunters', 						logo: 'https://cdn.mobygames.com/covers/10937779-star-wars-hunters-android-front-cover.jpg' },
+		{ members: 1, name: 'CSR 2', 									logo: 'https://cdn.mobygames.com/covers/8385924-csr-racing-2-android-front-cover.png' },
+		{ members: 1, name: 'Race Kings', 								logo: 'https://cdn.mobygames.com/covers/2624785-race-kings-iphone-front-cover.jpg' },
+		{ members: 2, name: 'CSR Classics', 							logo: 'https://cdn.mobygames.com/covers/9313795-csr-classics-iphone-front-cover.jpg' },
+		{ members: 2, name: 'CSR Racing', 								logo: 'https://cdn.mobygames.com/covers/9313786-csr-racing-iphone-front-cover.jpg' },
 	];
 
 	const featuredProject = {
@@ -257,6 +268,7 @@
 						<div class="client-logo-wrapper">
 							<img src={client.logo} alt={client.name} class="client-logo" />
 						</div>
+						<div class="members-label">{client.name}</div>
 						<div class="client-members">
 							<span class="members-count">{client.members}</span>
 <span class="members-label">team members have worked on this</span>

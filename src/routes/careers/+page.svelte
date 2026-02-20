@@ -6,7 +6,7 @@
 			id: 1,
 			title: 'Open Application',
 			shortDescription: null,
-			fullDescription: "We're always on the lookout for exceptional talent! If you believe you'd be a great addition to our team but can’t find a role that fits your expertise, we encourage you to take a moment to submit an open application.",
+			fullDescription: "We're always looking for talented individuals to join Day III Digital! If you believe you'd be a great addition to our team but can’t find a role that fits your expertise, we encourage you to take a moment to submit an open application.",
 			expanded: false
 		}
 	]);
