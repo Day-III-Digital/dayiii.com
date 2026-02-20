@@ -3,16 +3,16 @@
 
 	const featuredProject = {
 		title: 'Mafia: Old Country',
-		description: 'Full-spectrum technical art and engineering support for Hangar 13\'s upcoming open-world AAA title. Our team delivered deep performance optimization across CPU, GPU, and memory, custom shader development for stylized rendering and environmental effects, procedural environment tools for large-scale world building, automated reporting pipelines for performance tracking and asset validation, and core gameplay engineering using C++ and Blueprints. We worked closely with the Hangar 13 team to hit performance targets on all platforms while maintaining the visual quality expected from a next-gen AAA experience.',
+		description: 'Full-spectrum technical art and engineering support for Hangar 13\'s open-world AAA title. Our team delivered deep performance optimization across CPU, GPU, and memory, custom shader development for stylized rendering and environmental effects, procedural environment tools for large-scale world building, automated reporting pipelines for performance tracking and asset validation, and core gameplay engineering using C++ and Blueprints. We worked closely with the Hangar 13 team to hit performance targets on all platforms while maintaining the visual quality expected from a next-gen AAA experience.',
 		tags: ['Performance Optimization', 'Shader Tech Art', 'Environment Art', 'Engineering', 'Tools & Reporting'],
 		images: [
 			'/images/mafia_the_old_country.jpg',
-			'/images/mafia_the_old_country.jpg',
-			'/images/mafia_the_old_country.jpg'
+			'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1941540/ss_8c5af3a1b47337fe9d2f4f48d21975964eb23ccb.1920x1080.jpg',
+			'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1941540/ss_44047e62744c4a7201a0238994d23f3ca72649cb.1920x1080.jpg'
 		],
 		companyLogos: [
+			{ src: '/images/2k_logo.svg', alt: '2K Games' },
 			{ src: '/images/hanger13_logo.png', alt: 'Hangar 13' },
-			{ src: '/images/2k_logo.svg', alt: '2K Games' }
 		]
 	};
 
@@ -175,7 +175,7 @@
 		<div class="section-content">
 			<h2 class="projects-heading"><span class="projects-prefix">FEATURED</span> <span class="projects-highlight">PROJECTS</span></h2>
 <p class="projects-notice">Currently working on <span class="notice-highlight">3+ unannounced</span> Unreal Engine projects</p>
-			
+
 			<div class="featured-project-card">
 				<div class="featured-gallery">
 					<div class="gallery-container">
@@ -191,7 +191,7 @@
 						<button class="gallery-btn" on:click={nextImage}>›</button>
 					</div>
 				</div>
-				
+
 				<div class="featured-content">
 					<h3 class="featured-title">{featuredProject.title}</h3>
 					<div class="featured-tags">
@@ -201,7 +201,7 @@
 					</div>
 					<p class="featured-description">{featuredProject.description}</p>
 				</div>
-				
+
 				<div class="featured-logos">
 					{#each featuredProject.companyLogos as logo}
 						<div class="company-logo-wrapper">
@@ -218,7 +218,7 @@
 	<section id="contact" class="contact">
 		<div class="section-content">
 			<h2 class="contact-heading"><span class="contact-prefix">GET IN</span> <span class="contact-highlight">TOUCH</span></h2>
-			
+
 			<div class="contact-box">
 				<p class="contact-intro">Ready to bring your project to life? Let's talk.</p>
 				<a href="mailto:{email}" class="contact-cta">{email}</a>
@@ -765,7 +765,7 @@ section {
 		padding: 1.75rem 2.5rem 2.5rem 2.5rem;
 		border-radius: 20px;
 		border: 1px solid rgba(107, 143, 255, 0.2);
-		box-shadow: 
+		box-shadow:
 			0 25px 60px rgba(0, 0, 0, 0.5),
 			0 0 40px rgba(107, 143, 255, 0.08),
 			inset 0 0 80px rgba(107, 143, 255, 0.03);
@@ -870,9 +870,9 @@ section {
 	.service-card:nth-child(4) { animation-delay: 0.3s; }
 
 	.service-card:hover {
-		transform: translateY(-6px);
-		border-color: #6B8FFF;
-		box-shadow: 0 12px 30px rgba(107, 143, 255, 0.25);
+		border-color: rgba(107, 143, 255, 0.4);
+		transform: translateY(-4px);
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 	}
 
 	.service-card h3 {
