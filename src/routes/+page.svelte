@@ -31,24 +31,23 @@
 
 	const clientProjects = [
 		// Console
-		{ members: 2, name: 'Hogwarts Legacy', 							logo: '/images/hogwarts_legacy.png', wide: true },
-		{ members: 3, name: 'Horizon Adventures', 						logo: '/images/horizon_adventures.png', wide: true },
-		{ members: 1, name: 'The Settlers: New Allies', 				logo: 'https://cdn.mobygames.com/covers/15541921-the-settlers-new-allies-windows-front-cover.jpg', wide: false },
-		{ members: 1, name: 'Song of Nunu: A League of Legends Story', 	logo: 'https://cdn.mobygames.com/covers/17795665-song-of-nunu-a-league-of-legends-story-windows-front-cover.jpg', wide: true },
-		{ members: 1, name: 'Watch Dogs: Legion', 						logo: 'https://cdn.mobygames.com/covers/9328358-watch-dogs-legion-playstation-4-front-cover.jpg', wide: false },
-		{ members: 1, name: 'Gylt', 									logo: 'https://cdn.mobygames.com/covers/17378699-gylt-playstation-4-front-cover.jpg', wide: false },
-		{ members: 1, name: 'For Honor', 								logo: 'https://cdn.mobygames.com/covers/1784962-for-honor-playstation-4-front-cover.jpg', wide: false },
-		{ members: 1, name: 'Tom Clancy\'s Ghost Recon Wildlands', 		logo: 'https://cdn.mobygames.com/covers/2153415-tom-clancys-ghost-recon-wildlands-playstation-4-front-cover.jpg', wide: false },
-		{ members: 1, name: 'Tom Clancy\'s Rainbow Six Siege', 			logo: 'https://cdn.mobygames.com/covers/1131178-tom-clancys-rainbow-six-siege-xbox-one-front-cover.png', wide: false },
-		{ members: 1, name: 'Beyond Good and Evil 2', 					logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Beyond_Good_and_Evil_2_boxshot.jpg/250px-Beyond_Good_and_Evil_2_boxshot.jpg', wide: false },
-		{ members: 1, name: 'The Sexy Brutale', 						logo: 'https://cdn.mobygames.com/covers/1292064-the-sexy-brutale-nintendo-switch-front-cover.jpg', wide: false },
-
+		{ members: 2, name: 'Hogwarts Legacy', logo: 'https://cdn.cloudflare.steamstatic.com/steam/apps/990080/library_600x900.jpg' },
+		{ members: 3, name: 'LEGO Horizon Adventures', logo: 'https://cdn.cloudflare.steamstatic.com/steam/apps/2428810/library_600x900.jpg' },
+		{ members: 1, name: 'The Settlers: New Allies', logo: 'https://cdn.mobygames.com/covers/15541921-the-settlers-new-allies-windows-front-cover.jpg' },
+		{ members: 1, name: 'Song of Nunu: A League of Legends Story', logo: 'https://cdn.mobygames.com/covers/17795665-song-of-nunu-a-league-of-legends-story-windows-front-cover.jpg' },
+		{ members: 1, name: 'Watch Dogs: Legion', logo: 'https://cdn.mobygames.com/covers/9328358-watch-dogs-legion-playstation-4-front-cover.jpg' },
+		{ members: 1, name: 'Gylt', logo: 'https://cdn.mobygames.com/covers/17378699-gylt-playstation-4-front-cover.jpg' },
+		{ members: 1, name: 'For Honor', logo: 'https://cdn.mobygames.com/covers/1784962-for-honor-playstation-4-front-cover.jpg' },
+		{ members: 1, name: "Tom Clancy's Ghost Recon Wildlands", logo: 'https://cdn.mobygames.com/covers/2153415-tom-clancys-ghost-recon-wildlands-playstation-4-front-cover.jpg' },
+		{ members: 1, name: "Tom Clancy's Rainbow Six Siege", logo: 'https://cdn.mobygames.com/covers/1131178-tom-clancys-rainbow-six-siege-xbox-one-front-cover.png' },
+		{ members: 1, name: 'Beyond Good and Evil 2', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Beyond_Good_and_Evil_2_boxshot.jpg/250px-Beyond_Good_and_Evil_2_boxshot.jpg' },
+		{ members: 1, name: 'The Sexy Brutale', logo: 'https://cdn.mobygames.com/covers/1292064-the-sexy-brutale-nintendo-switch-front-cover.jpg' },
 		// Mobile
-		{ members: 1, name: 'Star Wars: Hunters', 						logo: 'https://cdn.mobygames.com/covers/10937779-star-wars-hunters-android-front-cover.jpg', wide: false },
-		{ members: 1, name: 'CSR 2', 									logo: 'https://cdn.mobygames.com/covers/8385924-csr-racing-2-android-front-cover.png', wide: false },
-		{ members: 1, name: 'Race Kings', 								logo: 'https://cdn.mobygames.com/covers/2624785-race-kings-iphone-front-cover.jpg', wide: false },
-		{ members: 2, name: 'CSR Classics', 							logo: 'https://cdn.mobygames.com/covers/9313795-csr-classics-iphone-front-cover.jpg', wide: false },
-		{ members: 2, name: 'CSR Racing', 								logo: 'https://cdn.mobygames.com/covers/9313786-csr-racing-iphone-front-cover.jpg', wide: false },
+		{ members: 1, name: 'Star Wars: Hunters', logo: 'https://cdn.mobygames.com/covers/10937779-star-wars-hunters-android-front-cover.jpg' },
+		{ members: 1, name: 'CSR 2', logo: 'https://cdn.mobygames.com/covers/8385924-csr-racing-2-android-front-cover.png' },
+		{ members: 1, name: 'Race Kings', logo: 'https://cdn.mobygames.com/covers/2624785-race-kings-iphone-front-cover.jpg' },
+		{ members: 2, name: 'CSR Classics', logo: 'https://cdn.mobygames.com/covers/9313795-csr-classics-iphone-front-cover.jpg' },
+		{ members: 2, name: 'CSR Racing', logo: 'https://cdn.mobygames.com/covers/9313786-csr-racing-iphone-front-cover.jpg' },
 	];
 
 	const featuredProject = {
@@ -267,14 +266,14 @@
 				</div>
 			</div>
 
-			<h2 class="projects-heading experience-heading"><span class="projects-prefix">OUR TEAM'S PAST</span> <span class="projects-highlight">EXPERIENCE</span></h2>
+			<h2 class="projects-heading experience-heading"><span class="projects-prefix">OUR TEAM'S</span> <span class="projects-highlight">PAST EXPERIENCE</span></h2>
 			<div class="clients-grid">
 				{#each clientProjects as client}
 					<div class="client-card">
-						<div class="client-logo-wrapper" class:wide={client.wide}>
+						<div class="client-logo-wrapper">
 							<img src={client.logo} alt={client.name} class="client-logo" />
 						</div>
-						<div class="members-label">{client.name}</div>
+						<div class="client-title">{client.name}</div>
 						<div class="client-members">
 							<span class="members-count">{client.members}</span>
 							<span class="members-label">team member{#if client.members > 1}s{/if} {#if client.members > 1}have{:else}has{/if}  worked on this</span>
@@ -1343,7 +1342,7 @@
 	/* Client Cards */
 	.clients-grid {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(5, 1fr);
 		gap: 1rem;
 	}
 
@@ -1351,13 +1350,13 @@
 		background: rgba(19, 26, 54, 0.88);
 		backdrop-filter: blur(16px);
 		-webkit-backdrop-filter: blur(16px);
-		padding: 1.5rem;
+		padding: 1rem;
 		border-radius: 12px;
 		border: 1px solid rgba(107, 143, 255, 0.15);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 1rem;
+		gap: 0.75rem;
 		transition: all 0.3s ease;
 	}
 
@@ -1368,38 +1367,43 @@
 	}
 
 	.client-logo-wrapper {
-		width: 80px;
-		height: 80px;
-		border-radius: 12px;
+		width: 100%;
+		height: 180px;
+		border-radius: 8px;
 		overflow: hidden;
 		background: rgba(5, 10, 30, 0.95);
 		border: 1px solid rgba(107, 143, 255, 0.2);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 0.5rem;
-	}
-
-	.client-logo-wrapper.wide {
-		width: 100%;
-		height: 90px;
 	}
 
 	.client-logo {
 		width: 100%;
 		height: 100%;
-		object-fit: contain;
+		object-fit: cover;
+	}
+
+	.client-title {
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: #9a9aaa;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+		text-align: center;
+		line-height: 1.3;
 	}
 
 	.client-members {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 0.25rem;
+		gap: 0.15rem;
+		margin-top: auto;
 	}
 
 	.members-count {
-		font-size: 1rem;
+		font-size: 1.25rem;
 		font-weight: 900;
 		color: #FFD84D;
 		font-family: 'Gabarito', sans-serif;
@@ -1407,10 +1411,10 @@
 	}
 
 	.members-label {
-		font-size: 0.75rem;
+		font-size: 0.6rem;
 		color: #6a6a7a;
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
+		letter-spacing: 0.02em;
 		text-align: center;
 	}
 
