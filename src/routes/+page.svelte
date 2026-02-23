@@ -75,6 +75,63 @@
 	function prevImage() {
 		currentImageIndex = (currentImageIndex - 1 + featuredProject.images.length) % featuredProject.images.length;
 	}
+
+	let experienceTrack: HTMLDivElement | null = null;
+	let experienceHasOverflow = false;
+
+	function updateExperienceNav() {
+		if (!experienceTrack) return;
+		const maxScrollLeft = experienceTrack.scrollWidth - experienceTrack.clientWidth;
+		experienceHasOverflow = maxScrollLeft > 5;
+	}
+
+	function scrollExperience(direction: -1 | 1) {
+		if (!experienceTrack) return;
+
+		const maxScrollLeft = experienceTrack.scrollWidth - experienceTrack.clientWidth;
+		if (maxScrollLeft <= 5) return;
+
+		const nearStart = experienceTrack.scrollLeft <= 5;
+		const nearEnd = experienceTrack.scrollLeft >= maxScrollLeft - 5;
+
+		if (direction === 1 && nearEnd) {
+			experienceTrack.scrollTo({ left: 0, behavior: 'smooth' });
+			return;
+		}
+
+		if (direction === -1 && nearStart) {
+			experienceTrack.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
+			return;
+		}
+
+		experienceTrack.scrollBy({
+			left: direction * experienceTrack.clientWidth * 0.9,
+			behavior: 'smooth'
+		});
+	}
+
+	onMount(() => {
+		const el = experienceTrack;
+		if (!el) return;
+
+		const onScroll = () => updateExperienceNav();
+		const onResize = () => updateExperienceNav();
+
+		updateExperienceNav();
+
+		el.addEventListener('scroll', onScroll, { passive: true });
+		window.addEventListener('resize', onResize);
+
+		// Handles late-loading images changing scrollWidth.
+		const ro = new ResizeObserver(() => updateExperienceNav());
+		ro.observe(el);
+
+		return () => {
+			el.removeEventListener('scroll', onScroll);
+			window.removeEventListener('resize', onResize);
+			ro.disconnect();
+		};
+	});
 </script>
 
 <div class="page-bg">
@@ -267,19 +324,43 @@
 			</div>
 
 			<h2 class="projects-heading experience-heading"><span class="projects-prefix">OUR TEAM'S</span> <span class="projects-highlight">PAST EXPERIENCE</span></h2>
-			<div class="clients-grid">
-				{#each clientProjects as client}
-					<div class="client-card">
-						<div class="client-logo-wrapper">
-							<img src={client.logo} alt={client.name} class="client-logo" />
+
+			<div class="experience-carousel" role="region" aria-roledescription="carousel" aria-label="Past experience projects">
+				<button
+					class="experience-nav experience-prev"
+					on:click={() => scrollExperience(-1)}
+					disabled={!experienceHasOverflow}
+					aria-label="Scroll past experience left"
+				>
+					‹
+				</button>
+
+				<div
+					class="experience-track"
+					bind:this={experienceTrack}
+				>
+					{#each clientProjects as client}
+						<div class="client-card">
+							<div class="client-logo-wrapper">
+								<img src={client.logo} alt={client.name} class="client-logo" />
+							</div>
+							<div class="client-title">{client.name}</div>
+							<div class="client-members">
+								<span class="members-count">{client.members}</span>
+								<span class="members-label">team member{#if client.members > 1}s{/if} {#if client.members > 1}have{:else}has{/if}  worked on this</span>
+							</div>
 						</div>
-						<div class="client-title">{client.name}</div>
-						<div class="client-members">
-							<span class="members-count">{client.members}</span>
-							<span class="members-label">team member{#if client.members > 1}s{/if} {#if client.members > 1}have{:else}has{/if}  worked on this</span>
-						</div>
-					</div>
-				{/each}
+					{/each}
+				</div>
+
+				<button
+					class="experience-nav experience-next"
+					on:click={() => scrollExperience(1)}
+					disabled={!experienceHasOverflow}
+					aria-label="Scroll past experience right"
+				>
+					›
+				</button>
 			</div>
 		</div>
 	</section>
@@ -1339,11 +1420,73 @@
 		object-fit: contain;
 	}
 
-	/* Client Cards */
-	.clients-grid {
-		display: grid;
-		grid-template-columns: repeat(5, 1fr);
+	/* Past Experience Carousel */
+	.experience-carousel {
+		position: relative;
+		margin-top: 1.25rem;
+	}
+
+	.experience-track {
+		--experience-card-width: clamp(180px, 18vw, 220px);
+
+		display: flex;
 		gap: 1rem;
+		overflow-x: auto;
+		padding: 0.5rem 3rem;
+		scroll-snap-type: x mandatory;
+		scroll-padding: 3rem;
+		overscroll-behavior-x: contain;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+	}
+
+	.experience-track::-webkit-scrollbar {
+		display: none;
+	}
+
+	.experience-track .client-card {
+		flex: 0 0 var(--experience-card-width);
+		scroll-snap-align: start;
+	}
+
+	.experience-nav {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 5;
+
+		background: rgba(19, 26, 54, 0.92);
+		border: 1px solid rgba(107, 143, 255, 0.3);
+		color: #6B8FFF;
+		width: 42px;
+		height: 42px;
+		border-radius: 50%;
+		font-size: 1.4rem;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+	}
+
+	.experience-nav:hover {
+		background: rgba(107, 143, 255, 0.35);
+		color: #ffffff;
+	}
+
+	.experience-nav:disabled {
+		opacity: 0.4;
+		cursor: not-allowed;
+	}
+
+	.experience-prev {
+		left: 0.25rem;
+	}
+
+	.experience-next {
+		right: 0.25rem;
 	}
 
 	.client-card {
@@ -1795,8 +1938,10 @@
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		.clients-grid {
-			grid-template-columns: repeat(2, 1fr);
+		.experience-track {
+			--experience-card-width: clamp(170px, 70vw, 240px);
+			padding: 0.5rem 2.25rem;
+			scroll-padding: 2.25rem;
 		}
 
 		.unreal-partner {
