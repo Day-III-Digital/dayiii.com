@@ -252,7 +252,11 @@
 					<p>Certified by Epic Games as a trusted partner for Unreal Engine development. This recognition means we meet Epic's highest standards for technical expertise, project delivery, and professional service.</p>
 				</div>
 			</a>
+		</div>
+	</section>
 
+	<section class="services">
+		<div class="section-content">
 			<h2 class="pillars-heading"><span class="pillars-prefix">OUR</span> <span class="pillars-highlight">PILLARS</span></h2>
 			<div class="pillars-grid">
 				<div class="pillar-card">
@@ -312,7 +316,11 @@
 					{/each}
 				</div>
 			</div>
+		</div>
+	</section>
 
+	<section class="projects">
+		<div class="section-content">
 			<h2 class="projects-heading experience-heading"><span class="projects-prefix">OUR</span> <span class="projects-highlight">LEGACY</span></h2>
 			<p class="projects-notice">Our team members have built <span class="notice-highlight">experience working on industry defining projects</span></p>
 
@@ -1130,7 +1138,6 @@
 		font-family: 'Gabarito', sans-serif;
 		letter-spacing: 0.02em;
 		animation: fadeIn 0.6s ease-out both;
-		margin-top: 3rem;
 		text-align: left !important;
 	}
 
@@ -1193,9 +1200,6 @@
 
 	.projects h2.experience-heading {
 		text-align: left;
-		margin-top: 3rem;
-		padding-top: 2.5rem;
-		border-top: 1px solid rgba(107, 143, 255, 0.2);
 	}
 
 	.projects-heading {
