@@ -417,7 +417,7 @@
 	}
 
 	section + section {
-		margin-top: 8em;
+		margin-top: 4em;
 	}
 
 	section.scroll-animate {
