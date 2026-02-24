@@ -34,9 +34,12 @@
 		{ members: 3, name: 'Hogwarts Legacy', logo: 'https://cdn.cloudflare.steamstatic.com/steam/apps/990080/library_600x900.jpg' },
 		{ members: 5, name: 'LEGO Horizon Adventures', logo: 'https://cdn.cloudflare.steamstatic.com/steam/apps/2428810/library_600x900.jpg' },
 		{ members: 1, name: 'Watch Dogs: Legion', logo: 'https://cdn.mobygames.com/covers/9328358-watch-dogs-legion-playstation-4-front-cover.jpg' },
+		{ members: 1, name: 'For Honor', logo: 'https://cdn.mobygames.com/covers/1784962-for-honor-playstation-4-front-cover.jpg' },
+		{ members: 1, name: "Tom Clancy's Ghost Recon Wildlands", logo: 'https://cdn.mobygames.com/covers/2153415-tom-clancys-ghost-recon-wildlands-playstation-4-front-cover.jpg' },
 		{ members: 1, name: "Tom Clancy's Rainbow Six Siege", logo: 'https://cdn.mobygames.com/covers/1131178-tom-clancys-rainbow-six-siege-xbox-one-front-cover.png' },
 		// Mobile
 		{ members: 1, name: 'Star Wars: Hunters', logo: 'https://cdn.mobygames.com/covers/10937779-star-wars-hunters-android-front-cover.jpg' },
+		{ members: 1, name: 'CSR 2', logo: 'https://cdn.mobygames.com/covers/8385924-csr-racing-2-android-front-cover.png' },
 		{ members: 2, name: 'CSR Racing', logo: 'https://cdn.mobygames.com/covers/9313786-csr-racing-iphone-front-cover.jpg' },
 	];
 
