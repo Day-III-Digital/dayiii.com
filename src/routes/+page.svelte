@@ -422,6 +422,10 @@
 		transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 	}
 
+	section + section {
+		margin-top: 8em;
+	}
+
 	section.scroll-animate {
 		opacity: 0;
 		transform: translateY(30px);
@@ -931,10 +935,6 @@
 		padding: 1.75rem 2.5rem 2.5rem 2.5rem;
 		border-radius: 20px;
 		border: 1px solid rgba(107, 143, 255, 0.2);
-		box-shadow:
-			0 25px 60px rgba(0, 0, 0, 0.5),
-			0 0 40px rgba(107, 143, 255, 0.08),
-			inset 0 0 80px rgba(107, 143, 255, 0.03);
 		transition: transform 0.3s ease, box-shadow 0.3s ease;
 		overflow: hidden;
 		display: flex;
