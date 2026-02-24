@@ -322,7 +322,7 @@
 	<section class="projects">
 		<div class="section-content">
 			<h2 class="projects-heading experience-heading"><span class="projects-prefix">OUR</span> <span class="projects-highlight">LEGACY</span></h2>
-			<p class="projects-notice">Our team members have built <span class="notice-highlight">experience working on industry defining projects</span></p>
+			<p class="projects-notice experience-notice">Our team members have built <span class="notice-highlight-blue">experience working on industry defining projects</span></p>
 
 			<div class="experience-carousel" role="region" aria-roledescription="carousel" aria-label="Past experience projects">
 				<button
@@ -1234,6 +1234,16 @@
 	}
 
 	.notice-highlight {
+		color: #FFD84D;
+		font-weight: 900;
+	}
+
+	.experience-notice {
+		background: rgba(107, 143, 255, 0.25);
+		border: 1px solid rgba(107, 143, 255, 0.3);
+	}
+
+	.notice-highlight-blue {
 		color: #FFD84D;
 		font-weight: 900;
 	}
