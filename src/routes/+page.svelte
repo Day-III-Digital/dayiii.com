@@ -344,12 +344,6 @@
 								<img src={client.logo} alt={client.name} class="client-logo" />
 							</div>
 							<div class="client-title">{client.name}</div>
-							{#if client.members > 1}
-							<div class="client-members">
-								<span class="members-count">{client.members}</span>
-								<span class="members-label">team member{#if client.members > 1}s{/if} {#if client.members > 1}have{:else}has{/if}  worked on this</span>
-							</div>
-							{/if}
 						</div>
 					{/each}
 				</div>
@@ -1508,17 +1502,18 @@
 
 	.client-logo-wrapper {
 		width: 100%;
-		height: 180px;
+		aspect-ratio: 1 / 1;
 		border-radius: 8px;
 		overflow: hidden;
 		background: rgba(5, 10, 30, 0.95);
 		border: 1px solid rgba(107, 143, 255, 0.2);
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		position: relative;
 	}
 
 	.client-logo {
+		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -1527,35 +1522,34 @@
 	.client-title {
 		font-size: 0.75rem;
 		font-weight: 700;
-		color: #9a9aaa;
+		color: #c5c5d0;
 		text-transform: uppercase;
 		letter-spacing: 0.03em;
 		text-align: center;
 		line-height: 1.3;
+		padding-bottom: 0.7rem;
 	}
 
 	.client-members {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		align-items: center;
-		gap: 0.15rem;
+		gap: 0.25rem;
 		margin-top: auto;
 	}
 
 	.members-count {
-		font-size: 1.25rem;
+		font-size: 1rem;
 		font-weight: 900;
 		color: #FFD84D;
 		font-family: 'Gabarito', sans-serif;
 		line-height: 1;
 	}
 
-	.members-label {
-		font-size: 0.6rem;
-		color: #6a6a7a;
-		text-transform: uppercase;
-		letter-spacing: 0.02em;
-		text-align: center;
+	.members-icon {
+		width: 14px;
+		height: 14px;
+		color: #FFD84D;
 	}
 
 	/* Team & Partner Section */
