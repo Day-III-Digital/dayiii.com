@@ -248,7 +248,8 @@
 
 			<a href="https://partners.unrealengine.com/s/partner-detail?partnerAccountId=001QP00001C00VKYAZ" target="_blank" rel="noopener noreferrer" class="unreal-partner">
 				<div class="unreal-logos">
-					<img src="/images/ue_approved.png" alt="Unreal Engine" class="unreal-logo" />
+					<img src="/images/unreal_partner_2025.png" alt="Unreal Engine Partner 2025" class="unreal-logo" />
+					<img src="/images/unreal_partner_2026.png" alt="Unreal Engine Partner 2026" class="unreal-logo" />
 				</div>
 				<div class="unreal-content">
 					<h3>Official Unreal Engine Service Partner</h3>
@@ -1690,17 +1691,17 @@
 	.unreal-logos {
 		display: flex;
 		flex-direction: row;
-		gap: 1rem;
+		gap: 0.5rem;
 		flex-shrink: 0;
 	}
 
 	.unreal-logo {
-		width: 80px;
-		height: 80px;
+		width: 150px;
+		height: 150px;
 		flex-shrink: 0;
 		transition: transform 0.3s ease;
 		background: rgba(0, 0, 0, 0);
-		border-radius: 12px;
+		border-radius: 20px;
 		padding: 0.5rem;
 		object-fit: contain;
 	}
