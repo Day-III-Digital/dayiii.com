@@ -55,7 +55,7 @@
 <style>
 	.careers-page {
 		min-height: 100vh;
-		background: #0a0e27;
+		background: #0f0a2e;
 		padding: 6rem 2rem 4rem;
 	}
 
@@ -122,7 +122,7 @@
 
 	.career-card h2 {
 		font-size: 1.4rem;
-		color: #6B8FFF;
+		color: #9462E8;
 		margin: 0 0 0.5rem 0;
 		font-weight: 900;
 		text-transform: uppercase;
@@ -138,7 +138,7 @@
 
 	.career-toggle {
 		font-size: 2rem;
-		color: #6B8FFF;
+		color: #9462E8;
 		font-weight: 300;
 		width: 50px;
 		height: 50px;
@@ -164,7 +164,7 @@
 		display: inline-block;
 		padding: 0.7rem 1.8rem;
 		background: #FFD84D;
-		color: #0a0e27;
+		color: #0f0a2e;
 		text-decoration: none;
 		border-radius: 4px;
 		font-weight: 900;
@@ -177,7 +177,7 @@
 	}
 
 	.apply-button:hover {
-		background: #6B8FFF;
+		background: #9462E8;
 		transform: translateY(-2px);
 		box-shadow: 0 6px 20px rgba(107, 143, 255, 0.5);
 	}

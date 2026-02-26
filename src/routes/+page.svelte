@@ -2,6 +2,52 @@
 	import { onMount } from 'svelte';
 
 	let email = 'contact@dayiii.com';
+let purpleColor = '#6529d1';
+	let backgroundDarkness = 15;
+	let cardTransparency = 85;
+let aboutFontSize = 0.96; // rem value
+	let marmotIconSize = 120; // px
+
+	function updatePurpleColor(event: Event) {
+		const input = event.target as HTMLInputElement;
+		purpleColor = input.value;
+		document.documentElement.style.setProperty('--purple-accent', purpleColor);
+	}
+
+	function updateBackgroundDarkness(event: Event) {
+		const input = event.target as HTMLInputElement;
+		backgroundDarkness = parseInt(input.value);
+		const r = backgroundDarkness;
+		const g = Math.round(backgroundDarkness * 0.67);
+		const b = Math.round(backgroundDarkness * 3.1);
+		document.documentElement.style.setProperty('--bg-color', `rgb(${r}, ${g}, ${b})`);
+	}
+
+function updateCardTransparency(event: Event) {
+		const input = event.target as HTMLInputElement;
+		cardTransparency = parseInt(input.value);
+		document.documentElement.style.setProperty('--card-opacity', (cardTransparency / 100).toString());
+	}
+
+function updateAboutFontSize(event: Event) {
+		const input = event.target as HTMLInputElement;
+		aboutFontSize = parseFloat(input.value);
+		document.documentElement.style.setProperty('--about-font-size', aboutFontSize + 'rem');
+	}
+
+	function updateMarmotIconSize(event: Event) {
+		const input = event.target as HTMLInputElement;
+		marmotIconSize = parseInt(input.value);
+		document.documentElement.style.setProperty('--marmot-icon-size', marmotIconSize + 'px');
+	}
+
+	onMount(() => {
+		document.documentElement.style.setProperty('--purple-accent', purpleColor);
+		document.documentElement.style.setProperty('--bg-color', 'rgb(15, 10, 46)');
+		document.documentElement.style.setProperty('--card-opacity', (cardTransparency / 100).toString());
+document.documentElement.style.setProperty('--about-font-size', aboutFontSize + 'rem');
+		document.documentElement.style.setProperty('--marmot-icon-size', marmotIconSize + 'px');
+	});
 
 	onMount(() => {
 		const sections = document.querySelectorAll('section:not(.hero)');
@@ -157,18 +203,42 @@
 			</div>
 			<div class="hero-right">
 				<div class="hero-about">
-					<h2 class="about-heading"><span class="about-highlight">HI</span> <span class="about-prefix">THERE !!!</span></h2>
-					<p class="about-text">A veteran-led development studio for Unreal Engine and open-world AAA games, specializing in:</p>
-					<ul class="about-list">
-						<li><span class="keyword">Technical art</span></li>
-						<li><span class="keyword">Rendering</span></li>
-						<li><span class="keyword">Deep learning</span></li>
-					</ul>
-					<p class="about-text">Our custom tools and streamlined workflows help studios overcome technical challenges, control budgets, and exceed player expectations.</p>
+<h2 class="about-heading"><span class="about-highlight">HI</span> <span class="about-prefix">THERE !!!</span></h2>
+<p class="about-text">A <span class="keyword">veteran-led</span> development studio for <span class="keyword">Unreal Engine</span> and open-world AAA games, specializing in <span class="keyword">technical art</span>, <span class="keyword">rendering</span>, and <span class="keyword">deep learning</span>.</p>
+					<p class="about-text">Our custom tools and streamlined workflows help studios overcome <span class="keyword">technical challenges</span> and exceed player expectations.</p>
 				</div>
 			</div>
 		</div>
 	</section>
+
+<!-- Color Picker -->
+	<div class="color-picker-container">
+		<label class="color-picker-label">
+			<span>Purple accent:</span>
+			<input type="color" value={purpleColor} on:input={updatePurpleColor} class="color-picker-input" />
+			<span class="color-picker-value">{purpleColor}</span>
+		</label>
+		<label class="color-picker-label">
+			<span>Background:</span>
+			<input type="range" min="0" max="30" value={backgroundDarkness} on:input={updateBackgroundDarkness} class="slider-input" />
+			<span class="slider-value">{backgroundDarkness}</span>
+		</label>
+<label class="color-picker-label">
+			<span>Card opacity:</span>
+			<input type="range" min="20" max="100" value={cardTransparency} on:input={updateCardTransparency} class="slider-input" />
+			<span class="slider-value">{cardTransparency}%</span>
+		</label>
+<label class="color-picker-label">
+			<span>HI THERE font:</span>
+			<input type="range" min="0.8" max="1.4" step="0.02" value={aboutFontSize} on:input={updateAboutFontSize} class="slider-input" />
+			<span class="slider-value">{aboutFontSize}rem</span>
+		</label>
+		<label class="color-picker-label">
+			<span>Marmot icon:</span>
+			<input type="range" min="60" max="180" value={marmotIconSize} on:input={updateMarmotIconSize} class="slider-input" />
+			<span class="slider-value">{marmotIconSize}px</span>
+		</label>
+	</div>
 
 	<!-- Services Section -->
 	<section class="services">
@@ -389,14 +459,81 @@
 </div>
 
 <style>
+:global(:root) {
+		--purple-accent: #6529d1;
+		--bg-color: rgb(15, 10, 46);
+		--card-opacity: 0.85;
+--about-font-size: 0.96rem;
+		--marmot-icon-size: 120px;
+	}
+
 	:global(html, body) {
 		margin: 0;
 		padding: 0;
 		font-family: 'Gabarito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-		background: #0a0e27;
+		background: var(--bg-color);
 		color: #e0e0e0;
 		line-height: 1.6;
 		overflow-x: hidden;
+	}
+
+	.color-picker-container {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		padding: 1rem;
+		margin-top: 2rem;
+		flex-wrap: wrap;
+	}
+
+	.color-picker-label {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		background: rgba(15, 10, 46, var(--card-opacity));
+		padding: 0.75rem 1.25rem;
+		border-radius: 8px;
+		border: 1px solid rgba(107, 143, 255, 0.2);
+		color: #ffffff;
+		font-family: 'Gabarito', sans-serif;
+		font-size: 0.9rem;
+	}
+
+	.color-picker-input {
+		width: 40px;
+		height: 40px;
+		border: none;
+		border-radius: 6px;
+		cursor: pointer;
+		background: transparent;
+	}
+
+	.color-picker-input::-webkit-color-swatch-wrapper {
+		padding: 0;
+	}
+
+	.color-picker-input::-webkit-color-swatch {
+		border-radius: 6px;
+		border: 2px solid rgba(255, 255, 255, 0.3);
+	}
+
+.color-picker-value {
+		font-family: monospace;
+		color: var(--purple-accent);
+		font-weight: 600;
+	}
+
+	.slider-input {
+		width: 100px;
+		cursor: pointer;
+		accent-color: var(--purple-accent);
+	}
+
+	.slider-value {
+		font-family: monospace;
+		color: var(--purple-accent);
+		font-weight: 600;
+		min-width: 40px;
 	}
 
 	.container {
@@ -417,7 +554,7 @@
 		transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 	}
 
-	section + section {
+section + section {
 		margin-top: 4em;
 	}
 
@@ -750,7 +887,7 @@
 
 	.subtitle {
 		font-size: 2rem;
-		color: #6B8FFF;
+		color: var(--purple-accent);
 		margin: 0;
 		line-height: 1.1;
 		font-weight: 900;
@@ -845,7 +982,7 @@
 		100% { opacity: 0; background-position: 200% 0; }
 	}
 
-	.partner-badge {
+.partner-badge {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
@@ -853,7 +990,7 @@
 		background: rgba(107, 143, 255, 0.15);
 		border: 1px solid rgba(107, 143, 255, 0.3);
 		border-radius: 6px;
-		color: #6B8FFF;
+		color: #ffffff;
 		font-size: 0.85rem;
 		font-weight: 600;
 		text-transform: uppercase;
@@ -878,7 +1015,7 @@
 		display: inline-block;
 		padding: 0.7rem 1.8rem;
 		background: #FFD84D !important; /* force default yellow */
-		color: #0a0e27;
+		color: #0f0a2e;
 		text-decoration: none;
 		border-radius: 4px;
 		font-weight: 900;
@@ -893,7 +1030,7 @@
 	.cta-button:hover {
 		transform: translateY(-2px);
 		box-shadow: 0 6px 20px rgba(107, 143, 255, 0.5);
-		background: #6B8FFF !important; /* blue on hover */
+		background: var(--purple-accent) !important; /* blue on hover */
 	}
 
 	/* Section Styles */
@@ -924,7 +1061,7 @@
 		max-width: 560px;
 		width: 100%;
 		min-height: 280px;
-		background: rgba(19, 26, 54, 0.92);
+		background: rgba(15, 10, 46, var(--card-opacity));
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
 		padding: 1.75rem 2.5rem 2.5rem 2.5rem;
@@ -944,18 +1081,18 @@
 		left: 0;
 		right: 0;
 		height: 4px;
-		background: linear-gradient(90deg, #6B8FFF, #FFD84D);
+		background: linear-gradient(90deg, var(--purple-accent), #FFD84D);
 		border-radius: 20px 20px 0 0;
 	}
 
 
-	.about-heading {
+.about-heading {
 		font-size: 1.6rem;
 		margin: 0 0 1rem 0;
 		text-align: left;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
-		font-weight: 900;
+		font-weight: 700;
 	}
 
 	.about-highlight {
@@ -966,8 +1103,8 @@
 		color: #ffffff;
 	}
 
-	.about-text {
-		font-size: 1.02rem;
+.about-text {
+		font-size: var(--about-font-size);
 		line-height: 1.75;
 		color: #ffffff;
 		margin: 0 0 1rem;
@@ -1014,7 +1151,7 @@
 
 	.service-card {
 		position: relative;
-		background: rgba(19, 26, 54, 0.88);
+		background: rgba(15, 10, 46, var(--card-opacity));
 		backdrop-filter: blur(16px);
 		-webkit-backdrop-filter: blur(16px);
 		padding: 2rem 1.25rem 1.25rem 1.25rem;
@@ -1033,7 +1170,7 @@
 		left: 0;
 		right: 0;
 		height: 4px;
-		background: linear-gradient(90deg, #6B8FFF, #FFD84D);
+		background: linear-gradient(90deg, var(--purple-accent), #FFD84D);
 		border-radius: 16px 16px 0 0;
 	}
 
@@ -1048,11 +1185,11 @@
 		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 	}
 
-	.service-card h3 {
+.service-card h3 {
 		font-size: 1.5rem;
 		margin: 0 0 0.25rem 0;
 		line-height: 1 !important; /* force compact title line height */
-		color: #6B8FFF; /* cooler blue to match site accent instead of yellow */
+color: #FFD84D;
 		font-weight: 900;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
@@ -1068,9 +1205,9 @@
 		margin-bottom: -0.5rem;
 	}
 
-	.service-icon img {
-		width: 120px;
-		height: 120px;
+.service-icon img {
+		width: var(--marmot-icon-size);
+		height: var(--marmot-icon-size);
 		object-fit: contain;
 	}
 
@@ -1155,7 +1292,7 @@
 	}
 
 	.pillar-card {
-		background: rgba(19, 26, 54, 0.88);
+		background: rgba(15, 10, 46, var(--card-opacity));
 		backdrop-filter: blur(16px);
 		-webkit-backdrop-filter: blur(16px);
 		padding: 1.5rem;
@@ -1171,14 +1308,14 @@
 
 	.pillar-card:hover {
 		transform: translateY(-6px);
-		border-color: #6B8FFF;
+		border-color: var(--purple-accent);
 		box-shadow: 0 12px 30px rgba(107, 143, 255, 0.25);
 	}
 
 	.pillar-card h3 {
 		font-size: 1.5rem;
 		margin: 0 0 0.75rem 0;
-		color: #6B8FFF;
+		color: var(--purple-accent);
 		font-weight: 900;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
@@ -1242,9 +1379,9 @@
 		font-weight: 900;
 	}
 
-	.experience-notice {
-		background: rgba(107, 143, 255, 0.25);
-		border: 1px solid rgba(107, 143, 255, 0.3);
+.experience-notice {
+		background: rgba(15, 10, 46, var(--card-opacity));
+		border: 1px solid rgba(117, 31, 252, 0.4);
 	}
 
 	.notice-highlight-blue {
@@ -1258,7 +1395,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1.4fr auto;
 		gap: 2rem;
-		background: rgba(19, 26, 54, 0.88);
+		background: rgba(15, 10, 46, var(--card-opacity));
 		backdrop-filter: blur(16px);
 		-webkit-backdrop-filter: blur(16px);
 		padding: 2rem;
@@ -1276,7 +1413,7 @@
 		left: 0;
 		right: 0;
 		height: 4px;
-		background: linear-gradient(90deg, #6B8FFF, #FFD84D);
+		background: linear-gradient(90deg, var(--purple-accent), #FFD84D);
 		border-radius: 16px 16px 0 0;
 	}
 
@@ -1312,7 +1449,7 @@
 	.gallery-btn {
 		background: rgba(107, 143, 255, 0.2);
 		border: 1px solid rgba(107, 143, 255, 0.3);
-		color: #6B8FFF;
+		color: var(--purple-accent);
 		width: 32px;
 		height: 32px;
 		border-radius: 50%;
@@ -1343,7 +1480,7 @@
 	}
 
 	.gallery-dot.active {
-		background: #6B8FFF;
+		background: var(--purple-accent);
 		transform: scale(1.2);
 	}
 
@@ -1365,7 +1502,7 @@
 	.featured-years {
 		display: block;
 		font-size: 0.9rem;
-		color: #6B8FFF;
+		color: var(--purple-accent);
 		font-weight: 700;
 		margin-bottom: 0.75rem;
 		font-family: 'Gabarito', sans-serif;
@@ -1378,11 +1515,12 @@
 		margin-bottom: 1rem;
 	}
 
-	.featured-tag {
-		background: rgba(107, 143, 255, 0.2);
-		color: #6B8FFF;
+.featured-tag {
+		background: transparent;
+		color: var(--purple-accent);
 		padding: 0.35rem 0.75rem;
 		border-radius: 4px;
+border: 1px solid rgba(153, 69, 255, 0.5);
 		font-size: 0.8rem;
 		font-weight: 700;
 		text-transform: uppercase;
@@ -1460,9 +1598,9 @@
 		transform: translateY(-50%);
 		z-index: 5;
 
-		background: rgba(19, 26, 54, 0.92);
+		background: rgba(15, 10, 46, var(--card-opacity));
 		border: 1px solid rgba(107, 143, 255, 0.3);
-		color: #6B8FFF;
+		color: var(--purple-accent);
 		width: 42px;
 		height: 42px;
 		border-radius: 50%;
@@ -1495,7 +1633,7 @@
 	}
 
 	.client-card {
-		background: rgba(19, 26, 54, 0.88);
+		background: rgba(15, 10, 46, var(--card-opacity));
 		backdrop-filter: blur(16px);
 		-webkit-backdrop-filter: blur(16px);
 		padding: 1rem;
@@ -1600,7 +1738,7 @@
 	}
 
 	.expertise-card {
-		background: rgba(19, 26, 54, 0.88);
+		background: rgba(15, 10, 46, var(--card-opacity));
 		backdrop-filter: blur(16px);
 		-webkit-backdrop-filter: blur(16px);
 		padding: 1.5rem 1rem;
@@ -1637,14 +1775,15 @@
 		transform: scale(1.15) rotate(5deg);
 	}
 
-	.expertise-card h3 {
+.expertise-card h3 {
 		font-size: 1rem;
-		color: #6B8FFF;
+		color: var(--purple-accent);
 		margin: 0 0 0.5rem 0;
 		font-weight: 700;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
 		letter-spacing: 0.02em;
+		line-height: 1.1;
 	}
 
 	.expertise-card p {
@@ -1710,7 +1849,7 @@
 		transform: scale(1.1);
 	}
 
-	.unreal-content h3 {
+.unreal-content h3 {
 		font-size: 1.4rem;
 		color: #FFD84D;
 		margin: 0 0 0.75rem 0;
@@ -1755,7 +1894,7 @@
 
 	.contact-box {
 		padding: 2.5rem;
-		background: rgba(19, 26, 54, 0.88);
+		background: rgba(15, 10, 46, var(--card-opacity));
 		backdrop-filter: blur(16px);
 		-webkit-backdrop-filter: blur(16px);
 		border-radius: 16px;
@@ -1827,7 +1966,7 @@
 	}
 
 	.contact-careers {
-		color: #6B8FFF;
+		color: var(--purple-accent);
 		text-decoration: none;
 		font-weight: 600;
 		font-size: 0.85rem;
