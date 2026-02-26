@@ -2,9 +2,9 @@
 	import { onMount } from 'svelte';
 
 	let email = 'contact@dayiii.com';
-let purpleColor = '#6529d1';
+let purpleColor = '#743cd1';
 	let backgroundDarkness = 15;
-	let cardTransparency = 85;
+let cardTransparency = 42;
 let aboutFontSize = 0.96; // rem value
 	let marmotIconSize = 120; // px
 
@@ -460,9 +460,9 @@ document.documentElement.style.setProperty('--about-font-size', aboutFontSize + 
 
 <style>
 :global(:root) {
-		--purple-accent: #6529d1;
+		--purple-accent: #743cd1;
 		--bg-color: rgb(15, 10, 46);
-		--card-opacity: 0.85;
+--card-opacity: 0.42;
 --about-font-size: 0.96rem;
 		--marmot-icon-size: 120px;
 	}
