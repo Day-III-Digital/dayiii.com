@@ -1392,7 +1392,7 @@ section + section {
 		position: relative;
 		max-width: 560px;
 		width: 100%;
-		min-height: 280px;
+		min-height: 250px;
 		background: rgba(15, 10, 46, var(--card-opacity));
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
