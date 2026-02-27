@@ -55,8 +55,10 @@
 <style>
 	.careers-page {
 		min-height: 100vh;
-		background: #0f0a2e;
+		background: transparent;
 		padding: 6rem 2rem 4rem;
+		position: relative;
+		z-index: 1;
 	}
 
 	.careers-container {
@@ -74,16 +76,16 @@
 	}
 
 	.title-prefix {
-		color: #ffffff;
+		color: var(--white-color);
 	}
 
 	.title-highlight {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 	}
 
 	.page-intro {
 		text-align: center;
-		color: #b0b0b0;
+		color: var(--text-color);
 		font-size: 1.1rem;
 		margin-bottom: 3rem;
 		line-height: 1.6;
@@ -96,15 +98,30 @@
 	}
 
 	.career-card {
-		background: linear-gradient(to bottom, #131a36 0%, #1e274a 100%);
-		border-radius: 12px;
-		border: 1px solid rgba(255, 255, 255, 0.08);
+		position: relative;
+		background: rgba(15, 10, 46, var(--card-opacity, 0.42));
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		border-radius: 16px;
+		border: 1px solid rgba(107, 143, 255, 0.15);
 		overflow: hidden;
-		transition: border-color 0.3s ease;
+		transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+	}
+
+	.career-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background: linear-gradient(90deg, var(--purple-accent), var(--yellow-accent));
 	}
 
 	.career-card:hover {
-		border-color: rgba(107, 143, 255, 0.3);
+		border-color: rgba(107, 143, 255, 0.4);
+		transform: translateY(-2px);
+		box-shadow: 0 8px 30px rgba(107, 143, 255, 0.15);
 	}
 
 	.career-header {
@@ -122,7 +139,7 @@
 
 	.career-card h2 {
 		font-size: 1.4rem;
-		color: #9462E8;
+		color: var(--purple-accent);
 		margin: 0 0 0.5rem 0;
 		font-weight: 900;
 		text-transform: uppercase;
@@ -130,7 +147,7 @@
 	}
 
 	.career-short {
-		color: #b0b0b0;
+		color: var(--text-color);
 		margin: 0;
 		font-size: 1rem;
 		line-height: 1.5;
@@ -138,7 +155,7 @@
 
 	.career-toggle {
 		font-size: 2rem;
-		color: #9462E8;
+		color: var(--purple-accent);
 		font-weight: 300;
 		width: 50px;
 		height: 50px;
@@ -150,11 +167,11 @@
 
 	.career-details {
 		padding: 0 1.5rem 1.5rem;
-		border-top: 1px solid rgba(255, 255, 255, 0.05);
+		border-top: 1px solid rgba(107, 143, 255, 0.1);
 	}
 
 	.career-details p {
-		color: #e0e5ff;
+		color: var(--white-color);
 		line-height: 1.7;
 		margin: 1rem 0;
 		font-size: 1rem;
@@ -163,7 +180,7 @@
 	.apply-button {
 		display: inline-block;
 		padding: 0.7rem 1.8rem;
-		background: #FFD84D;
+		background: var(--yellow-accent);
 		color: #0f0a2e;
 		text-decoration: none;
 		border-radius: 4px;
@@ -177,7 +194,8 @@
 	}
 
 	.apply-button:hover {
-		background: #9462E8;
+		background: var(--purple-accent);
+		color: var(--white-color);
 		transform: translateY(-2px);
 		box-shadow: 0 6px 20px rgba(107, 143, 255, 0.5);
 	}
