@@ -5,6 +5,7 @@ let email = 'contact@dayiii.com';
 	// Colors
 	let purpleColor = '#774dd1';
 	let yellowColor = '#FFD84D';
+	let blueColor = '#3b82f6';
 	let bgBaseColor = '#150e41';
 	let textColor = '#e0e0e0';
 	let whiteColor = '#ffffff';
@@ -31,6 +32,12 @@ let email = 'contact@dayiii.com';
 		const input = event.target as HTMLInputElement;
 		yellowColor = input.value;
 		document.documentElement.style.setProperty('--yellow-accent', yellowColor);
+	}
+
+	function updateBlueColor(event: Event) {
+		const input = event.target as HTMLInputElement;
+		blueColor = input.value;
+		document.documentElement.style.setProperty('--blue-accent', blueColor);
 	}
 
 	function updateBgBaseColor(event: Event) {
@@ -112,6 +119,7 @@ function updateAboutFontSize(event: Event) {
 		const values = `// Colors
 purpleColor: ${purpleColor}
 yellowColor: ${yellowColor}
+blueColor: ${blueColor}
 bgBaseColor: ${bgBaseColor}
 textColor: ${textColor}
 whiteColor: ${whiteColor}
@@ -133,6 +141,7 @@ sectionSpacing: ${sectionSpacing}em`;
 		// Colors
 		document.documentElement.style.setProperty('--purple-accent', purpleColor);
 		document.documentElement.style.setProperty('--yellow-accent', yellowColor);
+		document.documentElement.style.setProperty('--blue-accent', blueColor);
 		document.documentElement.style.setProperty('--bg-color', bgBaseColor);
 		document.documentElement.style.setProperty('--text-color', textColor);
 		document.documentElement.style.setProperty('--white-color', whiteColor);
@@ -580,6 +589,11 @@ sectionSpacing: ${sectionSpacing}em`;
 				<span class="color-picker-value">{yellowColor}</span>
 			</label>
 			<label class="color-picker-label">
+				<span>Accent 3:</span>
+				<input type="color" value={blueColor} on:input={updateBlueColor} class="color-picker-input" />
+				<span class="color-picker-value">{blueColor}</span>
+			</label>
+			<label class="color-picker-label">
 				<span>White:</span>
 				<input type="color" value={whiteColor} on:input={updateWhiteColor} class="color-picker-input" />
 				<span class="color-picker-value">{whiteColor}</span>
@@ -654,6 +668,7 @@ sectionSpacing: ${sectionSpacing}em`;
 :global(:root) {
 		--purple-accent: #774dd1;
 		--yellow-accent: #FFD84D;
+		--blue-accent: #3b82f6;
 		--white-color: #ffffff;
 		--text-color: #e0e0e0;
 		--bg-color: rgb(21, 14, 65);
@@ -924,14 +939,16 @@ section + section {
 	.bubble-3 {
 		width: 20vmin;
 		height: 20vmin;
-		background: rgba(59, 130, 246, 0.45);
+		background: var(--blue-accent);
+		opacity: 0.45;
 		animation: float3 75s ease-in-out infinite;
 	}
 
 	.bubble-4 {
 		width: 10vmin;
 		height: 10vmin;
-		background: rgba(14, 165, 233, 0.5);
+		background: var(--blue-accent);
+		opacity: 0.5;
 		animation: float4 50s ease-in-out infinite;
 	}
 
@@ -954,7 +971,8 @@ section + section {
 	.bubble-7 {
 		width: 22vmin;
 		height: 22vmin;
-		background: rgba(56, 189, 248, 0.4);
+		background: var(--blue-accent);
+		opacity: 0.4;
 		animation: float7 90s ease-in-out infinite;
 	}
 
@@ -977,7 +995,8 @@ section + section {
 	.bubble-10 {
 		width: 6vmin;
 		height: 6vmin;
-		background: rgba(96, 165, 250, 0.55);
+		background: var(--blue-accent);
+		opacity: 0.55;
 		animation: float10 40s ease-in-out infinite;
 	}
 
@@ -992,7 +1011,8 @@ section + section {
 	.bubble-12 {
 		width: 11vmin;
 		height: 11vmin;
-		background: rgba(34, 211, 238, 0.45);
+		background: var(--blue-accent);
+		opacity: 0.45;
 		animation: float12 60s ease-in-out infinite;
 	}
 
