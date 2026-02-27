@@ -5,7 +5,7 @@ let email = 'contact@dayiii.com';
 	// Colors
 	let purpleColor = '#774dd1';
 	let yellowColor = '#FFD84D';
-	let blueColor = '#6b8fff';
+	let bgBaseColor = '#150e41';
 	let textColor = '#e0e0e0';
 	let whiteColor = '#ffffff';
 	// Sizes
@@ -33,10 +33,10 @@ let email = 'contact@dayiii.com';
 		document.documentElement.style.setProperty('--yellow-accent', yellowColor);
 	}
 
-	function updateBlueColor(event: Event) {
+	function updateBgBaseColor(event: Event) {
 		const input = event.target as HTMLInputElement;
-		blueColor = input.value;
-		document.documentElement.style.setProperty('--blue-accent', blueColor);
+		bgBaseColor = input.value;
+		document.documentElement.style.setProperty('--bg-color', bgBaseColor);
 	}
 
 	function updateTextColor(event: Event) {
@@ -112,7 +112,7 @@ function updateAboutFontSize(event: Event) {
 		const values = `// Colors
 purpleColor: ${purpleColor}
 yellowColor: ${yellowColor}
-blueColor: ${blueColor}
+bgBaseColor: ${bgBaseColor}
 textColor: ${textColor}
 whiteColor: ${whiteColor}
 // Sizes
@@ -133,7 +133,7 @@ sectionSpacing: ${sectionSpacing}em`;
 		// Colors
 		document.documentElement.style.setProperty('--purple-accent', purpleColor);
 		document.documentElement.style.setProperty('--yellow-accent', yellowColor);
-		document.documentElement.style.setProperty('--blue-accent', blueColor);
+		document.documentElement.style.setProperty('--bg-color', bgBaseColor);
 		document.documentElement.style.setProperty('--text-color', textColor);
 		document.documentElement.style.setProperty('--white-color', whiteColor);
 		// Sizes
@@ -570,19 +570,14 @@ sectionSpacing: ${sectionSpacing}em`;
 		<div class="dev-section">
 			<h4 class="dev-section-title">🎨 Colors</h4>
 			<label class="color-picker-label">
-				<span>Purple:</span>
+				<span>Accent 1:</span>
 				<input type="color" value={purpleColor} on:input={updatePurpleColor} class="color-picker-input" />
 				<span class="color-picker-value">{purpleColor}</span>
 			</label>
 			<label class="color-picker-label">
-				<span>Yellow:</span>
+				<span>Accent 2:</span>
 				<input type="color" value={yellowColor} on:input={updateYellowColor} class="color-picker-input" />
 				<span class="color-picker-value">{yellowColor}</span>
-			</label>
-			<label class="color-picker-label">
-				<span>Blue:</span>
-				<input type="color" value={blueColor} on:input={updateBlueColor} class="color-picker-input" />
-				<span class="color-picker-value">{blueColor}</span>
 			</label>
 			<label class="color-picker-label">
 				<span>White:</span>
@@ -595,7 +590,12 @@ sectionSpacing: ${sectionSpacing}em`;
 				<span class="color-picker-value">{textColor}</span>
 			</label>
 			<label class="color-picker-label">
-				<span>Background:</span>
+				<span>BG base:</span>
+				<input type="color" value={bgBaseColor} on:input={updateBgBaseColor} class="color-picker-input" />
+				<span class="color-picker-value">{bgBaseColor}</span>
+			</label>
+			<label class="color-picker-label">
+				<span>BG darkness:</span>
 				<input type="range" min="0" max="30" value={backgroundDarkness} on:input={updateBackgroundDarkness} class="slider-input" />
 				<span class="slider-value">{backgroundDarkness}</span>
 			</label>
@@ -654,7 +654,6 @@ sectionSpacing: ${sectionSpacing}em`;
 :global(:root) {
 		--purple-accent: #774dd1;
 		--yellow-accent: #FFD84D;
-		--blue-accent: #6b8fff;
 		--white-color: #ffffff;
 		--text-color: #e0e0e0;
 		--bg-color: rgb(21, 14, 65);
@@ -673,7 +672,7 @@ sectionSpacing: ${sectionSpacing}em`;
 		padding: 0;
 		font-family: 'Gabarito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 		background: var(--bg-color);
-		color: #e0e0e0;
+		color: var(--text-color);
 		line-height: 1.6;
 		overflow-x: hidden;
 	}
@@ -707,7 +706,7 @@ sectionSpacing: ${sectionSpacing}em`;
 		padding: 0.4rem 0.75rem;
 		border-radius: 6px;
 		border: 1px solid rgba(107, 143, 255, 0.2);
-		color: #ffffff;
+		color: var(--white-color);
 		font-family: 'Gabarito', sans-serif;
 		font-size: 0.75rem;
 	}
@@ -909,14 +908,16 @@ section + section {
 	.bubble-1 {
 		width: 25vmin;
 		height: 25vmin;
-		background: rgba(99, 102, 241, 0.5);
+		background: var(--purple-accent);
+		opacity: 0.5;
 		animation: float1 70s ease-in-out infinite;
 	}
 
 	.bubble-2 {
 		width: 8vmin;
 		height: 8vmin;
-		background: rgba(139, 92, 246, 0.5);
+		background: var(--purple-accent);
+		opacity: 0.5;
 		animation: float2 55s ease-in-out infinite;
 	}
 
@@ -937,14 +938,16 @@ section + section {
 	.bubble-5 {
 		width: 28vmin;
 		height: 28vmin;
-		background: rgba(168, 85, 247, 0.35);
+		background: var(--purple-accent);
+		opacity: 0.35;
 		animation: float5 100s ease-in-out infinite;
 	}
 
 	.bubble-6 {
 		width: 7vmin;
 		height: 7vmin;
-		background: rgba(79, 70, 229, 0.55);
+		background: var(--purple-accent);
+		opacity: 0.55;
 		animation: float6 45s ease-in-out infinite;
 	}
 
@@ -958,14 +961,16 @@ section + section {
 	.bubble-8 {
 		width: 9vmin;
 		height: 9vmin;
-		background: rgba(129, 140, 248, 0.5);
+		background: var(--purple-accent);
+		opacity: 0.5;
 		animation: float8 52s ease-in-out infinite;
 	}
 
 	.bubble-9 {
 		width: 16vmin;
 		height: 16vmin;
-		background: rgba(192, 132, 252, 0.4);
+		background: var(--purple-accent);
+		opacity: 0.4;
 		animation: float9 80s ease-in-out infinite;
 	}
 
@@ -979,7 +984,8 @@ section + section {
 	.bubble-11 {
 		width: 30vmin;
 		height: 30vmin;
-		background: rgba(99, 102, 241, 0.3);
+		background: var(--purple-accent);
+		opacity: 0.3;
 		animation: float11 110s ease-in-out infinite;
 	}
 
@@ -1178,7 +1184,7 @@ section + section {
 		font-size: var(--hero-title-size);
 		font-weight: 900;
 		margin: 0;
-		color: #FFD84D;
+		color: var(--yellow-accent);
 		text-transform: uppercase;
 		letter-spacing: 0.02em;
 		font-family: 'Gabarito', sans-serif;
@@ -1192,7 +1198,7 @@ section + section {
 
 .subtitle {
 		font-size: var(--hero-subtitle-size);
-		color: #ffffff;
+		color: var(--white-color);
 		margin: 0;
 		line-height: 1.1;
 		font-weight: 900;
@@ -1203,7 +1209,7 @@ section + section {
 
 	.subtitle-accent {
 		font-size: 2rem;
-		color: #FFD84D;
+		color: var(--yellow-accent);
 		margin: 0.2rem 0 0 0;
 		line-height: 1.1;
 		font-weight: 900;
@@ -1212,15 +1218,15 @@ section + section {
 	}
 
 	.studio-text {
-		color: #ffffff;
+		color: var(--white-color);
 	}
 
 	.amp-text {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 	}
 
 	.subtitle-highlight {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 	}
 
 	/* Full Spectrum Rainbow Shimmer Effect */
@@ -1296,7 +1302,7 @@ section + section {
 		background: rgba(107, 143, 255, 0.15);
 		border: 1px solid rgba(107, 143, 255, 0.3);
 		border-radius: 6px;
-		color: #ffffff;
+		color: var(--white-color);
 		font-size: 0.85rem;
 		font-weight: 600;
 		text-transform: uppercase;
@@ -1320,7 +1326,7 @@ section + section {
 	.cta-button {
 		display: inline-block;
 		padding: 0.7rem 1.8rem;
-		background: #FFD84D !important; /* force default yellow */
+		background: var(--yellow-accent) !important; /* force default yellow */
 		color: #0f0a2e;
 		text-decoration: none;
 		border-radius: 4px;
@@ -1347,7 +1353,7 @@ section + section {
 		font-size: clamp(2rem, 4vw, 3rem);
 		margin-top: 0; /* kill default top margin to avoid gaps between sections */
 		margin-bottom: 0.5rem;
-		color: #FFD84D;
+		color: var(--yellow-accent);
 		text-align: center;
 		font-weight: 900;
 		text-transform: uppercase;
@@ -1387,7 +1393,7 @@ section + section {
 		left: 0;
 		right: 0;
 		height: 4px;
-		background: linear-gradient(90deg, var(--purple-accent), #FFD84D);
+		background: linear-gradient(90deg, var(--purple-accent), var(--yellow-accent));
 		border-radius: 20px 20px 0 0;
 	}
 
@@ -1402,17 +1408,17 @@ section + section {
 	}
 
 	.about-highlight {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 	}
 
 	.about-prefix {
-		color: #ffffff;
+		color: var(--white-color);
 	}
 
 .about-text {
 		font-size: var(--about-font-size);
 		line-height: 1.75;
-		color: #ffffff;
+		color: var(--white-color);
 		margin: 0 0 1rem;
 		text-align: justify;
 	}
@@ -1424,7 +1430,7 @@ section + section {
 	.about-list {
 		margin: 0 0 1rem 0;
 		padding-left: 1.5rem;
-		color: #ffffff;
+		color: var(--white-color);
 		font-size: 1.02rem;
 		line-height: 1.75;
 	}
@@ -1434,7 +1440,7 @@ section + section {
 	}
 
 	.keyword {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 		font-weight: 600;
 		transition: all 0.2s ease;
 	}
@@ -1476,7 +1482,7 @@ section + section {
 		left: 0;
 		right: 0;
 		height: 4px;
-		background: linear-gradient(90deg, var(--purple-accent), #FFD84D);
+		background: linear-gradient(90deg, var(--purple-accent), var(--yellow-accent));
 		border-radius: 16px 16px 0 0;
 	}
 
@@ -1495,7 +1501,7 @@ section + section {
 		font-size: 1.5rem;
 		margin: 0 0 0.25rem 0;
 		line-height: 1 !important; /* force compact title line height */
-color: #FFD84D;
+color: var(--yellow-accent);
 		font-weight: 900;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
@@ -1538,11 +1544,11 @@ color: #FFD84D;
 	}
 
 	.services-prefix {
-		color: #ffffff; /* "Explore our" in white */
+		color: var(--white-color); /* "Explore our" in white */
 	}
 
 	.services-highlight {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 	}
 
 	.section-divider {
@@ -1564,11 +1570,11 @@ color: #FFD84D;
 	}
 
 	.expertise-prefix {
-		color: #ffffff;
+		color: var(--white-color);
 	}
 
 	.expertise-highlight {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 	}
 
 	/* Pillars Section */
@@ -1583,11 +1589,11 @@ color: #FFD84D;
 	}
 
 	.pillars-prefix {
-		color: #ffffff;
+		color: var(--white-color);
 	}
 
 	.pillars-highlight {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 	}
 
 	.pillars-grid {
@@ -1629,7 +1635,7 @@ color: #FFD84D;
 	}
 
 	.pillar-card p {
-		color: #ffffff;
+		color: var(--white-color);
 		line-height: 1.7;
 		margin: 0;
 		text-align: center;
@@ -1653,11 +1659,11 @@ color: #FFD84D;
 	}
 
 	.projects-prefix {
-		color: #ffffff;
+		color: var(--white-color);
 	}
 
 	.projects-highlight {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 	}
 
 	.projects-notice {
@@ -1669,7 +1675,7 @@ color: #FFD84D;
 		margin: 0 0 2rem 0;
 		font-size: 1.25rem;
 		font-weight: 700;
-		color: #ffffff;
+		color: var(--white-color);
 		font-family: 'Gabarito', sans-serif;
 		text-align: center;
 		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
@@ -1681,7 +1687,7 @@ color: #FFD84D;
 	}
 
 	.notice-highlight {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 		font-weight: 900;
 	}
 
@@ -1691,7 +1697,7 @@ color: #FFD84D;
 	}
 
 	.notice-highlight-blue {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 		font-weight: 900;
 	}
 
@@ -1719,7 +1725,7 @@ color: #FFD84D;
 		left: 0;
 		right: 0;
 		height: 4px;
-		background: linear-gradient(90deg, var(--purple-accent), #FFD84D);
+		background: linear-gradient(90deg, var(--purple-accent), var(--yellow-accent));
 		border-radius: 16px 16px 0 0;
 	}
 
@@ -1769,7 +1775,7 @@ color: #FFD84D;
 
 	.gallery-btn:hover {
 		background: rgba(107, 143, 255, 0.4);
-		color: #ffffff;
+		color: var(--white-color);
 	}
 
 	.gallery-dots {
@@ -1799,7 +1805,7 @@ color: #FFD84D;
 	.featured-title {
 		font-size: 1.8rem;
 		margin: 0 0 0.25rem 0;
-		color: #FFD84D;
+		color: var(--yellow-accent);
 		font-weight: 900;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
@@ -1922,7 +1928,7 @@ border: 1px solid rgba(153, 69, 255, 0.5);
 
 	.experience-nav:hover {
 		background: rgba(107, 143, 255, 0.35);
-		color: #ffffff;
+		color: var(--white-color);
 	}
 
 	.experience-nav:disabled {
@@ -1999,7 +2005,7 @@ border: 1px solid rgba(153, 69, 255, 0.5);
 	.members-count {
 		font-size: 1rem;
 		font-weight: 900;
-		color: #FFD84D;
+		color: var(--yellow-accent);
 		font-family: 'Gabarito', sans-serif;
 		line-height: 1;
 	}
@@ -2007,7 +2013,7 @@ border: 1px solid rgba(153, 69, 255, 0.5);
 	.members-icon {
 		width: 14px;
 		height: 14px;
-		color: #FFD84D;
+		color: var(--yellow-accent);
 	}
 
 	/* Team & Partner Section */
@@ -2029,11 +2035,11 @@ border: 1px solid rgba(153, 69, 255, 0.5);
 	}
 
 	.team-prefix {
-		color: #ffffff;
+		color: var(--white-color);
 	}
 
 	.team-highlight {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 	}
 
 	.expertise-grid {
@@ -2093,7 +2099,7 @@ border: 1px solid rgba(153, 69, 255, 0.5);
 	}
 
 	.expertise-card p {
-		color: #ffffff;
+		color: var(--white-color);
 		font-size: 0.85rem;
 		line-height: 1.5;
 		margin: 0;
@@ -2124,7 +2130,7 @@ border: 1px solid rgba(153, 69, 255, 0.5);
 		left: 0;
 		right: 0;
 		height: 4px;
-		background: #FFD84D;
+		background: var(--yellow-accent);
 		border-radius: 16px 16px 0 0;
 	}
 
@@ -2157,7 +2163,7 @@ border: 1px solid rgba(153, 69, 255, 0.5);
 
 .unreal-content h3 {
 		font-size: 1.4rem;
-		color: #FFD84D;
+		color: var(--yellow-accent);
 		margin: 0 0 0.75rem 0;
 		font-weight: 900;
 		text-transform: uppercase;
@@ -2191,11 +2197,11 @@ border: 1px solid rgba(153, 69, 255, 0.5);
 	}
 
 	.contact-prefix {
-		color: #ffffff;
+		color: var(--white-color);
 	}
 
 	.contact-highlight {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 	}
 
 	.contact-box {
@@ -2223,7 +2229,7 @@ border: 1px solid rgba(153, 69, 255, 0.5);
 
 	.contact-cta {
 		font-size: 1.6rem;
-		color: #FFD84D;
+		color: var(--yellow-accent);
 		text-decoration: none;
 		font-weight: 700;
 		font-family: 'Gabarito', sans-serif;
@@ -2240,13 +2246,13 @@ border: 1px solid rgba(153, 69, 255, 0.5);
 		left: 50%;
 		width: 0;
 		height: 2px;
-		background: #FFD84D;
+		background: var(--yellow-accent);
 		transition: all 0.3s ease;
 		transform: translateX(-50%);
 	}
 
 	.contact-cta:hover {
-		color: #ffffff;
+		color: var(--white-color);
 		transform: scale(1.02);
 	}
 
@@ -2281,7 +2287,7 @@ border: 1px solid rgba(153, 69, 255, 0.5);
 	}
 
 	.contact-careers:hover {
-		color: #FFD84D;
+		color: var(--yellow-accent);
 	}
 
 	/* Footer */
