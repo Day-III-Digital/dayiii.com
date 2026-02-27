@@ -1,17 +1,54 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let email = 'contact@dayiii.com';
-let purpleColor = '#774dd1';
-let backgroundDarkness = 19;
-let cardTransparency = 42;
-let aboutFontSize = 0.96; // rem value
-	let marmotIconSize = 120; // px
+let email = 'contact@dayiii.com';
+	// Colors
+	let purpleColor = '#774dd1';
+	let yellowColor = '#FFD84D';
+	let blueColor = '#6b8fff';
+	let textColor = '#e0e0e0';
+	let whiteColor = '#ffffff';
+	// Sizes
+	let backgroundDarkness = 21;
+	let cardTransparency = 42;
+	let aboutFontSize = 0.96;
+	let marmotIconSize = 120;
+	let heroTitleSize = 3.4;
+	let heroSubtitleSize = 1.9;
+	let heroMarmotSize = 114;
+	// Spacing
+	let aboutPadding = 2.2;
+	let sectionSpacing = 1.5; // em for between sections
+	let devPanelOpen = false;
 
 	function updatePurpleColor(event: Event) {
 		const input = event.target as HTMLInputElement;
 		purpleColor = input.value;
 		document.documentElement.style.setProperty('--purple-accent', purpleColor);
+	}
+
+	function updateYellowColor(event: Event) {
+		const input = event.target as HTMLInputElement;
+		yellowColor = input.value;
+		document.documentElement.style.setProperty('--yellow-accent', yellowColor);
+	}
+
+	function updateBlueColor(event: Event) {
+		const input = event.target as HTMLInputElement;
+		blueColor = input.value;
+		document.documentElement.style.setProperty('--blue-accent', blueColor);
+	}
+
+	function updateTextColor(event: Event) {
+		const input = event.target as HTMLInputElement;
+		textColor = input.value;
+		document.documentElement.style.setProperty('--text-color', textColor);
+	}
+
+	function updateWhiteColor(event: Event) {
+		const input = event.target as HTMLInputElement;
+		whiteColor = input.value;
+		document.documentElement.style.setProperty('--white-color', whiteColor);
 	}
 
 	function updateBackgroundDarkness(event: Event) {
@@ -41,18 +78,82 @@ function updateAboutFontSize(event: Event) {
 		document.documentElement.style.setProperty('--marmot-icon-size', marmotIconSize + 'px');
 	}
 
+	function updateHeroTitleSize(event: Event) {
+		const input = event.target as HTMLInputElement;
+		heroTitleSize = parseFloat(input.value);
+		document.documentElement.style.setProperty('--hero-title-size', heroTitleSize + 'rem');
+	}
+
+	function updateHeroSubtitleSize(event: Event) {
+		const input = event.target as HTMLInputElement;
+		heroSubtitleSize = parseFloat(input.value);
+		document.documentElement.style.setProperty('--hero-subtitle-size', heroSubtitleSize + 'rem');
+	}
+
+	function updateHeroMarmotSize(event: Event) {
+		const input = event.target as HTMLInputElement;
+		heroMarmotSize = parseInt(input.value);
+		document.documentElement.style.setProperty('--hero-marmot-size', heroMarmotSize + 'px');
+	}
+
+	function updateAboutPadding(event: Event) {
+		const input = event.target as HTMLInputElement;
+		aboutPadding = parseFloat(input.value);
+		document.documentElement.style.setProperty('--about-padding', aboutPadding + 'rem');
+	}
+
+	function updateSectionSpacing(event: Event) {
+		const input = event.target as HTMLInputElement;
+		sectionSpacing = parseFloat(input.value);
+		document.documentElement.style.setProperty('--section-spacing', sectionSpacing + 'em');
+	}
+
+	function copySliderValues() {
+		const values = `// Colors
+purpleColor: ${purpleColor}
+yellowColor: ${yellowColor}
+blueColor: ${blueColor}
+textColor: ${textColor}
+whiteColor: ${whiteColor}
+// Sizes
+backgroundDarkness: ${backgroundDarkness}
+cardTransparency: ${cardTransparency}%
+aboutFontSize: ${aboutFontSize}rem
+marmotIconSize: ${marmotIconSize}px
+heroTitleSize: ${heroTitleSize}rem
+heroSubtitleSize: ${heroSubtitleSize}rem
+heroMarmotSize: ${heroMarmotSize}px
+// Spacing
+aboutPadding: ${aboutPadding}rem
+sectionSpacing: ${sectionSpacing}em`;
+		navigator.clipboard.writeText(values);
+	}
+
 	onMount(() => {
+		// Colors
 		document.documentElement.style.setProperty('--purple-accent', purpleColor);
+		document.documentElement.style.setProperty('--yellow-accent', yellowColor);
+		document.documentElement.style.setProperty('--blue-accent', blueColor);
+		document.documentElement.style.setProperty('--text-color', textColor);
+		document.documentElement.style.setProperty('--white-color', whiteColor);
+		// Sizes
 		document.documentElement.style.setProperty('--bg-color', 'rgb(15, 10, 46)');
 		document.documentElement.style.setProperty('--card-opacity', (cardTransparency / 100).toString());
-document.documentElement.style.setProperty('--about-font-size', aboutFontSize + 'rem');
+		document.documentElement.style.setProperty('--about-font-size', aboutFontSize + 'rem');
 		document.documentElement.style.setProperty('--marmot-icon-size', marmotIconSize + 'px');
+		document.documentElement.style.setProperty('--hero-title-size', heroTitleSize + 'rem');
+		document.documentElement.style.setProperty('--hero-subtitle-size', heroSubtitleSize + 'rem');
+		document.documentElement.style.setProperty('--hero-marmot-size', heroMarmotSize + 'px');
+		// Spacing
+		document.documentElement.style.setProperty('--about-padding', aboutPadding + 'rem');
+		document.documentElement.style.setProperty('--section-spacing', sectionSpacing + 'em');
 	});
 
 	onMount(() => {
 		const sections = document.querySelectorAll('section:not(.hero)');
+		const cards = document.querySelectorAll('.service-card, .expertise-card, .pillar-card, .client-card, .featured-project-card');
 
-		const observer = new IntersectionObserver((entries) => {
+		const sectionObserver = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
 					entry.target.classList.add('visible');
@@ -64,15 +165,43 @@ document.documentElement.style.setProperty('--about-font-size', aboutFontSize + 
 			threshold: 0.15
 		});
 
+		const cardObserver = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('card-visible');
+				} else {
+					entry.target.classList.remove('card-visible');
+				}
+			});
+		}, {
+			threshold: 0.1
+		});
+
+		// Index cards within their parent container for staggered animation
+		const containers = document.querySelectorAll('.services-grid, .expertise-grid, .pillars-grid, .experience-track');
+		containers.forEach(container => {
+			const containerCards = container.querySelectorAll('.service-card, .expertise-card, .pillar-card, .client-card');
+			containerCards.forEach((card, index) => {
+				(card as HTMLElement).style.setProperty('--card-index', index.toString());
+			});
+		});
+
 		// Small delay to ensure CSS is ready, then add animation class and observe
 		requestAnimationFrame(() => {
 			sections.forEach(section => {
 				section.classList.add('scroll-animate');
-				observer.observe(section);
+				sectionObserver.observe(section);
+			});
+			cards.forEach(card => {
+				card.classList.add('card-animate');
+				cardObserver.observe(card);
 			});
 		});
 
-		return () => observer.disconnect();
+		return () => {
+			sectionObserver.disconnect();
+			cardObserver.disconnect();
+		};
 	});
 
 	const clientProjects = [
@@ -192,11 +321,13 @@ document.documentElement.style.setProperty('--about-font-size', aboutFontSize + 
 	<!-- Hero Section - Split Layout -->
 	<section class="hero">
 		<div class="hero-split">
-			<div class="hero-left">
-				<h1 class="title sr-only">Day III Digital</h1>
-				<img src="/images/logo_horizontal_rounded.png" alt="Day III Digital" class="hero-logo" />
-				<div class="hero-taglines">
-					<p class="subtitle"><span class="full-spectrum">Full Spectrum</span> <span class="subtitle-highlight">Technical Art</span></p>
+<div class="hero-left">
+				<div class="hero-branding">
+<img src="/images/marmot_logo_round.png" alt="Day III Digital" class="hero-marmot" />
+					<div class="hero-titles">
+<h1 class="title">DAY III <span class="title-digital">DIGITAL</span></h1>
+						<p class="subtitle"><span class="full-spectrum">FULL SPECTRUM</span> <span class="subtitle-highlight">TECH ART</span></p>
+					</div>
 				</div>
 				<span class="partner-badge"><img src="/images/unreal_icon.png" alt="Unreal Engine" class="partner-icon" /> Official Unreal Engine Service Partner</span>
 				<a href="#contact" class="cta-button">Get in Touch</a>
@@ -209,36 +340,7 @@ document.documentElement.style.setProperty('--about-font-size', aboutFontSize + 
 				</div>
 			</div>
 		</div>
-	</section>
-
-<!-- Color Picker -->
-	<div class="color-picker-container">
-		<label class="color-picker-label">
-			<span>Purple accent:</span>
-			<input type="color" value={purpleColor} on:input={updatePurpleColor} class="color-picker-input" />
-			<span class="color-picker-value">{purpleColor}</span>
-		</label>
-		<label class="color-picker-label">
-			<span>Background:</span>
-			<input type="range" min="0" max="30" value={backgroundDarkness} on:input={updateBackgroundDarkness} class="slider-input" />
-			<span class="slider-value">{backgroundDarkness}</span>
-		</label>
-<label class="color-picker-label">
-			<span>Card opacity:</span>
-			<input type="range" min="20" max="100" value={cardTransparency} on:input={updateCardTransparency} class="slider-input" />
-			<span class="slider-value">{cardTransparency}%</span>
-		</label>
-<label class="color-picker-label">
-			<span>HI THERE font:</span>
-			<input type="range" min="0.8" max="1.4" step="0.02" value={aboutFontSize} on:input={updateAboutFontSize} class="slider-input" />
-			<span class="slider-value">{aboutFontSize}rem</span>
-		</label>
-		<label class="color-picker-label">
-			<span>Marmot icon:</span>
-			<input type="range" min="60" max="180" value={marmotIconSize} on:input={updateMarmotIconSize} class="slider-input" />
-			<span class="slider-value">{marmotIconSize}px</span>
-		</label>
-	</div>
+</section>
 
 	<!-- Services Section -->
 	<section class="services">
@@ -458,13 +560,112 @@ document.documentElement.style.setProperty('--about-font-size', aboutFontSize + 
 	</footer>
 </div>
 
+<!-- Dev Panel (sliding drawer) - outside container for proper z-index -->
+<button class="dev-panel-tab" on:click={() => devPanelOpen = !devPanelOpen}>
+	🛠️
+</button>
+<div class="dev-panel" class:open={devPanelOpen}>
+	<button class="dev-panel-close" on:click={() => devPanelOpen = false}>✕</button>
+	<div class="dev-panel-content">
+		<div class="dev-section">
+			<h4 class="dev-section-title">🎨 Colors</h4>
+			<label class="color-picker-label">
+				<span>Purple:</span>
+				<input type="color" value={purpleColor} on:input={updatePurpleColor} class="color-picker-input" />
+				<span class="color-picker-value">{purpleColor}</span>
+			</label>
+			<label class="color-picker-label">
+				<span>Yellow:</span>
+				<input type="color" value={yellowColor} on:input={updateYellowColor} class="color-picker-input" />
+				<span class="color-picker-value">{yellowColor}</span>
+			</label>
+			<label class="color-picker-label">
+				<span>Blue:</span>
+				<input type="color" value={blueColor} on:input={updateBlueColor} class="color-picker-input" />
+				<span class="color-picker-value">{blueColor}</span>
+			</label>
+			<label class="color-picker-label">
+				<span>White:</span>
+				<input type="color" value={whiteColor} on:input={updateWhiteColor} class="color-picker-input" />
+				<span class="color-picker-value">{whiteColor}</span>
+			</label>
+			<label class="color-picker-label">
+				<span>Text:</span>
+				<input type="color" value={textColor} on:input={updateTextColor} class="color-picker-input" />
+				<span class="color-picker-value">{textColor}</span>
+			</label>
+			<label class="color-picker-label">
+				<span>Background:</span>
+				<input type="range" min="0" max="30" value={backgroundDarkness} on:input={updateBackgroundDarkness} class="slider-input" />
+				<span class="slider-value">{backgroundDarkness}</span>
+			</label>
+			<label class="color-picker-label">
+				<span>Card opacity:</span>
+				<input type="range" min="20" max="100" value={cardTransparency} on:input={updateCardTransparency} class="slider-input" />
+				<span class="slider-value">{cardTransparency}%</span>
+			</label>
+		</div>
+		<div class="dev-section">
+			<h4 class="dev-section-title">📏 Sizes</h4>
+			<label class="color-picker-label">
+				<span>HI THERE font:</span>
+				<input type="range" min="0.8" max="1.4" step="0.02" value={aboutFontSize} on:input={updateAboutFontSize} class="slider-input" />
+				<span class="slider-value">{aboutFontSize}rem</span>
+			</label>
+			<label class="color-picker-label">
+				<span>Marmot icon:</span>
+				<input type="range" min="60" max="180" value={marmotIconSize} on:input={updateMarmotIconSize} class="slider-input" />
+				<span class="slider-value">{marmotIconSize}px</span>
+			</label>
+			<label class="color-picker-label">
+				<span>DAY III DIGITAL:</span>
+				<input type="range" min="2" max="5" step="0.1" value={heroTitleSize} on:input={updateHeroTitleSize} class="slider-input" />
+				<span class="slider-value">{heroTitleSize}rem</span>
+			</label>
+			<label class="color-picker-label">
+				<span>FULL SPECTRUM:</span>
+				<input type="range" min="1" max="3" step="0.1" value={heroSubtitleSize} on:input={updateHeroSubtitleSize} class="slider-input" />
+				<span class="slider-value">{heroSubtitleSize}rem</span>
+			</label>
+			<label class="color-picker-label">
+				<span>Hero marmot:</span>
+				<input type="range" min="60" max="200" value={heroMarmotSize} on:input={updateHeroMarmotSize} class="slider-input" />
+				<span class="slider-value">{heroMarmotSize}px</span>
+			</label>
+		</div>
+		<div class="dev-section">
+			<h4 class="dev-section-title">↔️ Spacing</h4>
+			<label class="color-picker-label">
+				<span>HI THERE padding:</span>
+				<input type="range" min="1" max="4" step="0.1" value={aboutPadding} on:input={updateAboutPadding} class="slider-input" />
+				<span class="slider-value">{aboutPadding}rem</span>
+			</label>
+			<label class="color-picker-label">
+				<span>Section gap:</span>
+				<input type="range" min="1" max="8" step="0.5" value={sectionSpacing} on:input={updateSectionSpacing} class="slider-input" />
+				<span class="slider-value">{sectionSpacing}em</span>
+			</label>
+		</div>
+		<button class="copy-values-btn" on:click={copySliderValues}>📋 Copy Values</button>
+	</div>
+</div>
+
 <style>
 :global(:root) {
 		--purple-accent: #774dd1;
---bg-color: rgb(19, 13, 59);
---card-opacity: 0.42;
---about-font-size: 0.96rem;
+		--yellow-accent: #FFD84D;
+		--blue-accent: #6b8fff;
+		--white-color: #ffffff;
+		--text-color: #e0e0e0;
+		--bg-color: rgb(21, 14, 65);
+		--card-opacity: 0.42;
+		--about-font-size: 0.96rem;
 		--marmot-icon-size: 120px;
+		--hero-title-size: 3.4rem;
+		--hero-subtitle-size: 1.9rem;
+		--hero-marmot-size: 114px;
+		--about-padding: 2.2rem;
+		--section-spacing: 1.5em;
 	}
 
 	:global(html, body) {
@@ -479,31 +680,43 @@ document.documentElement.style.setProperty('--about-font-size', aboutFontSize + 
 
 	.color-picker-container {
 		display: flex;
-		justify-content: center;
-		gap: 1rem;
-		padding: 1rem;
-		margin-top: 2rem;
-		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 0.5rem;
+		padding: 0.5rem;
+		margin-top: 0.5rem;
+	}
+
+	.dev-section {
+		margin-bottom: 1rem;
+	}
+
+	.dev-section-title {
+		color: var(--yellow-accent);
+		font-size: 0.7rem;
+		font-weight: 700;
+		margin: 0 0 0.5rem 0;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 
 	.color-picker-label {
 		display: flex;
 		align-items: center;
-		gap: 0.75rem;
+		gap: 0.5rem;
 		background: rgba(15, 10, 46, var(--card-opacity));
-		padding: 0.75rem 1.25rem;
-		border-radius: 8px;
+		padding: 0.4rem 0.75rem;
+		border-radius: 6px;
 		border: 1px solid rgba(107, 143, 255, 0.2);
 		color: #ffffff;
 		font-family: 'Gabarito', sans-serif;
-		font-size: 0.9rem;
+		font-size: 0.75rem;
 	}
 
 	.color-picker-input {
-		width: 40px;
-		height: 40px;
+		width: 28px;
+		height: 28px;
 		border: none;
-		border-radius: 6px;
+		border-radius: 4px;
 		cursor: pointer;
 		background: transparent;
 	}
@@ -524,7 +737,7 @@ document.documentElement.style.setProperty('--about-font-size', aboutFontSize + 
 	}
 
 	.slider-input {
-		width: 100px;
+		width: 70px;
 		cursor: pointer;
 		accent-color: var(--purple-accent);
 	}
@@ -533,7 +746,88 @@ document.documentElement.style.setProperty('--about-font-size', aboutFontSize + 
 		font-family: monospace;
 		color: var(--purple-accent);
 		font-weight: 600;
-		min-width: 40px;
+		min-width: 50px;
+		font-size: 0.7rem;
+	}
+
+	.copy-values-btn {
+		background: var(--purple-accent);
+		color: #fff;
+		border: none;
+		padding: 0.4rem 0.75rem;
+		border-radius: 6px;
+		cursor: pointer;
+		font-family: 'Gabarito', sans-serif;
+		font-size: 0.75rem;
+		font-weight: 600;
+		transition: opacity 0.2s;
+	}
+
+	.copy-values-btn:hover {
+		opacity: 0.85;
+	}
+
+	.copy-values-btn:active {
+		opacity: 0.7;
+	}
+
+	.dev-panel-tab {
+		position: fixed;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		z-index: 10001;
+		background: rgba(15, 10, 46, 0.95);
+		border: 1px solid rgba(107, 143, 255, 0.3);
+		border-right: none;
+		padding: 0.75rem 0.5rem;
+		border-radius: 8px 0 0 8px;
+		cursor: pointer;
+		font-size: 1rem;
+		transition: all 0.2s;
+	}
+
+	.dev-panel-tab:hover {
+		background: rgba(107, 143, 255, 0.2);
+	}
+
+	.dev-panel {
+		position: fixed;
+		top: 0;
+		right: -240px;
+		bottom: 0;
+		width: 240px;
+		z-index: 10002;
+		background: rgba(15, 10, 46, 0.98);
+		border-left: 1px solid rgba(107, 143, 255, 0.3);
+		backdrop-filter: blur(10px);
+		transition: right 0.3s ease;
+	}
+
+	.dev-panel.open {
+		right: 0;
+	}
+
+	.dev-panel-close {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.5rem;
+		background: transparent;
+		border: none;
+		color: #888;
+		font-size: 1rem;
+		cursor: pointer;
+		padding: 0.25rem 0.5rem;
+	}
+
+	.dev-panel-close:hover {
+		color: #fff;
+	}
+
+	.dev-panel-content {
+		padding: 2rem 0.5rem 0.5rem;
+		height: 100%;
+		overflow-y: auto;
 	}
 
 	.container {
@@ -555,7 +849,7 @@ document.documentElement.style.setProperty('--about-font-size', aboutFontSize + 
 	}
 
 section + section {
-		margin-top: 4em;
+		margin-top: var(--section-spacing);
 	}
 
 	section.scroll-animate {
@@ -564,6 +858,19 @@ section + section {
 	}
 
 	section.scroll-animate.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* Card scroll animations */
+	.card-animate {
+		opacity: 0;
+		transform: translateY(40px);
+		transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+		transition-delay: calc(var(--card-index, 0) * 0.08s);
+	}
+
+	.card-animate.card-visible {
 		opacity: 1;
 		transform: translateY(0);
 	}
@@ -849,50 +1156,49 @@ section + section {
 		animation: slideInRight 0.8s ease-out 0.2s both;
 	}
 
-	.hero-logo {
-		display: block;
-		max-width: 480px;
-		width: 100%;
-		height: auto;
+.hero-branding {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
 		margin-bottom: 1.5rem;
+	}
+
+.hero-marmot {
+		width: var(--hero-marmot-size);
+		height: var(--hero-marmot-size);
 		filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
 	}
 
-	/* Visually hidden but accessible heading */
-	.sr-only {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		padding: 0;
-		margin: -1px;
-		overflow: hidden;
-		clip: rect(0, 0, 0, 0);
-		white-space: nowrap;
-		border: 0;
+	.hero-titles {
+		display: flex;
+		flex-direction: column;
 	}
 
-	.title {
-		font-size: clamp(4rem, 9vw, 5.75rem); /* slightly bigger hero title */
-		font-weight: 1000;
+.title {
+		font-size: var(--hero-title-size);
+		font-weight: 900;
 		margin: 0;
-		color: #ffffff; /* Day III Digital in white */
+		color: #FFD84D;
 		text-transform: uppercase;
 		letter-spacing: 0.02em;
 		font-family: 'Gabarito', sans-serif;
+		line-height: 1.1;
+		white-space: nowrap;
 	}
 
-	.hero-taglines {
-		margin-bottom: 1rem;
-	}
-
-	.subtitle {
-		font-size: 2rem;
+	.title-digital {
 		color: var(--purple-accent);
+	}
+
+.subtitle {
+		font-size: var(--hero-subtitle-size);
+		color: #ffffff;
 		margin: 0;
 		line-height: 1.1;
 		font-weight: 900;
 		text-transform: uppercase;
 		font-family: 'Gabarito', sans-serif;
+		white-space: nowrap;
 	}
 
 	.subtitle-accent {
@@ -923,8 +1229,8 @@ section + section {
 		display: inline-block;
 	}
 
-	.full-spectrum::before {
-		content: 'Full Spectrum';
+.full-spectrum::before {
+		content: 'FULL SPECTRUM';
 		position: absolute;
 		inset: 0;
 		background: linear-gradient(
@@ -1064,7 +1370,7 @@ section + section {
 		background: rgba(15, 10, 46, var(--card-opacity));
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
-		padding: 1.75rem 2.5rem 2.5rem 2.5rem;
+		padding: 1.75rem var(--about-padding) var(--about-padding) var(--about-padding);
 		border-radius: 20px;
 		border: 1px solid rgba(107, 143, 255, 0.2);
 		transition: transform 0.3s ease, box-shadow 0.3s ease;
