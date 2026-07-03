@@ -216,16 +216,15 @@ sectionSpacing: ${sectionSpacing}em`;
 
 	const clientProjects = [
 		// Console
-		{ members: 3, name: 'Hogwarts Legacy', logo: 'https://cdn.cloudflare.steamstatic.com/steam/apps/990080/library_600x900.jpg' },
-		{ members: 5, name: 'LEGO Horizon Adventures', logo: 'https://cdn.cloudflare.steamstatic.com/steam/apps/2428810/library_600x900.jpg' },
-		{ members: 1, name: 'Watch Dogs: Legion', logo: 'https://cdn.mobygames.com/covers/9328358-watch-dogs-legion-playstation-4-front-cover.jpg' },
-		{ members: 1, name: 'For Honor', logo: 'https://cdn.mobygames.com/covers/1784962-for-honor-playstation-4-front-cover.jpg' },
-		{ members: 1, name: "Tom Clancy's Ghost Recon Wildlands", logo: 'https://cdn.mobygames.com/covers/2153415-tom-clancys-ghost-recon-wildlands-playstation-4-front-cover.jpg' },
-		{ members: 1, name: "Tom Clancy's Rainbow Six Siege", logo: 'https://cdn.mobygames.com/covers/1131178-tom-clancys-rainbow-six-siege-xbox-one-front-cover.png' },
+		{ members: 3, name: 'Hogwarts Legacy', logo: '/images/hogwarts_legacy_600x900.jpg' },
+		{ members: 5, name: 'LEGO Horizon Adventures', logo: '/images/lego_ha_600x900.jpg' },
+		{ members: 1, name: 'Watch Dogs: Legion', logo: '/images/watch-dogs-legion.jpg' },
+		{ members: 1, name: 'For Honor', logo: '/images/for-honor.jpg' },
+		{ members: 1, name: "Tom Clancy's Ghost Recon Wildlands", logo: '/images/tom-clancys-ghost-recon-wildlands.jpg' },
+		{ members: 1, name: "Tom Clancy's Rainbow Six Siege", logo: '/images/tom-clancys-rainbow-six-siege.png' },
 		// Mobile
-		{ members: 1, name: 'Star Wars: Hunters', logo: 'https://cdn.mobygames.com/covers/10937779-star-wars-hunters-android-front-cover.jpg' },
-		{ members: 1, name: 'CSR 2', logo: 'https://cdn.mobygames.com/covers/8385924-csr-racing-2-android-front-cover.png' },
-		{ members: 2, name: 'CSR Racing', logo: 'https://cdn.mobygames.com/covers/9313786-csr-racing-iphone-front-cover.jpg' },
+		{ members: 1, name: 'Star Wars: Hunters', logo: '/images/star-wars-hunters.jpg' },
+		{ members: 2, name: 'CSR Racing', logo: '/images/csr-racing.jpg' },
 	];
 
 	const featuredProject = {
@@ -235,8 +234,8 @@ sectionSpacing: ${sectionSpacing}em`;
 		tags: ['Performance Optimization', 'Shader Tech Art', 'Environment Art', 'Engineering', 'Tools & Reporting'],
 		images: [
 			'/images/mafia_the_old_country.jpg',
-			'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1941540/ss_8c5af3a1b47337fe9d2f4f48d21975964eb23ccb.1920x1080.jpg',
-			'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1941540/ss_44047e62744c4a7201a0238994d23f3ca72649cb.1920x1080.jpg'
+			'/images/ss_8c5af3a1b47337fe9d2f4f48d21975964eb23ccb.1920x1080.jpg',
+			'/images/ss_44047e62744c4a7201a0238994d23f3ca72649cb.1920x1080.jpg'
 		],
 		companyLogos: [
 			{ src: '/images/2k_logo.svg', alt: '2K Games' },
@@ -450,7 +449,7 @@ sectionSpacing: ${sectionSpacing}em`;
 	<section id="projects" class="projects">
 		<div class="section-content">
 			<h2 class="projects-heading"><span class="projects-prefix">FEATURED</span> <span class="projects-highlight">PROJECTS</span></h2>
-			<p class="projects-notice">Currently working on <span class="notice-highlight">3+ unannounced</span> Unreal Engine projects</p>
+			<p class="projects-notice">Currently working on <span class="notice-highlight">4+ unannounced</span> Unreal Engine projects</p>
 
 			<div class="featured-project-card">
 				<div class="featured-gallery">
