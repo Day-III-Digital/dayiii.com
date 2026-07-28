@@ -323,7 +323,7 @@ sectionSpacing: ${sectionSpacing}em`;
 						<p class="subtitle"><span class="full-spectrum">FULL SPECTRUM</span> <span class="subtitle-highlight">TECH ART</span></p>
 					</div>
 				</div>
-				<span class="partner-badge"><img src="/images/unreal_icon.png" alt="Unreal Engine" class="partner-icon" /> Official Unreal Engine Service Partner</span>
+				<a href="https://partners.unrealengine.com/s/partner-detail?partnerAccountId=001QP00001C00VKYAZ"><span class="partner-badge"><img src="/images/unreal_icon.png" alt="Unreal Engine" class="partner-icon" /> Official Unreal Engine Service Partner</span></a>
 				<a href="#contact" class="cta-button">Get in Touch</a>
 			</div>
 			<div class="hero-right">
