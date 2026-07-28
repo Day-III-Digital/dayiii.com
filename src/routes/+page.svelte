@@ -576,6 +576,10 @@ sectionSpacing: ${sectionSpacing}em`;
 		--section-spacing: 1.5em;
 	}
 
+	:global(*, *::before, *::after) {
+		box-sizing: border-box;
+	}
+
 	:global(html, body) {
 		margin: 0;
 		padding: 0;
@@ -2053,8 +2057,23 @@ border: 1px solid rgba(153, 69, 255, 0.5);
 			max-width: 320px;
 		}
 
+		.hero-branding {
+			gap: 1rem;
+		}
+
+		.hero-marmot {
+			width: clamp(64px, 18vw, var(--hero-marmot-size));
+			height: clamp(64px, 18vw, var(--hero-marmot-size));
+		}
+
+		.title {
+			font-size: clamp(1.6rem, 7vw, var(--hero-title-size));
+			white-space: normal;
+		}
+
 		.subtitle {
-			font-size: 1.6rem;
+			font-size: clamp(1rem, 4.2vw, 1.6rem);
+			white-space: normal;
 		}
 
 		.hero-about {
