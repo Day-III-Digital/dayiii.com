@@ -245,7 +245,7 @@
 
 	.container {
 		max-width: 1200px;
-		margin: 4.5rem auto 0; /* add space below fixed top bar */
+		margin: 0 auto;
 		position: relative;
 		z-index: 1;
 	}

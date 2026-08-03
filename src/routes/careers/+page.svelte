@@ -53,10 +53,18 @@
 </div>
 
 <style>
+	:global(:root) {
+		--purple-accent: #774dd1;
+		--yellow-accent: #ffd84d;
+		--white-color: #ffffff;
+		--text-color: #e0e0e0;
+		--card-opacity: 0.42;
+	}
+
 	.careers-page {
 		min-height: 100vh;
 		background: transparent;
-		padding: 6rem 2rem 4rem;
+		padding: 3rem 2rem 4rem;
 		position: relative;
 		z-index: 1;
 	}

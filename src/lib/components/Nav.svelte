@@ -1,12 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
 
-	const navLogo = '/images/logo_square_rounded.png';
+	const navLogo = '/images/icon-white.png';
 
 	let isMenuOpen = $state(false);
-	let isHidden = $state(false);
-	let lastScrollY = 0;
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
@@ -15,26 +12,9 @@
 	function closeMenu() {
 		isMenuOpen = false;
 	}
-
-	onMount(() => {
-		const handleScroll = () => {
-			const currentScrollY = window.scrollY;
-			
-			if (currentScrollY > lastScrollY && currentScrollY > 80) {
-				isHidden = true;
-			} else {
-				isHidden = false;
-			}
-			
-			lastScrollY = currentScrollY;
-		};
-
-		window.addEventListener('scroll', handleScroll, { passive: true });
-		return () => window.removeEventListener('scroll', handleScroll);
-	});
 </script>
 
-<nav class="nav" class:hidden={isHidden}>
+<nav class="nav">
 	<div class="nav-container">
 		<a href="/" class="logo">
 			<img src={navLogo} alt="Day III Digital logo" class="logo-icon" />
@@ -48,56 +28,54 @@
 		</button>
 
 		<ul class="nav-links" class:open={isMenuOpen}>
-			<li><a href="/" onclick={closeMenu} class:active={$page.url.pathname === '/'}>HOME</a></li>
-			<li><a href="/#projects" onclick={closeMenu}>PROJECTS</a></li>
-			<li><a href="/careers" onclick={closeMenu} class:active={$page.url.pathname === '/careers'}>CAREERS</a></li>
-			<li><a href="/#contact" onclick={closeMenu}>CONTACT</a></li>
+			<li><a href="/" onclick={closeMenu} class:active={$page.url.pathname === '/'}>Home</a></li>
+			<li><a href="/#projects" onclick={closeMenu}>Projects</a></li>
+			<li><a href="/careers" onclick={closeMenu} class:active={$page.url.pathname === '/careers'}>Careers</a></li>
+			<li><a href="/#contact" onclick={closeMenu}>Contact</a></li>
 		</ul>
 	</div>
 </nav>
 
 <style>
 	.nav {
-		position: fixed;
+		position: sticky;
 		top: 0;
 		left: 0;
 		right: 0;
-		background: rgba(10, 14, 39, 0.95);
+		background: rgba(18, 12, 32, 0.82);
 		backdrop-filter: blur(10px);
-		border-bottom: 2px solid #1a1f3a;
-		z-index: 1000;
+		-webkit-backdrop-filter: blur(10px);
+		border-bottom: 1px solid #3a2f52;
+		z-index: 50;
 		font-family: 'Gabarito', sans-serif;
-		transition: transform 0.3s ease;
-	}
-
-	.nav.hidden {
-		transform: translateY(-100%);
 	}
 
 	.nav-container {
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: 1rem 2rem;
+		padding: 14px 32px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: 24px;
 	}
 
 	.logo {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.5rem;
-		font-size: 1.5rem;
+		gap: 12px;
+		font-size: 17px;
 		font-weight: 900;
-		color: #ffffff !important; /* force nav Day III Digital text to white */
+		color: #ffffff;
 		text-decoration: none;
-		letter-spacing: 0.05em;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
 	}
 
 	.logo-icon {
-		width: 28px;
-		height: 28px;
-		border-radius: 4px;
+		height: 34px;
+		width: auto;
+		display: block;
 	}
 
 	.menu-toggle {
@@ -113,7 +91,7 @@
 	.hamburger {
 		width: 25px;
 		height: 3px;
-		background: #FFD84D;
+		background: #ffcb63;
 		border-radius: 2px;
 		transition: all 0.3s ease;
 	}
@@ -121,46 +99,27 @@
 	.nav-links {
 		display: flex;
 		list-style: none;
-		gap: 2.5rem;
+		gap: 32px;
 		margin: 0;
 		padding: 0;
 	}
 
 	.nav-links a {
-		color: #e0e0e0;
+		color: #ffffff;
 		text-decoration: none;
 		font-weight: 700;
-		font-size: 0.95rem;
-		letter-spacing: 0.05em;
-		transition: color 0.3s ease;
-		position: relative;
-	}
-
-	.nav-links a::after {
-		content: '';
-		position: absolute;
-		bottom: -5px;
-		left: 0;
-		width: 0;
-		height: 2px;
-		background: #9462E8;
-		transition: width 0.3s ease;
+		font-size: 13px;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		transition: color 0.2s ease;
 	}
 
 	.nav-links a:hover {
-		color: #9462E8;
-	}
-
-	.nav-links a:hover::after {
-		width: 100%;
+		color: #ffcb63;
 	}
 
 	.nav-links a.active {
-		color: #FFD84D;
-	}
-
-	.nav-links a.active::after {
-		width: 0;
+		color: #ffcb63;
 	}
 
 	@media (max-width: 768px) {
@@ -174,14 +133,14 @@
 			left: 0;
 			right: 0;
 			flex-direction: column;
-			background: rgba(10, 14, 39, 0.98);
+			background: rgba(18, 12, 32, 0.97);
 			padding: 2rem;
 			gap: 1.5rem;
 			transform: translateY(-100%);
 			opacity: 0;
 			visibility: hidden;
 			transition: all 0.3s ease;
-			border-bottom: 2px solid #1a1f3a;
+			border-bottom: 1px solid #3a2f52;
 		}
 
 		.nav-links.open {
@@ -191,7 +150,7 @@
 		}
 
 		.nav-links a {
-			font-size: 1.2rem;
+			font-size: 1.1rem;
 		}
 	}
 </style>
