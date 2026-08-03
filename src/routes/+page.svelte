@@ -61,20 +61,20 @@
 	});
 
 	const legacyProjects = [
-		{ name: "Hogwarts Legacy", caption: 'Hogwarts Legacy', poster: '/images/poster-hogwarts_legacy_600x900.png' },
-		{ name: 'LEGO Horizon Adventures', caption: 'LEGO Horizon Adventures', poster: '/images/poster-lego_ha_600x900.png' },
-		{ name: "Watch Dogs: Legion", caption: 'Watch Dogs: Legion', poster: '/images/poster-watch-dogs-legion.png' },
-		{ name: 'For Honor', caption: 'For Honor', poster: '/images/poster-for-honor.png' },
-		{ name: "Tom Clancy's Ghost Recon Wildlands", caption: 'Ghost Recon Wildlands', poster: '/images/poster-tom-clancys-ghost-recon-wildlands.png' },
-		{ name: "Tom Clancy's Rainbow Six Siege", caption: 'Rainbow Six Siege', poster: '/images/poster-tom-clancys-rainbow-six-siege.png' },
-		{ name: 'Star Wars: Hunters', caption: 'Star Wars: Hunters', poster: '/images/poster-star-wars-hunters.png' },
-		{ name: 'CSR Racing', caption: 'CSR Racing', poster: '/images/poster-csr-racing.png' }
+		{ name: "Hogwarts Legacy", caption: 'Hogwarts Legacy', poster: '/images/hogwarts_legacy_600x900.jpg' },
+		{ name: 'LEGO Horizon Adventures', caption: 'LEGO Horizon Adventures', poster: '/images/lego_ha_600x900.jpg' },
+		{ name: "Watch Dogs: Legion", caption: 'Watch Dogs: Legion', poster: '/images/watch-dogs-legion.jpg' },
+		{ name: 'For Honor', caption: 'For Honor', poster: '/images/for-honor.jpg' },
+		{ name: "Tom Clancy's Ghost Recon Wildlands", caption: 'Ghost Recon Wildlands', poster: '/images/tom-clancys-ghost-recon-wildlands.jpg' },
+		{ name: "Tom Clancy's Rainbow Six Siege", caption: 'Rainbow Six Siege', poster: '/images/tom-clancys-rainbow-six-siege.png' },
+		{ name: 'Star Wars: Hunters', caption: 'Star Wars: Hunters', poster: '/images/star-wars-hunters.jpg' },
+		{ name: 'CSR Racing', caption: 'CSR Racing', poster: '/images/csr-racing.jpg' }
 	];
 
 	const featuredProject = {
 		title: 'Mafia: The Old Country',
 		years: '2024–2025',
-		image: '/images/poster-mafia_the_old_country.png',
+		image: '/images/mafia_the_old_country.jpg',
 		tags: ['Performance Optimization', 'Shader Tech Art', 'Environment Art', 'Engineering', 'Tools & Reporting'],
 		description:
 			"Full-spectrum technical art and engineering support for Hangar 13's open-world AAA title. Deep performance optimization across CPU, GPU and memory; custom shaders for stylized rendering and environmental effects; procedural environment tools for large-scale world building; automated reporting pipelines for performance tracking and asset validation; and core gameplay engineering in C++ and Blueprints — hitting performance targets on every platform without giving up next-gen visual quality.",
