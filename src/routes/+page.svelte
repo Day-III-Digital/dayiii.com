@@ -61,20 +61,20 @@
 	});
 
 	const legacyProjects = [
-		{ name: "Hogwarts Legacy", caption: 'Hogwarts Legacy', poster: '/images/hogwarts_legacy_600x900.jpg' },
-		{ name: 'LEGO Horizon Adventures', caption: 'LEGO Horizon Adventures', poster: '/images/lego_ha_600x900.jpg' },
-		{ name: "Watch Dogs: Legion", caption: 'Watch Dogs: Legion', poster: '/images/watch-dogs-legion.jpg' },
-		{ name: 'For Honor', caption: 'For Honor', poster: '/images/for-honor.jpg' },
-		{ name: "Tom Clancy's Ghost Recon Wildlands", caption: 'Ghost Recon Wildlands', poster: '/images/tom-clancys-ghost-recon-wildlands.jpg' },
-		{ name: "Tom Clancy's Rainbow Six Siege", caption: 'Rainbow Six Siege', poster: '/images/tom-clancys-rainbow-six-siege.png' },
-		{ name: 'Star Wars: Hunters', caption: 'Star Wars: Hunters', poster: '/images/star-wars-hunters.jpg' },
-		{ name: 'CSR Racing', caption: 'CSR Racing', poster: '/images/csr-racing.jpg' }
+		{ name: 'Forza Horizon 6', caption: 'Forza Horizon 6', poster: '/images/games/forza-horizon-6.png' },
+		{ name: "007: First Light", caption: '007: First Light', poster: '/images/games/007-first-light.png' },
+		{ name: "Hogwarts Legacy", caption: 'Hogwarts Legacy', poster: '/images/games/hogwarts_legacy_600x900.jpg' },
+		{ name: "Hellblade 2", caption: 'Hellblade 2', poster: '/images/games/hellblade-ii.png' },
+		{ name: "Gears of War Reloaded", caption: 'Gears of War Reloaded', poster: '/images/games/gears-of-war-reloaded.png' },
+		{ name: 'For Honor', caption: 'For Honor', poster: '/images/games/for-honor.jpg' },
+		{ name: "Watch Dogs: Legion", caption: 'Watch Dogs: Legion', poster: '/images/games/watch-dogs-legion.jpg' },
+		{ name: "Assassins Creed Syndicate", caption: 'Assassins Creed Syndicate', poster: '/images/games/assassins-creed-syndicate.jpg' },
 	];
 
 	const featuredProject = {
 		title: 'Mafia: The Old Country',
 		years: '2024–2025',
-		image: '/images/mafia_the_old_country.jpg',
+		image: '/images/games/mafia_the_old_country.jpg',
 		tags: ['Performance Optimization', 'Shader Tech Art', 'Environment Art', 'Engineering', 'Tools & Reporting'],
 		description:
 			"Full-spectrum technical art and engineering support for Hangar 13's open-world AAA title. Deep performance optimization across CPU, GPU and memory; custom shaders for stylized rendering and environmental effects; procedural environment tools for large-scale world building; automated reporting pipelines for performance tracking and asset validation; and core gameplay engineering in C++ and Blueprints — hitting performance targets on every platform without giving up next-gen visual quality.",
@@ -98,7 +98,7 @@
 					href="https://partners.unrealengine.com/s/partner-detail?partnerAccountId=001QP00001C00VKYAZ"
 					class="ue-badge"
 				>
-					<span class="ue-badge-icon">UE</span>
+					<img class="ue-badge-icon" src="images/unreal_icon.png">
 					Official Unreal Engine Service Partner
 				</a>
 				<a href="#contact" class="cta-button">Get in touch</a>
@@ -563,10 +563,9 @@
 	}
 
 	.ue-badge-icon {
-		width: 22px;
-		height: 22px;
+		width: 20px;
+		height: 20px;
 		border-radius: 50%;
-		background: #ffffff;
 		color: #000;
 		display: flex;
 		align-items: center;
