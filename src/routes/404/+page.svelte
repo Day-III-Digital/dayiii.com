@@ -49,8 +49,8 @@
 	<!-- Footer -->
     <footer>
 	    <div class="footer-content">
-		    <img src="/images/logo_square_rounded.png" alt="Day III Digital" class="footer-logo" />
-		    <p class="footer-text">&copy; {new Date().getFullYear()} Day III Digital. All rights reserved.</p>
+			<img src="/images/logo-white-text.png" alt="Day III Digital" class="footer-logo" />
+			<span class="footer-text">&copy; {new Date().getFullYear()} Day III Digital. All rights reserved.</span>
 	    </div>
     </footer>
 </div>
