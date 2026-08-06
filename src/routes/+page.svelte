@@ -111,7 +111,7 @@
 		<div class="section-inner">
 			<h2 class="statement-heading">
 				Veteran-led <span class="text-white">Unreal Engine</span> studio
-				<span class="text-lavender">for AAA open-world games</span>.
+				<span class="text-lavender">for AAA open-world games.</span>
 			</h2>
 			<p class="statement-text">
 				Our custom tools and streamlined workflows help studios overcome technical challenges and
@@ -199,16 +199,10 @@
 			href="https://partners.unrealengine.com/s/partner-detail?partnerAccountId=001QP00001C00VKYAZ"
 			class="partner-card"
 		>
-			<div class="partner-badges">
-				<div class="partner-badge-box">
-					<span class="partner-badge-label">Partner</span>
-					<span class="partner-badge-year">2025</span>
+			<div class="unreal-logos">
+					<img src="/images/unreal_partner_2025.png" alt="Unreal Engine Partner 2025" class="unreal-logo" />
+					<img src="/images/unreal_partner_2026.png" alt="Unreal Engine Partner 2026" class="unreal-logo" />
 				</div>
-				<div class="partner-badge-box">
-					<span class="partner-badge-label">Partner</span>
-					<span class="partner-badge-year">2026</span>
-				</div>
-			</div>
 			<div class="partner-content">
 				<h3>Official Unreal Engine Service Partner</h3>
 				<p>
@@ -1142,6 +1136,24 @@
 		font-size: 0.8rem;
 		letter-spacing: 0.06em;
 		color: var(--fog);
+	}
+
+	.unreal-logos {
+		display: flex;
+		flex-direction: row;
+		gap: 0.5rem;
+		flex-shrink: 0;
+	}
+
+	.unreal-logo {
+		width: 160px;
+		height: 160px;
+		flex-shrink: 0;
+		transition: transform 0.3s ease;
+		background: rgba(0, 0, 0, 0);
+		border-radius: 20px;
+		padding: 0.5rem;
+		object-fit: contain;
 	}
 
 	/* Responsive */
