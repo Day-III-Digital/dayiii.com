@@ -748,39 +748,6 @@
 		filter: brightness(1.1);
 	}
 
-	.partner-badges {
-		display: flex;
-		gap: 16px;
-	}
-
-	.partner-badge-box {
-		width: 90px;
-		height: 90px;
-		border-radius: var(--radius);
-		border: 1px solid var(--line);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 4px;
-		flex-shrink: 0;
-	}
-
-	.partner-badge-label {
-		font-family: 'Gabarito', sans-serif;
-		font-weight: 900;
-		font-size: 0.75rem;
-		letter-spacing: 0.1em;
-		color: var(--fog);
-	}
-
-	.partner-badge-year {
-		font-family: 'Gabarito', sans-serif;
-		font-weight: 900;
-		font-size: 1.6rem;
-		color: var(--gold);
-	}
-
 	.partner-content h3 {
 		margin: 0 0 10px 0;
 		font-family: 'Gabarito', sans-serif;
@@ -1206,10 +1173,6 @@
 
 		.legacy-grid {
 			grid-template-columns: repeat(2, 1fr);
-		}
-
-		.partner-badges {
-			justify-content: center;
 		}
 
 		.footer-content {
