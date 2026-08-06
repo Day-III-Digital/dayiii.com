@@ -235,9 +235,9 @@
 					<div class="pillar-number">02</div>
 					<h3>Flow</h3>
 					<p>
-						We work smart, not hard. Efficient pipelines, sustainable practices and innovative
-						tooling mean we deliver next-gen quality without burning out. Great work happens when
-						the process gets out of the way.
+						We work smart by building efficient pipelines,
+						sustainable practices and innovative tooling mean we deliver next-gen quality without burning out.
+						Great work happens when the process gets out of the way.
 					</p>
 				</div>
 				<div class="pillar-card">
