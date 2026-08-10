@@ -753,6 +753,7 @@
 	.partner-badges {
 		display: flex;
 		gap: 16px;
+		min-width: 0;
 	}
 
 	.partner-badge-box {
@@ -1145,13 +1146,14 @@
 		display: flex;
 		flex-direction: row;
 		gap: 0.5rem;
-		flex-shrink: 0;
+		min-width: 0;
 	}
 
 	.unreal-logo {
 		width: 160px;
-		height: 160px;
-		flex-shrink: 0;
+		height: auto;
+		flex: 0 1 auto;
+		min-width: 0;
 		transition: transform 0.3s ease;
 		background: rgba(0, 0, 0, 0);
 		border-radius: 20px;
