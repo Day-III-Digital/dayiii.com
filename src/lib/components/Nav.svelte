@@ -30,6 +30,7 @@
 		<ul class="nav-links" class:open={isMenuOpen}>
 			<li><a href="/" onclick={closeMenu} class:active={$page.url.pathname === '/'}>Home</a></li>
 			<li><a href="/#projects" onclick={closeMenu}>Projects</a></li>
+			<li><a href="/#testimonials" onclick={closeMenu}>Testimonials</a></li>
 			<li><a href="/careers" onclick={closeMenu} class:active={$page.url.pathname === '/careers'}>Careers</a></li>
 			<li><a href="/#contact" onclick={closeMenu}>Contact</a></li>
 		</ul>
@@ -99,7 +100,7 @@
 	.nav-links {
 		display: flex;
 		list-style: none;
-		gap: 32px;
+		gap: clamp(18px, 2.4vw, 32px);
 		margin: 0;
 		padding: 0;
 	}
@@ -111,6 +112,7 @@
 		font-size: 13px;
 		letter-spacing: 0.16em;
 		text-transform: uppercase;
+		white-space: nowrap;
 		transition: color 0.2s ease;
 	}
 

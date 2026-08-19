@@ -71,6 +71,26 @@
 		{ name: "Assassins Creed Syndicate", caption: 'Assassins Creed Syndicate', poster: '/images/games/assassins-creed-syndicate.jpg' },
 	];
 
+	const testimonialsNotice = 'What our partners say about working with us';
+
+	const testimonials = [
+		{
+			quote:
+				"Day III are some of the best in the industry. They bring a rare combination of technical depth, pipeline expertise, and genuine passion that doesn't just support a project, it elevates it. I'd recommend them without hesitation for tech art, pipeline, or best-practices support of any kind. What really sets them apart is how deliberately they build up the people around them: they document, they teach, they leave your team stronger than they found it, so the foundation holds whether they're in the room or not",
+			name: 'Austin Angelman',
+			role: 'Director of External Development',
+			company: 'Firaxis Games',
+			logo: '/images/games/Firaxis.png'
+		}
+	];
+
+	let activeTestimonial = $state(0);
+
+	function goToTestimonial(index: number) {
+		const count = testimonials.length;
+		activeTestimonial = ((index % count) + count) % count;
+	}
+
 	const featuredProject = {
 		title: 'Mafia: The Old Country',
 		years: '2024–2025',
@@ -287,6 +307,85 @@
 			</div>
 		</div>
 	</section>
+
+	<!-- Testimonials -->
+	{#if testimonials.length > 0}
+		<section id="testimonials" class="testimonials">
+			<div class="section-inner">
+				<div class="section-heading-row tight">
+					<h2>Testimonials</h2>
+					<span class="hairline"></span>
+				</div>
+				{#if testimonialsNotice}
+					<p class="testimonials-notice">{testimonialsNotice}</p>
+				{/if}
+
+				<div class="testimonials-carousel">
+					<div class="testimonials-viewport">
+						<div
+							class="testimonials-track"
+							style="transform: translateX({activeTestimonial * -100}%)"
+						>
+							{#each testimonials as testimonial, i}
+								<figure
+									class="testimonial-card"
+									class:testimonial-inactive={i !== activeTestimonial}
+									aria-hidden={i !== activeTestimonial}
+								>
+									<span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
+									<blockquote class="testimonial-quote">{testimonial.quote}</blockquote>
+									<figcaption class="testimonial-footer">
+										{#if testimonial.logo}
+											<img src={testimonial.logo} alt="" class="testimonial-logo" />
+										{/if}
+										<div class="testimonial-attribution">
+											<span class="testimonial-name">{testimonial.name}</span>
+											{#if testimonial.role || testimonial.company}
+												<span class="testimonial-role">{[testimonial.role, testimonial.company].filter(Boolean).join(', ')}</span>
+											{/if}
+										</div>
+									</figcaption>
+								</figure>
+							{/each}
+						</div>
+					</div>
+
+					{#if testimonials.length > 1}
+						<div class="carousel-controls">
+							<button
+								type="button"
+								class="carousel-arrow"
+								onclick={() => goToTestimonial(activeTestimonial - 1)}
+								aria-label="Previous testimonial"
+							>
+								&lsaquo;
+							</button>
+							<div class="carousel-dots">
+								{#each testimonials as testimonial, i}
+									<button
+										type="button"
+										class="carousel-dot"
+										class:carousel-dot-active={i === activeTestimonial}
+										onclick={() => goToTestimonial(i)}
+										aria-label="Show testimonial from {testimonial.name}"
+										aria-current={i === activeTestimonial}
+									></button>
+								{/each}
+							</div>
+							<button
+								type="button"
+								class="carousel-arrow"
+								onclick={() => goToTestimonial(activeTestimonial + 1)}
+								aria-label="Next testimonial"
+							>
+								&rsaquo;
+							</button>
+						</div>
+					{/if}
+				</div>
+			</div>
+		</section>
+	{/if}
 
 	<!-- Legacy -->
 	<section class="legacy">
@@ -968,6 +1067,172 @@
 		font-size: 0.85rem;
 		letter-spacing: 0.08em;
 		color: #ffffff;
+	}
+
+	/* Testimonials */
+	.testimonials {
+		border-top: 1px solid var(--line);
+	}
+
+	.testimonials-notice {
+		margin: 0 0 36px 0;
+		font-size: 0.95rem;
+		color: var(--fog);
+	}
+
+	.testimonials-carousel {
+		max-width: 860px;
+		margin: 0 auto;
+	}
+
+	.testimonials-viewport {
+		overflow: hidden;
+		border-radius: var(--radius);
+	}
+
+	.testimonials-track {
+		display: flex;
+		align-items: stretch;
+		transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.testimonial-card {
+		flex: 0 0 100%;
+		min-width: 0;
+		margin: 0;
+		border: 1.5px solid transparent;
+		border-radius: var(--radius);
+		background: linear-gradient(var(--ink), var(--ink)) padding-box, var(--border-stroke) border-box;
+		padding: 30px 30px 32px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		transition: filter 0.2s ease;
+	}
+
+	.testimonial-card:hover {
+		filter: brightness(1.08);
+	}
+
+	.testimonial-inactive {
+		visibility: hidden;
+	}
+
+	.testimonial-mark {
+		font-family: 'Gabarito', sans-serif;
+		font-weight: 900;
+		font-size: 3rem;
+		line-height: 0.6;
+		color: var(--gold);
+	}
+
+	.testimonial-quote {
+		margin: 0;
+		font-size: 0.95rem;
+		line-height: 1.65;
+		color: var(--mist);
+	}
+
+	.testimonial-footer {
+		margin-top: auto;
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		padding-top: 18px;
+		border-top: 1px solid var(--line);
+	}
+
+	.testimonial-logo {
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		object-fit: contain;
+		flex-shrink: 0;
+	}
+
+	.testimonial-attribution {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+	}
+
+	.testimonial-name {
+		font-family: 'Gabarito', sans-serif;
+		font-weight: 900;
+		font-size: 0.9rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: #ffffff;
+	}
+
+	.testimonial-role {
+		font-size: 0.8rem;
+		line-height: 1.4;
+		color: var(--fog);
+	}
+
+	.carousel-controls {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		margin-top: 28px;
+	}
+
+	.carousel-arrow {
+		width: 42px;
+		height: 42px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1.5px solid transparent;
+		border-radius: 50%;
+		background: linear-gradient(var(--ink), var(--ink)) padding-box, var(--border-stroke) border-box;
+		color: #ffffff;
+		font-family: 'Gabarito', sans-serif;
+		font-weight: 900;
+		font-size: 1.5rem;
+		line-height: 1;
+		padding: 0 0 4px;
+		cursor: pointer;
+		transition: filter 0.2s ease, color 0.2s ease;
+	}
+
+	.carousel-arrow:hover {
+		filter: brightness(1.25);
+		color: var(--gold);
+	}
+
+	.carousel-dots {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.carousel-dot {
+		width: 9px;
+		height: 9px;
+		padding: 0;
+		border: none;
+		border-radius: 50%;
+		background: var(--line);
+		cursor: pointer;
+		transition: background 0.2s ease, transform 0.2s ease;
+	}
+
+	.carousel-dot:hover {
+		background: var(--lavender);
+	}
+
+	.carousel-dot-active {
+		background: var(--gold);
+		transform: scale(1.35);
+	}
+
+	.carousel-arrow:focus-visible,
+	.carousel-dot:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 3px;
 	}
 
 	/* Legacy */
