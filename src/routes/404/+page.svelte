@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -29,13 +30,13 @@
 	    <div class="hero-split">
             <div class="hero-left">
 			    <div class="hero-branding">
-                    <img src="/images/marmot_logo_round.png" alt="Day III Digital" class="hero-marmot" />
+                    <img src="{base}/images/marmot_logo_round.png" alt="Day III Digital" class="hero-marmot" />
 				    <div class="hero-titles">
                         <h1 class="title">DAY III <span class="title-digital">DIGITAL</span></h1>
 					    <p class="subtitle"><span class="full-spectrum">FULL SPECTRUM</span> <span class="subtitle-highlight">TECH ART</span></p>
 				    </div>
 			    </div>
-			    <span class="partner-badge"><img src="/images/unreal_icon.png" alt="Unreal Engine" class="partner-icon" /> Official Unreal Engine Service Partner</span>
+			    <span class="partner-badge"><img src="{base}/images/unreal_icon.png" alt="Unreal Engine" class="partner-icon" /> Official Unreal Engine Service Partner</span>
 		    </div>
 			<div class="hero-right">
     			<div class="hero-about">
@@ -49,7 +50,7 @@
 	<!-- Footer -->
     <footer>
 	    <div class="footer-content">
-			<img src="/images/logo-white-text.png" alt="Day III Digital" class="footer-logo" />
+			<img src="{base}/images/logo-white-text.png" alt="Day III Digital" class="footer-logo" />
 			<span class="footer-text">&copy; {new Date().getFullYear()} Day III Digital. All rights reserved.</span>
 	    </div>
     </footer>

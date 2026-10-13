@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 
 	let email = 'contact@dayiii.com';
@@ -61,14 +62,14 @@
 	});
 
 	const legacyProjects = [
-		{ name: 'Forza Horizon 6', caption: 'Forza Horizon 6', poster: '/images/games/forza-horizon-6.png' },
-		{ name: "007: First Light", caption: '007: First Light', poster: '/images/games/007-first-light.png' },
-		{ name: "Hogwarts Legacy", caption: 'Hogwarts Legacy', poster: '/images/games/hogwarts_legacy_600x900.jpg' },
-		{ name: "Hellblade 2", caption: 'Hellblade 2', poster: '/images/games/hellblade-ii.png' },
-		{ name: "Gears of War Reloaded", caption: 'Gears of War Reloaded', poster: '/images/games/gears-of-war-reloaded.png' },
-		{ name: 'For Honor', caption: 'For Honor', poster: '/images/games/for-honor.jpg' },
-		{ name: "Watch Dogs: Legion", caption: 'Watch Dogs: Legion', poster: '/images/games/watch-dogs-legion.jpg' },
-		{ name: "Assassins Creed Syndicate", caption: 'Assassins Creed Syndicate', poster: '/images/games/assassins-creed-syndicate.jpg' },
+		{ name: 'Forza Horizon 6', caption: 'Forza Horizon 6', poster: base + '/images/games/forza-horizon-6.png' },
+		{ name: "007: First Light", caption: '007: First Light', poster: base + '/images/games/007-first-light.png' },
+		{ name: "Hogwarts Legacy", caption: 'Hogwarts Legacy', poster: base + '/images/games/hogwarts_legacy_600x900.jpg' },
+		{ name: "Hellblade 2", caption: 'Hellblade 2', poster: base + '/images/games/hellblade-ii.png' },
+		{ name: "Gears of War Reloaded", caption: 'Gears of War Reloaded', poster: base + '/images/games/gears-of-war-reloaded.png' },
+		{ name: 'For Honor', caption: 'For Honor', poster: base + '/images/games/for-honor.jpg' },
+		{ name: "Watch Dogs: Legion", caption: 'Watch Dogs: Legion', poster: base + '/images/games/watch-dogs-legion.jpg' },
+		{ name: "Assassins Creed Syndicate", caption: 'Assassins Creed Syndicate', poster: base + '/images/games/assassins-creed-syndicate.jpg' },
 	];
 
 	const testimonialsNotice = 'What our partners say about working with us';
@@ -80,7 +81,7 @@
 			name: 'Austin Angelman',
 			role: 'Director of External Development',
 			company: 'Firaxis Games',
-			logo: '/images/games/Firaxis.png'
+			logo: base + '/images/games/Firaxis.png'
 		}
 	];
 
@@ -94,7 +95,7 @@
 	const featuredProject = {
 		title: 'Mafia: The Old Country',
 		years: '2024–2025',
-		image: '/images/games/mafia_the_old_country.jpg',
+		image: base + '/images/games/mafia_the_old_country.jpg',
 		tags: ['Performance Optimization', 'Shader Tech Art', 'Environment Art', 'Engineering', 'Tools & Reporting'],
 		description:
 			"Full-spectrum technical art and engineering support for Hangar 13's open-world AAA title. Deep performance optimization across CPU, GPU and memory; custom shaders for stylized rendering and environmental effects; procedural environment tools for large-scale world building; automated reporting pipelines for performance tracking and asset validation; and core gameplay engineering in C++ and Blueprints — hitting performance targets on every platform without giving up next-gen visual quality.",
@@ -106,10 +107,10 @@
 	<!-- Hero -->
 	<section id="top" class="hero">
 		<div class="hero-radial"></div>
-		<img src="/images/mountains.png" alt="" class="hero-mountains" />
+		<img src="{base}/images/mountains.png" alt="" class="hero-mountains" />
 		<div class="hero-inner">
 			<div class="hero-icon-wrap">
-				<img src="/images/icon-white.png" alt="Day III Digital" class="hero-icon" />
+				<img src="{base}/images/icon-white.png" alt="Day III Digital" class="hero-icon" />
 			</div>
 			<h1 class="hero-title">Day III Digital</h1>
 			<div class="hero-subtitle">Full spectrum tech art</div>
@@ -154,22 +155,22 @@
 
 			<div class="services-grid">
 				<div class="service-card">
-					<img src="/images/trim-marmot-paint.png" alt="" class="service-icon" />
+					<img src="{base}/images/trim-marmot-paint.png" alt="" class="service-icon" />
 					<h3>Technical Art</h3>
 					<p>Shader development, procedural content generation, and optimization for real-time rendering.</p>
 				</div>
 				<div class="service-card">
-					<img src="/images/trim-marmot-sword.png" alt="" class="service-icon" />
+					<img src="{base}/images/trim-marmot-sword.png" alt="" class="service-icon" />
 					<h3>Unreal Engine Development</h3>
 					<p>Full-stack Unreal development, from prototyping to production-ready solutions.</p>
 				</div>
 				<div class="service-card">
-					<img src="/images/trim-marmot-cog.png" alt="" class="service-icon" />
+					<img src="{base}/images/trim-marmot-cog.png" alt="" class="service-icon" />
 					<h3>Performance Optimization</h3>
 					<p>Profiling and performance tuning so your project runs smoothly on every target platform.</p>
 				</div>
 				<div class="service-card">
-					<img src="/images/trim-marmot-buddies.png" alt="" class="service-icon" />
+					<img src="{base}/images/trim-marmot-buddies.png" alt="" class="service-icon" />
 					<h3>Co-Development</h3>
 					<p>Collaborative partnerships that augment your team with specialized expertise.</p>
 				</div>
@@ -221,8 +222,8 @@
 		>
 			<div class="partner-badges">
 				<div class="unreal-logos">
-					<img src="/images/unreal_partner_2025.png" alt="Unreal Engine Partner 2025" class="unreal-logo" />
-					<img src="/images/unreal_partner_2026.png" alt="Unreal Engine Partner 2026" class="unreal-logo" />
+					<img src="{base}/images/unreal_partner_2025.png" alt="Unreal Engine Partner 2025" class="unreal-logo" />
+					<img src="{base}/images/unreal_partner_2026.png" alt="Unreal Engine Partner 2026" class="unreal-logo" />
 				</div>
 			</div>
 			<div class="partner-content">
@@ -409,16 +410,16 @@
 
 	<!-- Contact -->
 	<section id="contact" class="contact">
-		<img src="/images/mountain-div.png" alt="" class="contact-mountains" />
+		<img src="{base}/images/mountain-div.png" alt="" class="contact-mountains" />
 		<div class="section-inner contact-inner">
 			<h2 class="contact-heading">Get in touch</h2>
 			<p class="contact-text">Looking for technical art help? Let's talk.</p>
 			<div class="contact-actions">
 				<a href="mailto:{email}" class="contact-cta">
-					<img src="/images/icon-mail.png" alt="" class="contact-cta-icon" />
+					<img src="{base}/images/icon-mail.png" alt="" class="contact-cta-icon" />
 					{email}
 				</a>
-				<a href="/careers" class="contact-hiring">We're hiring →</a>
+				<a href="{base}/careers" class="contact-hiring">We're hiring →</a>
 			</div>
 		</div>
 	</section>
@@ -426,7 +427,7 @@
 	<!-- Footer -->
 	<footer>
 		<div class="footer-content">
-			<img src="/images/logo-white-text.png" alt="Day III Digital" class="footer-logo" />
+			<img src="{base}/images/logo-white-text.png" alt="Day III Digital" class="footer-logo" />
 			<span class="footer-text">&copy; {new Date().getFullYear()} Day III Digital. All rights reserved.</span>
 		</div>
 	</footer>

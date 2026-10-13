@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 
-	const navLogo = '/images/icon-white.png';
+	const navLogo = `${base}/images/icon-white.png`;
 
 	let isMenuOpen = $state(false);
 
@@ -16,7 +17,7 @@
 
 <nav class="nav">
 	<div class="nav-container">
-		<a href="/" class="logo">
+		<a href="{base}/" class="logo">
 			<img src={navLogo} alt="Day III Digital logo" class="logo-icon" />
 			<span>DAY III DIGITAL</span>
 		</a>
@@ -28,11 +29,12 @@
 		</button>
 
 		<ul class="nav-links" class:open={isMenuOpen}>
-			<li><a href="/" onclick={closeMenu} class:active={$page.url.pathname === '/'}>Home</a></li>
-			<li><a href="/#projects" onclick={closeMenu}>Projects</a></li>
-			<li><a href="/#testimonials" onclick={closeMenu}>Testimonials</a></li>
-			<li><a href="/careers" onclick={closeMenu} class:active={$page.url.pathname === '/careers'}>Careers</a></li>
-			<li><a href="/#contact" onclick={closeMenu}>Contact</a></li>
+			<li><a href="{base}/" onclick={closeMenu} class:active={$page.url.pathname === `${base}/`}>Home</a></li>
+			<li><a href="{base}/#projects" onclick={closeMenu}>Projects</a></li>
+			<li><a href="{base}/#testimonials" onclick={closeMenu}>Testimonials</a></li>
+			<li><a href="{base}/blog" onclick={closeMenu} class:active={$page.url.pathname.startsWith(`${base}/blog`)}>Blog</a></li>
+			<li><a href="{base}/careers" onclick={closeMenu} class:active={$page.url.pathname === `${base}/careers`}>Careers</a></li>
+			<li><a href="{base}/#contact" onclick={closeMenu}>Contact</a></li>
 		</ul>
 	</div>
 </nav>

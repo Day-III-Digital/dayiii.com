@@ -2,6 +2,14 @@ import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { APP_REDIRECTS } from './src/redirects.js';
 
+// Optional sub-folder the site is served from while testing, e.g. BASE_PATH=/test
+// (no trailing slash). Set it in a git-ignored .env file or as an environment variable.
+try {
+	process.loadEnvFile('.env');
+} catch {
+	// no .env file
+}
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
@@ -28,7 +36,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+			base: process.env.BASE_PATH ?? ''
 		}
 	}
 };
