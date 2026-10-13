@@ -10,7 +10,7 @@ Translucent materials in Unreal come with a familiar list of drawbacks: sorting 
 
 ![HighresScreenshot00058.png](HighresScreenshot00058.png)
 
-![LS_Turn_Around.0052.jpeg](LS_Turn_Around.0052.jpeg)
+![LS_Turn_Around.0052.png](LS_Turn_Around.0052.png)
 
 [Fake_Translucency_Showcase.mp4](Fake_Translucency_Showcase.mp4)
 
@@ -75,9 +75,9 @@ And here we go, this is the shader in it’s simplest form. To recap :
 
 Now that it looks quite convincing, let’s apply this technique to something more complex. I decided to create a glass brick wall by creating some textures in Substance Designer. This will demonstrate the best use case for this shader trick. 
 
-![LS_Glass_Showcase1.0005.jpeg](LS_Glass_Showcase1.0005.jpeg)
+![LS_Glass_Showcase1.0005.png](LS_Glass_Showcase1.0005.png)
 
-![LS_Glass_Showcase.0005.jpeg](LS_Glass_Showcase.0005.jpeg)
+![LS_Glass_Showcase.0005.png](LS_Glass_Showcase.0005.png)
 
 The material uses 2 textures: an rgb normal texture and a rgba mask texture.
 
@@ -94,7 +94,7 @@ Lastly, let’s add some kind of fake interior, because this material is opaque,
 
 ![image.png](image_4.png)
 
-![Glass_Interior_Grout.gif](Glass_Interior_Grout.gif)
+![Glass_Interior_Grout.mp4](Glass_Interior_Grout.mp4)
 
 Here is a breakdown of the different effects layered together:
 
@@ -102,7 +102,7 @@ Here is a breakdown of the different effects layered together:
 
 Different normal/height maps can distort the background differently:
 
-![Glass_Diffrent_Patterns.gif](Glass_Diffrent_Patterns.gif)
+![Glass_Diffrent_Patterns.mp4](Glass_Diffrent_Patterns.mp4)
 
 ---
 
