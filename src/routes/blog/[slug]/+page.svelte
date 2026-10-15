@@ -27,7 +27,7 @@
 	}
 
 	.post-container {
-		max-width: 780px;
+		max-width: 1200px;
 		margin: 0 auto;
 	}
 
@@ -36,7 +36,6 @@
 		text-decoration: none;
 		font-weight: 700;
 		font-size: 0.9rem;
-		letter-spacing: 0.08em;
 		text-transform: uppercase;
 	}
 
@@ -48,8 +47,6 @@
 		font-size: clamp(2rem, 4.5vw, 3.2rem);
 		font-weight: 900;
 		color: #ffffff;
-		margin: 1.5rem 0 0.5rem;
-		line-height: 1.15;
 	}
 
 	.meta {
@@ -62,8 +59,6 @@
 
 	.content {
 		color: #e0e0e0;
-		font-size: 1.05rem;
-		line-height: 1.8;
 	}
 
 	.content :global(h2),
@@ -72,7 +67,6 @@
 		font-weight: 900;
 		text-transform: uppercase;
 		margin: 2.2rem 0 0.8rem;
-		line-height: 1.25;
 	}
 
 	.content :global(h2) {
