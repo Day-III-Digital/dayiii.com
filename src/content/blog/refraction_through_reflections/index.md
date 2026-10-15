@@ -2,6 +2,7 @@
 title: Nanite Translucency: Refraction Through Reflections
 date: 15-10-2026
 aliases: Faking Glass in an Opaque Material Refraction Through Reflections
+thumbnail: /blog/refraction_through_reflections/LS_Glass_Showcase.0005.png
 ---
 
 ![HighresScreenshot00092.png](HighresScreenshot00092.png)

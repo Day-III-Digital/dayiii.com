@@ -17,11 +17,16 @@
 
 		<div class="post-list">
 			{#each data.posts as post (post.slug)}
-				<a class="post-card" href="{base}/blog/{post.slug}">
-					<time datetime={post.date}>{formatDate(post.date)}</time>
-					<h2>{post.title}</h2>
-					{#if post.summary}<p>{post.summary}</p>{/if}
-					<span class="read-more">Read more →</span>
+				<a class="post-card" class:has-thumbnail={post.thumbnail} href="{base}/blog/{post.slug}">
+					{#if post.thumbnail}
+						<img class="post-thumbnail" src={post.thumbnail} alt="" loading="lazy" />
+					{/if}
+					<div class="post-body">
+						<time datetime={post.date}>{formatDate(post.date)}</time>
+						<h2>{post.title}</h2>
+						{#if post.summary}<p>{post.summary}</p>{/if}
+						<span class="read-more">Read more →</span>
+					</div>
 				</a>
 			{:else}
 				<p class="empty">No posts yet — check back soon.</p>
@@ -50,11 +55,11 @@
 	}
 
 	.title-prefix {
-		color: #ffffff;
+		color: white;
 	}
 
 	.title-highlight {
-		color: #ffd84d;
+		color: var(--gold);
 	}
 
 	.page-intro {
@@ -85,6 +90,22 @@
 		transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 	}
 
+	.post-card.has-thumbnail {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 240px;
+		gap: 1.5rem;
+		align-items: center;
+	}
+
+	.post-thumbnail {
+		order: 1;
+		width: 100%;
+		aspect-ratio: 16 / 10;
+		object-fit: cover;
+		border-radius: 10px;
+		display: block;
+	}
+
 	.post-card::before {
 		content: '';
 		position: absolute;
@@ -92,7 +113,7 @@
 		left: 0;
 		right: 0;
 		height: 3px;
-		background: linear-gradient(90deg, #774dd1, #ffd84d);
+		background: linear-gradient(90deg, #774dd1, var(--gold));
 	}
 
 	.post-card:hover {
@@ -122,7 +143,7 @@
 	}
 
 	.read-more {
-		color: #ffd84d;
+		color: var(--gold);
 		font-weight: 700;
 		font-size: 0.9rem;
 		letter-spacing: 0.08em;
@@ -136,6 +157,15 @@
 	@media (max-width: 768px) {
 		.blog-page {
 			padding: 3rem 1.25rem;
+		}
+
+		.post-card.has-thumbnail {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+
+		.post-thumbnail {
+			order: 0;
 		}
 	}
 </style>

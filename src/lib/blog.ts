@@ -6,6 +6,8 @@ export interface PostMeta {
 	date: string;
 	summary: string;
 	author: string;
+	// Cover image shown on the blog list (front matter: `thumbnail: cover.png`)
+	thumbnail: string;
 }
 
 export interface Post extends PostMeta {
@@ -35,6 +37,11 @@ function parse(path: string, raw: string): Post {
 	const resolve = (href: string) => {
 		if (/^([a-z][a-z0-9+.-]*:|\/|#)/i.test(href)) return href;
 		return assets[`${dir}/${decodeURIComponent(href.replace(/^\.\//, ''))}`] ?? href;
+	};
+	// Thumbnails may be written relative to the post folder (`cover.png`) or as `/blog/<slug>/cover.png`
+	const thumbnail = (href: string) => {
+		const own = `/blog/${slug}/`;
+		return resolve(href.startsWith(own) ? href.slice(own.length) : href);
 	};
 	const video = (href: string, label: string, title?: string | null) => {
 		const esc = (v: string) => v.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
@@ -79,6 +86,7 @@ function parse(path: string, raw: string): Post {
 		date: data.date ?? '',
 		summary: data.summary ?? '',
 		author: data.author ?? 'Day III Digital',
+		thumbnail: data.thumbnail ? thumbnail(data.thumbnail) : '',
 		aliases: (data.aliases ?? '')
 			.split(',')
 			.map((a) => a.trim())

@@ -76,7 +76,7 @@
 	}
 
 	.back {
-		color: #ffd84d;
+		color: var(--gold);
 		text-decoration: none;
 		font-weight: 700;
 		font-size: 0.9rem;
@@ -111,15 +111,15 @@
 	}
 
 	.content :global(a) {
-		color: #ffd84d;
+		color: var(--gold);
 	}
 
 	.content :global(a:hover) {
-		color: #ffffff;
+		color: white;
 	}
 
 	.content :global(strong) {
-		color: #ffffff;
+		color: white;
 	}
 
 	.content :global(img) {
@@ -233,14 +233,14 @@
 		right: 1.25rem;
 		background: none;
 		border: none;
-		color: #ffffff;
+		color: white;
 		font-size: 2.5rem;
 		line-height: 1;
 		cursor: pointer;
 	}
 
 	.lightbox-close:hover {
-		color: #ffd84d;
+		color: var(--gold);
 	}
 
 	@media (max-width: 768px) {
