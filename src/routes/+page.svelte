@@ -226,11 +226,9 @@
 				</div>
 			</div>
 			<div class="partner-content">
-				<h3>Official Unreal Engine Service Partner</h3>
+				<h3>Unreal Engine Service Partner</h3>
 				<p>
-					Certified by Epic Games as a trusted partner for Unreal Engine development — meeting
-					Epic's highest standards for technical expertise, project delivery, and professional
-					service.
+					Certified by Epic Games since 2025 as a trusted partner for Unreal Engine development, meeting Epic's highest standards for technical expertise, project delivery, and professional service.
 				</p>
 			</div>
 		</a>
