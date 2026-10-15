@@ -1,6 +1,7 @@
 ---
 title: Faking Glass in an Opaque Material: Refraction Through Reflections
 date: 15-10-2026
+aliases: Faking Glass in an Opaque Material Refraction Through Reflections
 ---
 
 ![HighresScreenshot00092.png](HighresScreenshot00092.png)
