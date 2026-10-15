@@ -7,13 +7,13 @@
 
 <svelte:head>
 	<title>Blog | Day III Digital</title>
-	<meta name="description" content="News and technical write-ups from Day III Digital." />
+	<meta name="description" content="News and technical articles from the Day III team." />
 </svelte:head>
 
 <div class="blog-page">
 	<div class="blog-container">
 		<h1 class="page-title"><span class="title-prefix">OUR</span> <span class="title-highlight">BLOG</span></h1>
-		<p class="page-intro">News and technical write-ups from the Day III Digital studio.</p>
+		<p class="page-intro">News and technical articles from the Day III team.</p>
 
 		<div class="post-list">
 			{#each data.posts as post (post.slug)}
