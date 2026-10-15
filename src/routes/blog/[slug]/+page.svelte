@@ -87,19 +87,7 @@
 		color: #ffffff;
 	}
 
-	h1 {
-		font-size: clamp(2rem, 4.5vw, 3.2rem);
-		font-weight: 900;
-		color: #ffffff;
-	}
 
-	.meta {
-		color: var(--fog);
-		margin: 0 0 2rem;
-		padding-bottom: 1.5rem;
-		border-bottom: 3px solid;
-		border-image: linear-gradient(90deg, #774dd1, #ffd84d) 1;
-	}
 
 	.content {
 		color: #e0e0e0;

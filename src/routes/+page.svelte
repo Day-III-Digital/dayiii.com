@@ -431,42 +431,8 @@
 </div>
 
 <style>
-	:global(:root) {
-		--aubergine: #19122b;
-		--ink: #120c20;
-		--purple: #714aba;
-		--lavender: #9d80f7;
-		--gold: #ffcb63;
-		--mist: #e8e8e8;
-		--fog: #b4aac6;
-		--line: #3a2f52;
-		--radius: 6px;
-		--border-stroke: conic-gradient(
-			from 135deg,
-			#bfa6ff,
-			#764dae,
-			#343867,
-			#764dae,
-			#bfa6ff,
-			#764dae,
-			#343867,
-			#764dae,
-			#bfa6ff
-		);
-	}
-
 	:global(*, *::before, *::after) {
 		box-sizing: border-box;
-	}
-
-	:global(html, body) {
-		margin: 0;
-		padding: 0;
-		font-family: 'Gabarito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-		background: var(--aubergine);
-		color: var(--mist);
-		line-height: 1.6;
-		overflow-x: hidden;
 	}
 
 	.page {
@@ -509,17 +475,6 @@
 		flex: 1;
 		height: 1px;
 		background: var(--line);
-	}
-
-	@keyframes fadeUp {
-		0% {
-			opacity: 0;
-			transform: translateY(30px);
-		}
-		100% {
-			opacity: 1;
-			transform: translateY(0);
-		}
 	}
 
 	.scroll-animate {
@@ -659,13 +614,6 @@
 		width: 20px;
 		height: 20px;
 		border-radius: 50%;
-		color: #000;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-family: 'Gabarito', sans-serif;
-		font-weight: 900;
-		font-size: 0.65rem;
 		flex-shrink: 0;
 	}
 
@@ -720,7 +668,6 @@
 		font-size: 1.25rem;
 		line-height: 1.55;
 		color: var(--fog);
-		max-width: 900px;
 	}
 
 	.statement-text:last-child {
@@ -853,33 +800,8 @@
 		min-width: 0;
 	}
 
-	.partner-badge-box {
-		width: 90px;
-		height: 90px;
-		border-radius: var(--radius);
-		border: 1px solid var(--line);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 4px;
-		flex-shrink: 0;
-	}
 
-	.partner-badge-label {
-		font-family: 'Gabarito', sans-serif;
-		font-weight: 900;
-		font-size: 0.75rem;
-		letter-spacing: 0.1em;
-		color: var(--fog);
-	}
 
-	.partner-badge-year {
-		font-family: 'Gabarito', sans-serif;
-		font-weight: 900;
-		font-size: 1.6rem;
-		color: var(--gold);
-	}
 
 	.partner-content h3 {
 		margin: 0 0 10px 0;
