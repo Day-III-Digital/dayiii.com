@@ -10,6 +10,8 @@ export interface PostMeta {
 
 export interface Post extends PostMeta {
 	html: string;
+	// Old slugs that should redirect to this post (front matter: `aliases: old-slug, another-old-slug`)
+	aliases: string[];
 }
 
 // Each post lives in src/content/blog/<slug>/index.md, with any assets beside it.
@@ -77,6 +79,10 @@ function parse(path: string, raw: string): Post {
 		date: data.date ?? '',
 		summary: data.summary ?? '',
 		author: data.author ?? 'Day III Digital',
+		aliases: (data.aliases ?? '')
+			.split(',')
+			.map((a) => a.trim())
+			.filter(Boolean),
 		html: marked.parse(body, { async: false }) as string
 	};
 }
@@ -87,9 +93,21 @@ const posts: Post[] = Object.entries(files)
 	.sort((a, b) => b.date.localeCompare(a.date));
 
 export const getPosts = (): PostMeta[] =>
-	posts.map(({ html: _html, ...meta }) => meta);
+	posts.map(({ html: _html, aliases: _aliases, ...meta }) => meta);
 
 export const getPost = (slug: string): Post | undefined => posts.find((p) => p.slug === slug);
+
+// Old slug -> current slug. A real post's slug always wins over an alias of the same name.
+const aliases = new Map<string, string>();
+for (const post of posts) {
+	for (const alias of post.aliases) {
+		if (!posts.some((p) => p.slug === alias)) aliases.set(alias, post.slug);
+	}
+}
+
+export const getAliases = (): [alias: string, slug: string][] => [...aliases];
+
+export const resolveAlias = (slug: string): string | undefined => aliases.get(slug);
 
 export function formatDate(date: string): string {
 	const d = new Date(date);
