@@ -222,7 +222,6 @@
 		>
 			<div class="partner-badges">
 				<div class="unreal-logos">
-					<img src="{base}/images/unreal_partner_2025.png" alt="Unreal Engine Partner 2025" class="unreal-logo" />
 					<img src="{base}/images/unreal_partner_2026.png" alt="Unreal Engine Partner 2026" class="unreal-logo" />
 				</div>
 			</div>
