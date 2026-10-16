@@ -2,7 +2,7 @@
 title: Nanite Translucency: Refraction Through Reflections
 date: 15-10-2026
 aliases: Faking Glass in an Opaque Material Refraction Through Reflections
-thumbnail: /blog/refraction_through_reflections/HighresScreenshot00058.png
+thumbnail: /blog/refraction_through_reflections/thumbnail.png
 author: Leo Newman
 author-picture: /blog/refraction_through_reflections/leo.png
 summary: The method consists of a fully opaque shader (Nanite) with no need for cube maps or emissive trickery, while still delivering convincing translucent results
