@@ -61,6 +61,11 @@ function parse(path: string, raw: string): Post {
 		renderer: {
 			// ![caption](clip.mp4) or [caption](clip.mp4) renders a video player
 			image({ href, title, text }) {
+				// ![Name](pic.png "avatar") renders a small round author picture
+				if (title === 'avatar') {
+					const esc = (v: string) => v.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+					return `<img class="avatar" src="${esc(href)}" alt="${esc(text)}" />`;
+				}
 				return isVideo(href) ? video(href, text, title) : false;
 			},
 			link({ href, title, text }) {

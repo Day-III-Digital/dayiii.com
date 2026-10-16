@@ -12,7 +12,7 @@ summary: The method consists of a fully opaque shader (Nanite) with no need for 
 
 # Nanite Translucency: <span style="color: var(--gold);">Refraction Through Reflections</span>
 
-by [Leo Newman](https://www.artstation.com/leo_newman) on 15th Oct 2026
+by ![Leo Newman](leo.png "avatar") [Leo Newman](https://www.artstation.com/leo_newman) on 15th Oct 2026
 
 Hello, my name is Leo Newman, and I’m a senior lighting contractor currently at Day III Digital. Besides lighting, I find myself dabbling in shaders more often than not. In this article, I want to share some exciting findings related to a fake translucency shader I created. Over the past few months, I have been perfecting the shader’s features, with some help from my colleague Ward Vervoort. The method consists of a fully opaque shader (Nanite) with no need for cube maps or emissive trickery, while still delivering convincing translucent results. It also supports refraction, blurred refraction, and coloured tinting.
 

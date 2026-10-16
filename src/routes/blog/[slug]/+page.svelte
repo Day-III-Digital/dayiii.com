@@ -11,7 +11,7 @@
 	// Post images are rendered with {@html}, so make them keyboard-reachable here
 	$effect(() => {
 		post.html;
-		content?.querySelectorAll('img').forEach((img) => {
+		content?.querySelectorAll('img:not(.avatar)').forEach((img) => {
 			img.tabIndex = 0;
 			img.setAttribute('role', 'button');
 			img.setAttribute('aria-label', `Expand image${img.alt ? `: ${img.alt}` : ''}`);
@@ -20,7 +20,7 @@
 
 	function expand(event: Event) {
 		const img = event.target;
-		if (!(img instanceof HTMLImageElement) || img.closest('a')) return;
+		if (!(img instanceof HTMLImageElement) || img.closest('a') || img.classList.contains('avatar')) return;
 		expanded = { src: img.currentSrc || img.src, alt: img.alt };
 	}
 
@@ -195,6 +195,16 @@
 
 	.content :global(img) {
 		cursor: zoom-in;
+	}
+
+	.content :global(img.avatar) {
+		width: 2rem;
+		height: 2rem;
+		border-radius: 999px;
+		border: 1px solid var(--line);
+		object-fit: cover;
+		vertical-align: middle;
+		cursor: default;
 	}
 
 	.lightbox {
