@@ -8,6 +8,8 @@ export interface PostMeta {
 	author: string;
 	// Cover image shown on the blog list (front matter: `thumbnail: cover.png`)
 	thumbnail: string;
+	// Author avatar (front matter: `author-picture: leo.png`)
+	authorPicture: string;
 }
 
 export interface Post extends PostMeta {
@@ -28,6 +30,12 @@ const assets = import.meta.glob(['/src/content/blog/*/*', '!/src/content/blog/*/
 	import: 'default',
 	eager: true
 }) as Record<string, string>;
+
+// Front matter dates may be written DD-MM-YYYY; store them as YYYY-MM-DD so they sort and parse
+function isoDate(date: string): string {
+	const m = date.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
+	return m ? `${m[3]}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}` : date;
+}
 
 function parse(path: string, raw: string): Post {
 	const dir = path.replace(/\/index\.md$/, '');
@@ -83,10 +91,11 @@ function parse(path: string, raw: string): Post {
 	return {
 		slug,
 		title: data.title ?? slug,
-		date: data.date ?? '',
+		date: isoDate(data.date ?? ''),
 		summary: data.summary ?? '',
 		author: data.author ?? 'Day III Digital',
 		thumbnail: data.thumbnail ? thumbnail(data.thumbnail) : '',
+		authorPicture: data['author-picture'] ? thumbnail(data['author-picture']) : '',
 		aliases: (data.aliases ?? '')
 			.split(',')
 			.map((a) => a.trim())

@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { formatDate } from '$lib/blog';
 
 	let { data } = $props();
+
+	// ISO date -> DD-MM-YYYY
+	const displayDate = (date: string) => date.split('-').reverse().join('-');
 </script>
 
 <svelte:head>
@@ -17,17 +19,35 @@
 
 		<div class="post-list">
 			{#each data.posts as post (post.slug)}
-				<a class="post-card" class:has-thumbnail={post.thumbnail} href="{base}/blog/{post.slug}">
-					{#if post.thumbnail}
-						<img class="post-thumbnail" src={post.thumbnail} alt="" loading="lazy" />
-					{/if}
+				<article class="post-card" class:no-thumbnail={!post.thumbnail}>
 					<div class="post-body">
-						<time datetime={post.date}>{formatDate(post.date)}</time>
-						<h2>{post.title}</h2>
-						{#if post.summary}<p>{post.summary}</p>{/if}
-						<span class="read-more">Read more →</span>
+						<div class="post-text">
+							<h2><a class="post-link" href="{base}/blog/{post.slug}">{post.title}</a></h2>
+							{#if post.summary}<p class="summary">{post.summary}</p>{/if}
+						</div>
+						<div class="post-footer">
+							<div class="author">
+								<div class="avatar">
+									{#if post.authorPicture}
+										<img src={post.authorPicture} alt="" loading="lazy" />
+									{:else}
+										<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"></path></svg>
+									{/if}
+								</div>
+								<div class="author-meta">
+									<span class="author-name">{post.author}</span>
+									<time datetime={post.date}>{displayDate(post.date)}</time>
+								</div>
+							</div>
+							<span class="read-more" aria-hidden="true">Read more →</span>
+						</div>
 					</div>
-				</a>
+					{#if post.thumbnail}
+						<div class="post-image">
+							<img src={post.thumbnail} alt="" loading="lazy" />
+						</div>
+					{/if}
+				</article>
 			{:else}
 				<p class="empty">No posts yet — check back soon.</p>
 			{/each}
@@ -42,7 +62,7 @@
 	}
 
 	.blog-container {
-		max-width: 900px;
+		max-width: 1120px;
 		margin: 0 auto;
 	}
 
@@ -72,100 +92,184 @@
 	.post-list {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 2rem;
 	}
 
 	.post-card {
 		position: relative;
-		display: block;
-		padding: 1.5rem;
-		background: rgba(15, 10, 46, 0.42);
-		backdrop-filter: blur(16px);
-		-webkit-backdrop-filter: blur(16px);
-		border-radius: 16px;
-		border: 1px solid rgba(107, 143, 255, 0.15);
-		overflow: hidden;
-		text-decoration: none;
-		color: inherit;
-		transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-	}
-
-	.post-card.has-thumbnail {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) 240px;
-		gap: 1.5rem;
-		align-items: center;
+		grid-template-columns: minmax(0, 1fr) 40%;
+		border: 1.33px solid transparent;
+		border-radius: var(--radius);
+		background:
+			linear-gradient(var(--ink), var(--ink)) padding-box,
+			var(--border-stroke) border-box;
+		overflow: hidden;
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
 	}
 
-	.post-thumbnail {
-		order: 1;
-		width: 100%;
-		aspect-ratio: 16 / 10;
-		object-fit: cover;
-		border-radius: 10px;
-		display: block;
-	}
-
-	.post-card::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 3px;
-		background: linear-gradient(90deg, #774dd1, var(--gold));
+	.post-card.no-thumbnail {
+		grid-template-columns: minmax(0, 1fr);
+		min-height: 0;
 	}
 
 	.post-card:hover {
-		border-color: rgba(107, 143, 255, 0.4);
 		transform: translateY(-2px);
-		box-shadow: 0 8px 30px rgba(107, 143, 255, 0.15);
+		box-shadow: 0 8px 30px rgba(113, 74, 186, 0.3);
 	}
 
-	time {
-		font-size: 0.85rem;
-		color: var(--fog);
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
+	.post-body {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 1.5rem;
+		padding: 32px 40px 28px;
+		min-width: 0;
+	}
+
+	.post-text {
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
 	}
 
 	h2 {
-		font-size: 1.4rem;
-		color: #774dd1;
-		margin: 0.4rem 0 0.5rem;
+		margin: 0;
 		font-weight: 900;
+		font-size: clamp(1.5rem, 2.6vw, 2rem);
+		line-height: 1.05;
 		text-transform: uppercase;
 	}
 
-	p {
-		margin: 0 0 1rem;
-		color: #e0e0e0;
+	/* The title link covers the whole card so the entire card is clickable */
+	.post-link {
+		color: var(--lavender);
+		text-decoration: none;
+	}
+
+	.post-link::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+	}
+
+	.post-link:focus-visible {
+		outline: none;
+	}
+
+	.post-card:has(.post-link:focus-visible) {
+		outline: 2px solid var(--gold);
+		outline-offset: 2px;
+	}
+
+	.summary {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.5;
+		color: var(--fog);
+	}
+
+	.post-footer {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+
+	.author {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+	}
+
+	.avatar {
+		width: 44px;
+		height: 44px;
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		border: 1.33px solid transparent;
+		border-radius: 999px;
+		color: var(--fog);
+		background:
+			linear-gradient(#221b31, #221b31) padding-box,
+			var(--border-stroke) border-box;
+	}
+
+	.avatar img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.author-meta {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.author-name {
+		font-size: 1rem;
+		font-weight: 700;
+		color: white;
+	}
+
+	time {
+		font-size: 0.875rem;
+		letter-spacing: 0.18em;
+		color: var(--fog);
 	}
 
 	.read-more {
 		color: var(--gold);
-		font-weight: 700;
-		font-size: 0.9rem;
-		letter-spacing: 0.08em;
+		font-weight: 900;
+		font-size: 0.95rem;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
+		padding: 12px 8px;
+		transition: color 0.2s ease;
+	}
+
+	.post-card:hover .read-more {
+		color: var(--lavender);
+	}
+
+	.post-image {
+		min-width: 0;
+		aspect-ratio: 16 / 10;
+	}
+
+	.post-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
 	}
 
 	.empty {
 		text-align: center;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 860px) {
 		.blog-page {
 			padding: 3rem 1.25rem;
 		}
 
-		.post-card.has-thumbnail {
-			grid-template-columns: 1fr;
-			gap: 1rem;
+		.post-card {
+			grid-template-columns: minmax(0, 1fr);
 		}
 
-		.post-thumbnail {
-			order: 0;
+		.post-image {
+			order: -1;
+		}
+
+		.post-body {
+			padding: 28px 24px 24px;
 		}
 	}
 </style>
