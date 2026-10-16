@@ -87,15 +87,13 @@
 		color: #ffffff;
 	}
 
-
-
 	.content {
 		color: #e0e0e0;
 	}
 
 	.content :global(h2),
 	.content :global(h3) {
-		color: #774dd1;
+		color: var(--lavender);
 		font-weight: 900;
 		text-transform: uppercase;
 		margin: 2.2rem 0 0.8rem;
