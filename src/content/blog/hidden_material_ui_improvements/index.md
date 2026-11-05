@@ -1,5 +1,5 @@
 ---
-title: Quick Tips: Unreal 5.7 Material UI Tips
+title: Quick Tips: Unreal 5.7 Material UI
 date: 09-11-2026
 aliases: 
 thumbnail: /blog/hidden_material_ui_improvements/image%20(2).png
@@ -10,7 +10,7 @@ summary: While building and using large, layered master materials, together with
 
 ![banner.png](banner.png)
 
-# Quick Tips: Unreal 5.7 Material UI Tips
+# Quick Tips: Unreal 5.7 Material UI
 
 by ![Bram Tempelaere](author.png "avatar") [Bram Tempelaere](https://www.artstation.com/bramtempelaere) on 9th Nov 2026
 
