@@ -2,7 +2,7 @@
 title: Hidden Material UI Improvements in Unreal
 date: 09-11-2026
 aliases: 
-thumbnail: /blog/hidden_material_ui_improvements/banner.png
+thumbnail: /blog/hidden_material_ui_improvements/image%20(2).png
 author: Bram Tempelaere
 author-picture: /blog/hidden_material_ui_improvements/author.png
 summary: While building and using large, layered master materials, together with my colleague Ward Vervoort, we found two easy-to-miss features that can make material instances much easier to navigate: **parameter subgroups** and **text dropdowns** for scalar parameters
@@ -12,7 +12,7 @@ summary: While building and using large, layered master materials, together with
 
 # Hidden Material UI Improvements in Unreal
 
-by ![Bram Tempelaere](author.png "avatar") Bram Tempelaere on 9th Nov 2026
+by ![Bram Tempelaere](author.png "avatar") [Bram Tempelaere](https://www.artstation.com/bramtempelaere) on 9th Nov 2026
 
 # Quick Tips: Unreal 5.7 Material UI Tips
 
