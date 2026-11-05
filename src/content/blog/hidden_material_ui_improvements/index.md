@@ -30,26 +30,16 @@ While not a hard requirement to make things work, having a nicer UI can elevate 
 
 The parameter group can be set in the details panel of the selected parameter node. Once a group has been assigned to one parameter, you can also find it in the dropdown under other parameters.
 
-![Details — Group field@2x.png](1c2190e2-16f5-4d5c-9099-f0ffe720bd5b.png)
-
-![Details — Group dropdown options@2x.png](Details__Group_dropdown_options2x.png)
+![groups.png](groups.png)
 
 A sort priority can also be set on a parameter which changes the order of parameters within its group.  To change the sort order for the groups, you can go into the materials details panel and search for group sorting.
 ( →click off any node, into the grid or on the brown material output node).
 
-![Details — Sort Priority field@2x.png](Details__Sort_Priority_field2x.png)
-
-![Details — Parameter Groups Priorities@2x.png](Details__Parameter_Groups_Priorities2x.png)
+![sortpriorities.png](sortpriorities.png)
 
 In a material-layering setup, every layer has its own colour, normals, roughness, blend settings and tiling, and it adds up fast. With flat groups, I end up scrolling through a long list of `L1 Base`, `L1 Adjustments`, `L2 Base` and so on. This matters even more for the artists using these materials, as most of them never open the master and only ever see the instance. A second issue I ran into is with using a scalar as an index for my material ( to switch between textures on an atlas for example): The only way to see what you’re selecting is by looking at your material or being familiar with what index corresponds to what entry. This can be quite unintuitive to a new user of your material.
 
-![A float value of 1 corresponds to my wood textureset here](scalarparameterindex.png)
-
-A float value of 1 corresponds to my wood textureset here
-
-![A float value of 0 corresponds to my stone textureset here](scalarparameterindex2.png)
-
-A float value of 0 corresponds to my stone textureset here
+![scalar parameter for textureindex.png](scalar_parameter_for_textureindex.png)
 
 ## Parameter Subgroups
 
