@@ -107,4 +107,4 @@ I'm always happy to hear how others keep their big masters readable, so feel fre
 
 ## Sources
 
-- [*[Link to the commit on GitHub]*](https://github.com/EpicGames/UnrealEngine/pull/13442#pullrequestreview-2948227338)
+- [Link to the commit on GitHub](https://github.com/EpicGames/UnrealEngine/pull/13442#pullrequestreview-2948227338) (requires git access to the Epic Games UE repo, see how to gain access here: [Epic Games](https://github.com/epicgames))
